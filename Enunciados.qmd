@@ -1,0 +1,19 @@
+---
+title: "Enunciados"
+format: html
+---
+
+# Enunciados de los problemas
+
+## Problema 1
+
+Se deben implementar todos los métodos de decisión bajo incertidumbre, tanto para el caso favorable como para el caso desfavorable (pesimista, optimista, Hurwicz, Savage, Laplace y punto ideal) para la siguiente tabla de decisión:
+
+|       | $\omega_1$ | $\omega_2$ | $\omega_3$ | $\omega_4$ |
+|-------|------------|------------|------------|------------|
+| $a_1$ | 5          | 15         | 8          | 18         |
+| $a_2$ | 7          | 13         | 14         | 20         |
+| $a_3$ | 6          | 17         | 11         | 17         |
+| $a_4$ | 4          | 14         | 16         | 16         |
+| $a_5$ | 10         | 10         | 13         | 15         |
+
