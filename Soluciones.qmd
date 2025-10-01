@@ -1,0 +1,269 @@
+---
+title: "Soluciones de los problemas"
+format: html
+---
+
+```{r}
+# Cargar librerías necesarias
+library(tinytable)
+
+# Cargar script con funciones
+source("teoriadecision_funciones_incertidumbre.R")
+```
+
+## Problema 1
+
+Se deben implementar todos los métodos de decisión bajo incertidumbre, tanto para el caso favorable como para el caso desfavorable (pesimista, optimista, Hurwicz, Savage, Laplace y punto ideal) para la siguiente tabla de decisión:
+
+|       | $\omega_1$ | $\omega_2$ | $\omega_3$ | $\omega_4$ |
+|-------|------------|------------|------------|------------|
+| $a_1$ | 5          | 15         | 8          | 18         |
+| $a_2$ | 7          | 13         | 14         | 20         |
+| $a_3$ | 6          | 17         | 11         | 17         |
+| $a_4$ | 4          | 14         | 16         | 16         |
+| $a_5$ | 10         | 10         | 13         | 15         |
+
+```{r}
+ # Definir la tabla de decisión
+ tabla_decision <- crea.tablaX(
+                    c(5, 15, 8, 18,
+                      7, 13, 14, 20,
+                      6, 17, 11, 17,
+                      4, 14, 16, 16,
+                      10, 10, 13, 15),
+                      numalternativas = 5, numestados = 4,
+                      nb_alternativas = c("a1", "a2", "a3", "a4", "a5"),
+                      nb_estados = c("ω1", "ω2", "ω3", "ω4")) 
+```
+
+### Caso favorable
+
+#### Método pesimista
+```{r}
+#| echo: true
+alternativa_pesimista <- criterio.Wald(tabla_decision, favorable = TRUE)
+
+```
+
+Para el criterio de `{r} alternativa_pesimista$criterio`, en el caso `{r} alternativa_pesimista$metodo`, la alternativa `{r} alternativa_pesimista$AlternativaOpt` es la mejor y el valor óptimo es `{r} alternativa_pesimista$ValorOptimo`.
+
+#### Método optimista
+
+```{r}
+#| echo: true
+
+alternativa_optimista <- criterio.Optimista(tabla_decision, favorable = TRUE)
+```
+
+Para el criterio `{r} alternativa_optimista$criterio`, en el caso `{r} alternativa_optimista$metodo`, la alternativa `{r} alternativa_optimista$AlternativaOpt` es la mejor y el valor óptimo es `{r} alternativa_optimista$ValorOptimo`.
+
+#### Método Hurwicz
+
+```{r}
+#| echo: true
+
+alternativa_Hurwicz <- criterio.Hurwicz(tabla_decision, alfa = 0.5, favorable = TRUE)
+alternativas_Hurwicz_alfas <- criterio.Hurwicz.General(tabla_decision, alfa = 10, favorable = TRUE)
+tb_Hurwicz <- data.frame(matrix(c(
+                  seq(from = 0, to = 1, by = (1/alternativas_Hurwicz_alfas$alfa)),
+                  alternativas_Hurwicz_alfas$AlternativaOptima, 
+                  alternativas_Hurwicz_alfas$ValorOptimo),
+                  nrow = length(alternativas_Hurwicz_alfas$AlternativaOptima), 
+                  byrow = FALSE, 
+                  ))
+colnames(tb_Hurwicz) <- c("Alfa", "Alternativa Óptima", "Valor Óptimo")
+```
+
+Para el criterio de `{r} alternativa_Hurwicz$criterio`, en el caso `{r} alternativa_Hurwicz$metodo`, la alternativa `{r} alternativa_Hurwicz$AlternativaOpt` es la mejor y el valor óptimo es `{r} alternativa_Hurwicz$ValorOptimo`. Con un valor de alfa = `{r} alternativa_Hurwicz$alfa`.
+
+Se muestra a continuación una tabla con las alternativas óptimas y los valores óptimos para diferentes valores de alfa, que van desde 0 hasta 1 con incrementos de 0.1:
+
+`{r} tt(tb_Hurwicz)`
+
+Y gráficamente:
+
+```{r}
+#| echo: true
+
+gráfico_Hurwicz <- dibuja.criterio.Hurwicz(tabla_decision, favorable = TRUE)
+```
+
+Además, se muestra un gráfico donde se pueden apreciar los intervalos de las alternativas óptimas para diferentes valores de alfa:
+
+```{r}
+#| echo: true
+
+intervalos_Hurwicz <- dibuja.criterio.Hurwicz_Intervalos(tabla_decision, favorable = TRUE)
+```
+
+
+#### Método Savage
+
+```{r}
+#| echo: true
+
+alternativa_Savage <- criterio.Savage(tabla_decision, favorable = TRUE)
+```
+
+Para el criterio de `{r} alternativa_Savage$criterio`, en el caso `{r} alternativa_Savage$metodo`, la alternativa `{r} alternativa_Savage$AlternativaOpt` es la mejor y el valor óptimo es `{r} alternativa_Savage$ValorOptimo`.
+
+#### Método Laplace
+
+```{r}
+#| echo: true
+
+alternativa_Laplace <- criterio.Laplace(tabla_decision, favorable = TRUE)
+```	
+
+Para el criterio de `{r} alternativa_Laplace$criterio`, en el caso `{r} alternativa_Laplace$metodo`, la alternativa `{r} alternativa_Laplace$AlternativaOpt` es la mejor y el valor óptimo es `{r} alternativa_Laplace$ValorOptimo`.
+#### Método punto ideal
+
+```{r}
+#| echo: true
+
+alternativa_puntoideal <- criterio.PuntoIdeal(tabla_decision, favorable = TRUE)
+```
+
+Para el criterio de `{r} alternativa_puntoideal$criterio`, en el caso `{r} alternativa_puntoideal$metodo`, la alternativa `{r} alternativa_puntoideal$AlternativaOpt` es la mejor y el valor óptimo es `{r} alternativa_puntoideal$ValorOptimo`.
+
+#### Resumen caso favorable
+
+```{r}
+#| echo: true
+
+resumen_favorable <- data.frame(
+  Criterio = c(alternativa_pesimista$criterio,
+               alternativa_optimista$criterio,
+               alternativa_Hurwicz$criterio,
+               alternativa_Savage$criterio,
+               alternativa_Laplace$criterio,
+               alternativa_puntoideal$criterio),
+  Alternativa_Óptima = c(alternativa_pesimista$AlternativaOpt,
+                         alternativa_optimista$AlternativaOpt,
+                         alternativa_Hurwicz$AlternativaOpt,
+                         alternativa_Savage$AlternativaOpt,
+                         alternativa_Laplace$AlternativaOpt,
+                         alternativa_puntoideal$AlternativaOpt)
+)
+
+tt(resumen_favorable)
+
+```
+
+Vemos que las alternativas óptimas son diferentes según el criterio utilizado, siendo la alternativa $a_2$ la que más veces aparece como óptima (5 veces). Ya alternativa $a_5$ aparece una sola vez como óptima para el criterio pesimista y es la mejor alternativa también para el criterio de Hurwicz con valores de $\alpha$ menores que ____ .
+
+### Caso desfavorable
+
+#### Método pesimista
+
+```{r}
+#| echo: true
+
+alternativa_pesimista_desfavorable <- criterio.Wald(tabla_decision, favorable = FALSE)
+```
+
+Para el criterio de `{r} alternativa_pesimista_desfavorable$criterio`, en el caso `{r} alternativa_pesimista_desfavorable$metodo`, la alternativa `{r} alternativa_pesimista_desfavorable$AlternativaOpt` es la mejor y el valor óptimo es `{r} alternativa_pesimista_desfavorable$ValorOptimo`.
+
+#### Método optimista
+
+```{r}
+#| echo: true
+
+alternativa_optimista_desfavorable <- criterio.Optimista(tabla_decision, favorable = FALSE)
+```
+
+Para el criterio `{r} alternativa_optimista_desfavorable$criterio`, en el caso `{r} alternativa_optimista_desfavorable$metodo`, la alternativa `{r} alternativa_optimista_desfavorable$AlternativaOpt` es la mejor y el valor óptimo es `{r} alternativa_optimista_desfavorable$ValorOptimo`.
+
+#### Método Hurwicz
+
+```{r}
+#| echo: true
+
+alternativa_Hurwicz_desfavorable <- criterio.Hurwicz(tabla_decision, alfa = 0.5, favorable = FALSE)
+alternativas_Hurwicz_alfas_desfavorable <- criterio.Hurwicz.General(tabla_decision, alfa = 10, favorable = FALSE)
+tb_Hurwicz_desfavorable <- data.frame(matrix(c(
+                  seq(from = 0, to = 1, by = (1/alternativas_Hurwicz_alfas_desfavorable$alfa)),
+                  alternativas_Hurwicz_alfas_desfavorable$AlternativaOptima, 
+                  alternativas_Hurwicz_alfas_desfavorable$ValorOptimo),
+                  nrow = length(alternativas_Hurwicz_alfas_desfavorable$AlternativaOptima), 
+                  byrow = FALSE, 
+                  ))
+colnames(tb_Hurwicz_desfavorable) <- c("Alfa", "Alternativa Óptima", "Valor Óptimo")
+```
+
+Para el criterio de `{r} alternativa_Hurwicz_desfavorable$criterio`, en el caso `{r} alternativa_Hurwicz_desfavorable$metodo`, la alternativa `{r} alternativa_Hurwicz_desfavorable$AlternativaOpt` es la mejor y el valor óptimo es `{r} alternativa_Hurwicz_desfavorable$ValorOptimo`. Con un valor de alfa = `{r} alternativa_Hurwicz_desfavorable$alfa`.
+
+Se muestra a continuación una tabla con las alternativas óptimas y los valores óptimos para diferentes valores de alfa, que van desde 0 hasta 1 con incrementos de 0.1:
+
+`{r} tt(tb_Hurwicz_desfavorable)`
+
+Y gráficamente:
+
+```{r}
+#| echo: true
+
+gráfico_Hurwicz_desfavorable <- dibuja.criterio.Hurwicz(tabla_decision, favorable = FALSE)
+```
+
+Además, se muestra un gráfico donde se pueden apreciar los intervalos de las alternativas óptimas para diferentes valores de alfa:
+
+```{r}
+#| echo: true
+
+intervalos_Hurwicz_desfavorable <- dibuja.criterio.Hurwicz_Intervalos(tabla_decision, favorable = FALSE)
+```
+
+#### Método Savage
+
+```{r}
+#| echo: true
+
+alternativa_Savage_desfavorable <- criterio.Savage(tabla_decision, favorable = FALSE)
+```
+
+Para el criterio de `{r} alternativa_Savage_desfavorable$criterio`, en el caso `{r} alternativa_Savage_desfavorable$metodo`, la alternativa `{r} alternativa_Savage_desfavorable$AlternativaOpt` es la mejor y el valor óptimo es `{r} alternativa_Savage_desfavorable$ValorOptimo`.
+
+#### Método Laplace
+
+```{r}
+#| echo: true
+
+alternativa_Laplace_desfavorable <- criterio.Laplace(tabla_decision, favorable = FALSE)
+```
+
+Para el criterio de `{r} alternativa_Laplace_desfavorable$criterio`, en el caso `{r} alternativa_Laplace_desfavorable$metodo`, la alternativa `{r} alternativa_Laplace_desfavorable$AlternativaOpt` es la mejor y el valor óptimo es `{r} alternativa_Laplace_desfavorable$ValorOptimo`.
+
+#### Método punto ideal
+
+```{r}
+#| echo: true
+
+alternativa_puntoideal_desfavorable <- criterio.PuntoIdeal(tabla_decision, favorable = FALSE)
+```
+
+Para el criterio de `{r} alternativa_puntoideal_desfavorable$criterio`, en el caso `{r} alternativa_puntoideal_desfavorable$metodo`, la alternativa `{r} alternativa_puntoideal_desfavorable$AlternativaOpt` es la mejor y el valor óptimo es `{r} alternativa_puntoideal_desfavorable$ValorOptimo`.
+
+#### Resumen caso desfavorable
+
+```{r}
+#| echo: true
+
+resumen_desfavorable <- data.frame(
+  Criterio = c(alternativa_pesimista_desfavorable$criterio,
+               alternativa_optimista_desfavorable$criterio,
+               alternativa_Hurwicz_desfavorable$criterio,
+               alternativa_Savage_desfavorable$criterio,
+               alternativa_Laplace_desfavorable$criterio,
+               alternativa_puntoideal_desfavorable$criterio),
+  Alternativa_Óptima = c(alternativa_pesimista_desfavorable$AlternativaOpt,
+                         alternativa_optimista_desfavorable$AlternativaOpt,
+                         alternativa_Hurwicz_desfavorable$AlternativaOpt,
+                         alternativa_Savage_desfavorable$AlternativaOpt,
+                         alternativa_Laplace_desfavorable$AlternativaOpt,
+                         alternativa_puntoideal_desfavorable$AlternativaOpt)
+)
+
+tt(resumen_desfavorable)
+```
+
+Vemos que las alternativas óptimas son diferentes según el criterio utilizado, siendo la alternativa $a_1$ la que más veces aparece como óptima (3 veces). La alternativa $a_4$ aparece en dos ocasiones como óptima, por último para el criterio pesimista la mejor alternativa es $a_5$ y es la mejor alternativa también para el criterio de Hurwicz con valores de $\alpha$ menores que ____ .

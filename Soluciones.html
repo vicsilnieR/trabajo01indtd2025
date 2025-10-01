@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Soluciones de los problemas</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Soluciones_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Soluciones_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="Soluciones_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="Soluciones_files/libs/quarto-html/popper.min.js"></script>
+<script src="Soluciones_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Soluciones_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Soluciones_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Soluciones_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Soluciones_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Soluciones_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Soluciones_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Soluciones de los problemas</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar librerías necesarias</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tinytable)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar script con funciones</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"teoriadecision_funciones_incertidumbre.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="problema-1" class="level2">
+<h2 class="anchored" data-anchor-id="problema-1">Problema 1</h2>
+<p>Se deben implementar todos los métodos de decisión bajo incertidumbre, tanto para el caso favorable como para el caso desfavorable (pesimista, optimista, Hurwicz, Savage, Laplace y punto ideal) para la siguiente tabla de decisión:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th><span class="math inline">\(\omega_1\)</span></th>
+<th><span class="math inline">\(\omega_2\)</span></th>
+<th><span class="math inline">\(\omega_3\)</span></th>
+<th><span class="math inline">\(\omega_4\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(a_1\)</span></td>
+<td>5</td>
+<td>15</td>
+<td>8</td>
+<td>18</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(a_2\)</span></td>
+<td>7</td>
+<td>13</td>
+<td>14</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(a_3\)</span></td>
+<td>6</td>
+<td>17</td>
+<td>11</td>
+<td>17</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(a_4\)</span></td>
+<td>4</td>
+<td>14</td>
+<td>16</td>
+<td>16</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(a_5\)</span></td>
+<td>10</td>
+<td>10</td>
+<td>13</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a> <span class="co"># Definir la tabla de decisión</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a> tabla_decision <span class="ot">&lt;-</span> <span class="fu">crea.tablaX</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">15</span>, <span class="dv">8</span>, <span class="dv">18</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                      <span class="dv">7</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">20</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                      <span class="dv">6</span>, <span class="dv">17</span>, <span class="dv">11</span>, <span class="dv">17</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                      <span class="dv">4</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">16</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                      <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">13</span>, <span class="dv">15</span>),</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                      <span class="at">numalternativas =</span> <span class="dv">5</span>, <span class="at">numestados =</span> <span class="dv">4</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                      <span class="at">nb_alternativas =</span> <span class="fu">c</span>(<span class="st">"a1"</span>, <span class="st">"a2"</span>, <span class="st">"a3"</span>, <span class="st">"a4"</span>, <span class="st">"a5"</span>),</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>                      <span class="at">nb_estados =</span> <span class="fu">c</span>(<span class="st">"ω1"</span>, <span class="st">"ω2"</span>, <span class="st">"ω3"</span>, <span class="st">"ω4"</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="caso-favorable" class="level3">
+<h3 class="anchored" data-anchor-id="caso-favorable">Caso favorable</h3>
+<section id="método-pesimista" class="level4">
+<h4 class="anchored" data-anchor-id="método-pesimista">Método pesimista</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>alternativa_pesimista <span class="ot">&lt;-</span> <span class="fu">criterio.Wald</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para el criterio de Wald, en el caso favorable, la alternativa 5 es la mejor y el valor óptimo es 10.</p>
+</section>
+<section id="método-optimista" class="level4">
+<h4 class="anchored" data-anchor-id="método-optimista">Método optimista</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>alternativa_optimista <span class="ot">&lt;-</span> <span class="fu">criterio.Optimista</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para el criterio Optimista, en el caso favorable, la alternativa 2 es la mejor y el valor óptimo es 20.</p>
+</section>
+<section id="método-hurwicz" class="level4">
+<h4 class="anchored" data-anchor-id="método-hurwicz">Método Hurwicz</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>alternativa_Hurwicz <span class="ot">&lt;-</span> <span class="fu">criterio.Hurwicz</span>(tabla_decision, <span class="at">alfa =</span> <span class="fl">0.5</span>, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>alternativas_Hurwicz_alfas <span class="ot">&lt;-</span> <span class="fu">criterio.Hurwicz.General</span>(tabla_decision, <span class="at">alfa =</span> <span class="dv">10</span>, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>tb_Hurwicz <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">1</span>, <span class="at">by =</span> (<span class="dv">1</span><span class="sc">/</span>alternativas_Hurwicz_alfas<span class="sc">$</span>alfa)),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                  alternativas_Hurwicz_alfas<span class="sc">$</span>AlternativaOptima, </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                  alternativas_Hurwicz_alfas<span class="sc">$</span>ValorOptimo),</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">nrow =</span> <span class="fu">length</span>(alternativas_Hurwicz_alfas<span class="sc">$</span>AlternativaOptima), </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">byrow =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                  ))</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tb_Hurwicz) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Alfa"</span>, <span class="st">"Alternativa Óptima"</span>, <span class="st">"Valor Óptimo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para el criterio de Hurwicz, en el caso favorable, la alternativa 2 es la mejor y el valor óptimo es 13.5. Con un valor de alfa = 0.5.</p>
+<p>Se muestra a continuación una tabla con las alternativas óptimas y los valores óptimos para diferentes valores de alfa, que van desde 0 hasta 1 con incrementos de 0.1:</p>
+<!-- preamble start -->
+
+    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
+
+    <script>
+      // Create table-specific functions using external factory
+      const tableFns_jeejm5g07paqrnjsvyyp = TinyTable.createTableFunctions("tinytable_jeejm5g07paqrnjsvyyp");
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: '11', j: 1 }, { i: '11', j: 2 }, { i: '11', j: 3 } ], css_id: 'tinytable_css_rqtm2xmzs659li9lv1eq',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 } ], css_id: 'tinytable_css_6uclffkz9mma0tudcdrw',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  tableFns_jeejm5g07paqrnjsvyyp.styleCell(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
+    <style>
+    /* tinytable css entries after */
+    #tinytable_jeejm5g07paqrnjsvyyp td.tinytable_css_rqtm2xmzs659li9lv1eq, #tinytable_jeejm5g07paqrnjsvyyp th.tinytable_css_rqtm2xmzs659li9lv1eq {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: black; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_jeejm5g07paqrnjsvyyp td.tinytable_css_6uclffkz9mma0tudcdrw, #tinytable_jeejm5g07paqrnjsvyyp th.tinytable_css_6uclffkz9mma0tudcdrw {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: black; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    </style>
+    <div class="container">
+      <table class="tinytable" id="tinytable_jeejm5g07paqrnjsvyyp" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        
+        <thead>
+              <tr>
+                <th scope="col" data-row="0" data-col="1">Alfa</th>
+                <th scope="col" data-row="0" data-col="2">Alternativa Óptima</th>
+                <th scope="col" data-row="0" data-col="3">Valor Óptimo</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td data-row="1" data-col="1">0.0</td>
+                  <td data-row="1" data-col="2">5</td>
+                  <td data-row="1" data-col="3">10.0</td>
+                </tr>
+                <tr>
+                  <td data-row="2" data-col="1">0.1</td>
+                  <td data-row="2" data-col="2">5</td>
+                  <td data-row="2" data-col="3">10.5</td>
+                </tr>
+                <tr>
+                  <td data-row="3" data-col="1">0.2</td>
+                  <td data-row="3" data-col="2">5</td>
+                  <td data-row="3" data-col="3">11.0</td>
+                </tr>
+                <tr>
+                  <td data-row="4" data-col="1">0.3</td>
+                  <td data-row="4" data-col="2">5</td>
+                  <td data-row="4" data-col="3">11.5</td>
+                </tr>
+                <tr>
+                  <td data-row="5" data-col="1">0.4</td>
+                  <td data-row="5" data-col="2">2</td>
+                  <td data-row="5" data-col="3">12.2</td>
+                </tr>
+                <tr>
+                  <td data-row="6" data-col="1">0.5</td>
+                  <td data-row="6" data-col="2">2</td>
+                  <td data-row="6" data-col="3">13.5</td>
+                </tr>
+                <tr>
+                  <td data-row="7" data-col="1">0.6</td>
+                  <td data-row="7" data-col="2">2</td>
+                  <td data-row="7" data-col="3">14.8</td>
+                </tr>
+                <tr>
+                  <td data-row="8" data-col="1">0.7</td>
+                  <td data-row="8" data-col="2">2</td>
+                  <td data-row="8" data-col="3">16.1</td>
+                </tr>
+                <tr>
+                  <td data-row="9" data-col="1">0.8</td>
+                  <td data-row="9" data-col="2">2</td>
+                  <td data-row="9" data-col="3">17.4</td>
+                </tr>
+                <tr>
+                  <td data-row="10" data-col="1">0.9</td>
+                  <td data-row="10" data-col="2">2</td>
+                  <td data-row="10" data-col="3">18.7</td>
+                </tr>
+                <tr>
+                  <td data-row="11" data-col="1">1.0</td>
+                  <td data-row="11" data-col="2">2</td>
+                  <td data-row="11" data-col="3">20.0</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+<p>Y gráficamente:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>gráfico_Hurwicz <span class="ot">&lt;-</span> <span class="fu">dibuja.criterio.Hurwicz</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Soluciones_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Además, se muestra un gráfico donde se pueden apreciar los intervalos de las alternativas óptimas para diferentes valores de alfa:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>intervalos_Hurwicz <span class="ot">&lt;-</span> <span class="fu">dibuja.criterio.Hurwicz_Intervalos</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Soluciones_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="método-savage" class="level4">
+<h4 class="anchored" data-anchor-id="método-savage">Método Savage</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>alternativa_Savage <span class="ot">&lt;-</span> <span class="fu">criterio.Savage</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para el criterio de Savage, en el caso favorable, la alternativa 2 es la mejor y el valor óptimo es 4.</p>
+</section>
+<section id="método-laplace" class="level4">
+<h4 class="anchored" data-anchor-id="método-laplace">Método Laplace</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>alternativa_Laplace <span class="ot">&lt;-</span> <span class="fu">criterio.Laplace</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para el criterio de Laplace, en el caso favorable, la alternativa 2 es la mejor y el valor óptimo es 13.5. #### Método punto ideal</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>alternativa_puntoideal <span class="ot">&lt;-</span> <span class="fu">criterio.PuntoIdeal</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para el criterio de Punto Ideal, en el caso favorable, la alternativa 2 es la mejor y el valor óptimo es 5.3851648.</p>
+</section>
+<section id="resumen-caso-favorable" class="level4">
+<h4 class="anchored" data-anchor-id="resumen-caso-favorable">Resumen caso favorable</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>resumen_favorable <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Criterio =</span> <span class="fu">c</span>(alternativa_pesimista<span class="sc">$</span>criterio,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>               alternativa_optimista<span class="sc">$</span>criterio,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>               alternativa_Hurwicz<span class="sc">$</span>criterio,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>               alternativa_Savage<span class="sc">$</span>criterio,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>               alternativa_Laplace<span class="sc">$</span>criterio,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>               alternativa_puntoideal<span class="sc">$</span>criterio),</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  Alternativa_Ó<span class="at">ptima =</span> <span class="fu">c</span>(alternativa_pesimista<span class="sc">$</span>AlternativaOpt,</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>                         alternativa_optimista<span class="sc">$</span>AlternativaOpt,</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>                         alternativa_Hurwicz<span class="sc">$</span>AlternativaOpt,</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>                         alternativa_Savage<span class="sc">$</span>AlternativaOpt,</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>                         alternativa_Laplace<span class="sc">$</span>AlternativaOpt,</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>                         alternativa_puntoideal<span class="sc">$</span>AlternativaOpt)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="fu">tt</span>(resumen_favorable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<!-- preamble start -->
+
+    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
+
+    <script>
+      // Create table-specific functions using external factory
+      const tableFns_t2li2sjveucmvlr1nep9 = TinyTable.createTableFunctions("tinytable_t2li2sjveucmvlr1nep9");
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: '6', j: 1 }, { i: '6', j: 2 } ], css_id: 'tinytable_css_u9f4cxh3qxp0u0hbgcvc',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 } ], css_id: 'tinytable_css_849i6bg1oty5j7hr3ajm',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  tableFns_t2li2sjveucmvlr1nep9.styleCell(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
+    <style>
+    /* tinytable css entries after */
+    #tinytable_t2li2sjveucmvlr1nep9 td.tinytable_css_u9f4cxh3qxp0u0hbgcvc, #tinytable_t2li2sjveucmvlr1nep9 th.tinytable_css_u9f4cxh3qxp0u0hbgcvc {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: black; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_t2li2sjveucmvlr1nep9 td.tinytable_css_849i6bg1oty5j7hr3ajm, #tinytable_t2li2sjveucmvlr1nep9 th.tinytable_css_849i6bg1oty5j7hr3ajm {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: black; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    </style>
+    <div class="container">
+      <table class="tinytable" id="tinytable_t2li2sjveucmvlr1nep9" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        
+        <thead>
+              <tr>
+                <th scope="col" data-row="0" data-col="1">Criterio</th>
+                <th scope="col" data-row="0" data-col="2">Alternativa_Óptima</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td data-row="1" data-col="1">Wald</td>
+                  <td data-row="1" data-col="2">5</td>
+                </tr>
+                <tr>
+                  <td data-row="2" data-col="1">Optimista</td>
+                  <td data-row="2" data-col="2">2</td>
+                </tr>
+                <tr>
+                  <td data-row="3" data-col="1">Hurwicz</td>
+                  <td data-row="3" data-col="2">2</td>
+                </tr>
+                <tr>
+                  <td data-row="4" data-col="1">Savage</td>
+                  <td data-row="4" data-col="2">2</td>
+                </tr>
+                <tr>
+                  <td data-row="5" data-col="1">Laplace</td>
+                  <td data-row="5" data-col="2">2</td>
+                </tr>
+                <tr>
+                  <td data-row="6" data-col="1">Punto Ideal</td>
+                  <td data-row="6" data-col="2">2</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+</div>
+</div>
+<p>Vemos que las alternativas óptimas son diferentes según el criterio utilizado, siendo la alternativa <span class="math inline">\(a_2\)</span> la que más veces aparece como óptima (5 veces). Ya alternativa <span class="math inline">\(a_5\)</span> aparece una sola vez como óptima para el criterio pesimista y es la mejor alternativa también para el criterio de Hurwicz con valores de <span class="math inline">\(\alpha\)</span> menores que ____ .</p>
+</section>
+</section>
+<section id="caso-desfavorable" class="level3">
+<h3 class="anchored" data-anchor-id="caso-desfavorable">Caso desfavorable</h3>
+<section id="método-pesimista-1" class="level4">
+<h4 class="anchored" data-anchor-id="método-pesimista-1">Método pesimista</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>alternativa_pesimista_desfavorable <span class="ot">&lt;-</span> <span class="fu">criterio.Wald</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para el criterio de Wald, en el caso desfavorable, la alternativa 5 es la mejor y el valor óptimo es 15.</p>
+</section>
+<section id="método-optimista-1" class="level4">
+<h4 class="anchored" data-anchor-id="método-optimista-1">Método optimista</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>alternativa_optimista_desfavorable <span class="ot">&lt;-</span> <span class="fu">criterio.Optimista</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para el criterio Optimista, en el caso desfavorable, la alternativa 4 es la mejor y el valor óptimo es 4.</p>
+</section>
+<section id="método-hurwicz-1" class="level4">
+<h4 class="anchored" data-anchor-id="método-hurwicz-1">Método Hurwicz</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>alternativa_Hurwicz_desfavorable <span class="ot">&lt;-</span> <span class="fu">criterio.Hurwicz</span>(tabla_decision, <span class="at">alfa =</span> <span class="fl">0.5</span>, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>alternativas_Hurwicz_alfas_desfavorable <span class="ot">&lt;-</span> <span class="fu">criterio.Hurwicz.General</span>(tabla_decision, <span class="at">alfa =</span> <span class="dv">10</span>, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>tb_Hurwicz_desfavorable <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">1</span>, <span class="at">by =</span> (<span class="dv">1</span><span class="sc">/</span>alternativas_Hurwicz_alfas_desfavorable<span class="sc">$</span>alfa)),</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>                  alternativas_Hurwicz_alfas_desfavorable<span class="sc">$</span>AlternativaOptima, </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>                  alternativas_Hurwicz_alfas_desfavorable<span class="sc">$</span>ValorOptimo),</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">nrow =</span> <span class="fu">length</span>(alternativas_Hurwicz_alfas_desfavorable<span class="sc">$</span>AlternativaOptima), </span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">byrow =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>                  ))</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tb_Hurwicz_desfavorable) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Alfa"</span>, <span class="st">"Alternativa Óptima"</span>, <span class="st">"Valor Óptimo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para el criterio de Hurwicz, en el caso desfavorable, la alternativa 4 es la mejor y el valor óptimo es 10. Con un valor de alfa = 0.5.</p>
+<p>Se muestra a continuación una tabla con las alternativas óptimas y los valores óptimos para diferentes valores de alfa, que van desde 0 hasta 1 con incrementos de 0.1:</p>
+<!-- preamble start -->
+
+    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
+
+    <script>
+      // Create table-specific functions using external factory
+      const tableFns_yn83ekl04ouhkextxpum = TinyTable.createTableFunctions("tinytable_yn83ekl04ouhkextxpum");
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: '11', j: 1 }, { i: '11', j: 2 }, { i: '11', j: 3 } ], css_id: 'tinytable_css_hptwo9bb7gv2vfsqjn4e',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 } ], css_id: 'tinytable_css_n14vprzjbud3icul1rsl',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  tableFns_yn83ekl04ouhkextxpum.styleCell(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
+    <style>
+    /* tinytable css entries after */
+    #tinytable_yn83ekl04ouhkextxpum td.tinytable_css_hptwo9bb7gv2vfsqjn4e, #tinytable_yn83ekl04ouhkextxpum th.tinytable_css_hptwo9bb7gv2vfsqjn4e {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: black; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_yn83ekl04ouhkextxpum td.tinytable_css_n14vprzjbud3icul1rsl, #tinytable_yn83ekl04ouhkextxpum th.tinytable_css_n14vprzjbud3icul1rsl {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: black; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    </style>
+    <div class="container">
+      <table class="tinytable" id="tinytable_yn83ekl04ouhkextxpum" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        
+        <thead>
+              <tr>
+                <th scope="col" data-row="0" data-col="1">Alfa</th>
+                <th scope="col" data-row="0" data-col="2">Alternativa Óptima</th>
+                <th scope="col" data-row="0" data-col="3">Valor Óptimo</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td data-row="1" data-col="1">0.0</td>
+                  <td data-row="1" data-col="2">5</td>
+                  <td data-row="1" data-col="3">15.0</td>
+                </tr>
+                <tr>
+                  <td data-row="2" data-col="1">0.1</td>
+                  <td data-row="2" data-col="2">5</td>
+                  <td data-row="2" data-col="3">14.5</td>
+                </tr>
+                <tr>
+                  <td data-row="3" data-col="1">0.2</td>
+                  <td data-row="3" data-col="2">4</td>
+                  <td data-row="3" data-col="3">13.6</td>
+                </tr>
+                <tr>
+                  <td data-row="4" data-col="1">0.3</td>
+                  <td data-row="4" data-col="2">4</td>
+                  <td data-row="4" data-col="3">12.4</td>
+                </tr>
+                <tr>
+                  <td data-row="5" data-col="1">0.4</td>
+                  <td data-row="5" data-col="2">4</td>
+                  <td data-row="5" data-col="3">11.2</td>
+                </tr>
+                <tr>
+                  <td data-row="6" data-col="1">0.5</td>
+                  <td data-row="6" data-col="2">4</td>
+                  <td data-row="6" data-col="3">10.0</td>
+                </tr>
+                <tr>
+                  <td data-row="7" data-col="1">0.6</td>
+                  <td data-row="7" data-col="2">4</td>
+                  <td data-row="7" data-col="3">8.8</td>
+                </tr>
+                <tr>
+                  <td data-row="8" data-col="1">0.7</td>
+                  <td data-row="8" data-col="2">4</td>
+                  <td data-row="8" data-col="3">7.6</td>
+                </tr>
+                <tr>
+                  <td data-row="9" data-col="1">0.8</td>
+                  <td data-row="9" data-col="2">4</td>
+                  <td data-row="9" data-col="3">6.4</td>
+                </tr>
+                <tr>
+                  <td data-row="10" data-col="1">0.9</td>
+                  <td data-row="10" data-col="2">4</td>
+                  <td data-row="10" data-col="3">5.2</td>
+                </tr>
+                <tr>
+                  <td data-row="11" data-col="1">1.0</td>
+                  <td data-row="11" data-col="2">4</td>
+                  <td data-row="11" data-col="3">4.0</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+<p>Y gráficamente:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>gráfico_Hurwicz_desfavorable <span class="ot">&lt;-</span> <span class="fu">dibuja.criterio.Hurwicz</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Soluciones_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Además, se muestra un gráfico donde se pueden apreciar los intervalos de las alternativas óptimas para diferentes valores de alfa:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>intervalos_Hurwicz_desfavorable <span class="ot">&lt;-</span> <span class="fu">dibuja.criterio.Hurwicz_Intervalos</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Soluciones_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="método-savage-1" class="level4">
+<h4 class="anchored" data-anchor-id="método-savage-1">Método Savage</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>alternativa_Savage_desfavorable <span class="ot">&lt;-</span> <span class="fu">criterio.Savage</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para el criterio de Savage, en el caso desfavorable, la alternativa 1 es la mejor y el valor óptimo es 5.</p>
+</section>
+<section id="método-laplace-1" class="level4">
+<h4 class="anchored" data-anchor-id="método-laplace-1">Método Laplace</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>alternativa_Laplace_desfavorable <span class="ot">&lt;-</span> <span class="fu">criterio.Laplace</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para el criterio de Laplace, en el caso desfavorable, la alternativa 1 es la mejor y el valor óptimo es 11.5.</p>
+</section>
+<section id="método-punto-ideal" class="level4">
+<h4 class="anchored" data-anchor-id="método-punto-ideal">Método punto ideal</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>alternativa_puntoideal_desfavorable <span class="ot">&lt;-</span> <span class="fu">criterio.PuntoIdeal</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para el criterio de Punto Ideal, en el caso desfavorable, la alternativa 1 es la mejor y el valor óptimo es 5.9160798.</p>
+</section>
+<section id="resumen-caso-desfavorable" class="level4">
+<h4 class="anchored" data-anchor-id="resumen-caso-desfavorable">Resumen caso desfavorable</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>resumen_desfavorable <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Criterio =</span> <span class="fu">c</span>(alternativa_pesimista_desfavorable<span class="sc">$</span>criterio,</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>               alternativa_optimista_desfavorable<span class="sc">$</span>criterio,</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>               alternativa_Hurwicz_desfavorable<span class="sc">$</span>criterio,</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>               alternativa_Savage_desfavorable<span class="sc">$</span>criterio,</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>               alternativa_Laplace_desfavorable<span class="sc">$</span>criterio,</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>               alternativa_puntoideal_desfavorable<span class="sc">$</span>criterio),</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  Alternativa_Ó<span class="at">ptima =</span> <span class="fu">c</span>(alternativa_pesimista_desfavorable<span class="sc">$</span>AlternativaOpt,</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>                         alternativa_optimista_desfavorable<span class="sc">$</span>AlternativaOpt,</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>                         alternativa_Hurwicz_desfavorable<span class="sc">$</span>AlternativaOpt,</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>                         alternativa_Savage_desfavorable<span class="sc">$</span>AlternativaOpt,</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>                         alternativa_Laplace_desfavorable<span class="sc">$</span>AlternativaOpt,</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>                         alternativa_puntoideal_desfavorable<span class="sc">$</span>AlternativaOpt)</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="fu">tt</span>(resumen_desfavorable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<!-- preamble start -->
+
+    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
+
+    <script>
+      // Create table-specific functions using external factory
+      const tableFns_js28v2zsr5lmyi63dyk7 = TinyTable.createTableFunctions("tinytable_js28v2zsr5lmyi63dyk7");
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: '6', j: 1 }, { i: '6', j: 2 } ], css_id: 'tinytable_css_q34m1wcxtuc6n56166oe',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 } ], css_id: 'tinytable_css_s2w7zjvm0b416lv9nzr3',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  tableFns_js28v2zsr5lmyi63dyk7.styleCell(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
+    <style>
+    /* tinytable css entries after */
+    #tinytable_js28v2zsr5lmyi63dyk7 td.tinytable_css_q34m1wcxtuc6n56166oe, #tinytable_js28v2zsr5lmyi63dyk7 th.tinytable_css_q34m1wcxtuc6n56166oe {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: black; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_js28v2zsr5lmyi63dyk7 td.tinytable_css_s2w7zjvm0b416lv9nzr3, #tinytable_js28v2zsr5lmyi63dyk7 th.tinytable_css_s2w7zjvm0b416lv9nzr3 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: black; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    </style>
+    <div class="container">
+      <table class="tinytable" id="tinytable_js28v2zsr5lmyi63dyk7" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        
+        <thead>
+              <tr>
+                <th scope="col" data-row="0" data-col="1">Criterio</th>
+                <th scope="col" data-row="0" data-col="2">Alternativa_Óptima</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td data-row="1" data-col="1">Wald</td>
+                  <td data-row="1" data-col="2">5</td>
+                </tr>
+                <tr>
+                  <td data-row="2" data-col="1">Optimista</td>
+                  <td data-row="2" data-col="2">4</td>
+                </tr>
+                <tr>
+                  <td data-row="3" data-col="1">Hurwicz</td>
+                  <td data-row="3" data-col="2">4</td>
+                </tr>
+                <tr>
+                  <td data-row="4" data-col="1">Savage</td>
+                  <td data-row="4" data-col="2">1</td>
+                </tr>
+                <tr>
+                  <td data-row="5" data-col="1">Laplace</td>
+                  <td data-row="5" data-col="2">1</td>
+                </tr>
+                <tr>
+                  <td data-row="6" data-col="1">Punto Ideal</td>
+                  <td data-row="6" data-col="2">1</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+</div>
+</div>
+<p>Vemos que las alternativas óptimas son diferentes según el criterio utilizado, siendo la alternativa <span class="math inline">\(a_2\)</span> la que más veces aparece como óptima (4 veces). Ya alternativa <span class="math inline">\(a_4\)</span> aparece una sola vez como óptima para el criterio pesimista y es la mejor alternativa también para el criterio de Hurwicz con valores de <span class="math inline">\(\alpha\)</span> menores que ____ .</p>
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

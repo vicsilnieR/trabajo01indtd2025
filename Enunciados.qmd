@@ -1,9 +1,7 @@
 ---
-title: "Enunciados"
+title: "Enunciados de los problemas"
 format: html
 ---
-
-# Enunciados de los problemas
 
 ## Problema 1
 
