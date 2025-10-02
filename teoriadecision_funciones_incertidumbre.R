@@ -277,7 +277,7 @@ dibuja.criterio.Hurwicz = function(tablaX,favorable=TRUE) {
   y0=y0-0.1*rg;y1=y1+0.1*rg;
   plot(c(x0,x1), c(y0,y1), type = "n", xlab = "alpha", ylab = "Criterio Hurwicz");
   nn = length(Altmin);
-  colores = rainbow(nn);
+  colores = hcl.colors(nn, palette = "Berlin");
   abline(v=0);
   abline(v=1);
   if (favorable) {
@@ -293,7 +293,7 @@ dibuja.criterio.Hurwicz = function(tablaX,favorable=TRUE) {
       abline(a=aa,b=bb,col=colores[i]);
     }
   }
-  lines(valfa,vHurwicz,col=rainbow(nn+1)[nn+1],lty=3,lwd=3)
+  lines(valfa,vHurwicz,col=hcl.colors(nn+1, palette = "Berlin")[nn+1],lty=3,lwd=3)
   if (favorable) {
     legend("bottomright",legend=rownames(X),fill=colores,inset=0.05)
     title("Criterio de Hurwicz (favorable - línea discontinua)")
@@ -375,7 +375,7 @@ dibuja.criterio.Hurwicz_Intervalos = function(tablaX,favorable=TRUE,mostrarGrafi
         y0=y0-0.1*rg;y1=y1+0.1*rg;
         plot(c(x0,x1), c(y0,y1), type = "n", xlab = "alpha", ylab = "Criterio Hurwicz");
         nn = length(Altmin);
-        colores = rainbow(nn) #aquí es donde estaba el fallo, por lo que salían todas las lineas azules.
+        colores = hcl.colors(nn, palette = "Berlin") #aquí es donde estaba el fallo, por lo que salían todas las lineas azules.
         abline(v=0);
         abline(v=1);
         if (favorable) {
@@ -392,8 +392,8 @@ dibuja.criterio.Hurwicz_Intervalos = function(tablaX,favorable=TRUE,mostrarGrafi
             }
         }
 
-        lines(valfa,Hurw$vHurwicz,col="green",lty=3,lwd=3)
-        abline(v = alfaCorte, col="red")
+        lines(valfa,Hurw$vHurwicz,col = hcl.colors(nn+1, palette = "Berlin")[nn+1],lty=3,lwd=3)
+        abline(v = alfaCorte, col=hcl.colors(nn+2, palette = "Berlin")[nn+2])
 
         if (favorable) {
             legend("bottomright",legend=rownames(X),fill=colores,inset=0.05) #leyendas añadidas
