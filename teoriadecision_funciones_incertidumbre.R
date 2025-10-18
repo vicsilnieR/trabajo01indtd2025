@@ -293,7 +293,7 @@ dibuja.criterio.Hurwicz = function(tablaX,favorable=TRUE) {
       abline(a=aa,b=bb,col=colores[i]);
     }
   }
-  lines(valfa,vHurwicz,col=hcl.colors(nn+1, palette = "Berlin")[nn+1],lty=3,lwd=3)
+  lines(valfa,vHurwicz,col=hcl.colors(10, palette = "Earth")[4],lty=3,lwd=3)
   if (favorable) {
     legend("bottomright",legend=rownames(X),fill=colores,inset=0.05)
     title("Criterio de Hurwicz (favorable - línea discontinua)")
@@ -392,8 +392,8 @@ dibuja.criterio.Hurwicz_Intervalos = function(tablaX,favorable=TRUE,mostrarGrafi
             }
         }
 
-        lines(valfa,Hurw$vHurwicz,col = hcl.colors(nn+1, palette = "Berlin")[nn+1],lty=3,lwd=3)
-        abline(v = alfaCorte, col=hcl.colors(nn+2, palette = "Berlin")[nn+2])
+        lines(valfa,Hurw$vHurwicz,col = hcl.colors(10, palette = "Earth")[4],lty=3,lwd=3)
+        abline(v = alfaCorte, col=hcl.colors(10, palette = "Earth")[1])
 
         if (favorable) {
             legend("bottomright",legend=rownames(X),fill=colores,inset=0.05) #leyendas añadidas
