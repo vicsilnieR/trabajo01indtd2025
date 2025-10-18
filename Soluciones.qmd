@@ -4,6 +4,7 @@ format:
   typst-pdf: 
     toc: true
     number-sections: true
+    include-before-body: toc-sep.typ
     code-fold: false
     theme: cosmo
   html:
@@ -376,58 +377,10 @@ Ahora vamos a construir la matriz de decisión para un año. Puesto que los esta
 
 Puesto que la alternativa 1 no se ve afectada por los estados de la naturaleza esta alternativa tendrá valores fijos en todos ellos y no se va afectada por esta reducción.
 
+Vamos a hacer una tabla para un año y luego aplicaremos los criterios de decisión bajo incertidumbre para ver qué alternativa es la mejor.
 
 ```{r}
-#| echo: true
 
-m11 <- 4000 + 30000 * 0.02
-m12 <- 4000 + 30000 * 0.02
-m13 <- 4000 + 30000 * 0.02
-m14 <- 4000 + 30000 * 0.02
-m15 <- 4000 + 30000 * 0.02
-m16 <- 4000 + 30000 * 0.02
-m21 <- -200000 * 0.01 - 4000
-m22 <- 200000 * 0.04 - 4000
-m23 <- 200000 * 0.04 - 4000
-m24 <- 200000 * 0.04 - 4000
-m25 <- 200000 * 0.04 - 4000
-m26 <- 200000 * 0.04 - 4000
-m31 <- 200000 * 0.07 - 4000
-m32 <- 200000 * 0.07 - 4000
-m33 <- 200000 * 0.07 - 4000
-m34 <- -200000 * 0.08 - 4000
-m35 <- 200000 * 0.07 - 4000
-m36 <- 200000 * 0.07 - 4000
-m41 <- 200000 * 0.1 - 4000
-m42 <- 200000 * 0.1 - 4000
-m43 <- 200000 * 0.1 - 4000
-m44 <- 200000 * 0.1 - 4000
-m45 <- 200000 * 0.1 - 4000
-m46 <- -200000 * 0.1 - 4000
-
-tabla_decision2 <- crea.tablaX(c(m11, m12, m13, m14, m15, m16,
-                      m21, m22, m23, m24, m25, m26,
-                      m31, m32, m33, m34, m35, m36,
-                      m41, m42, m43, m44, m45, m46),
-                      numalternativas = 4,
-                      numestados = 6,
-                      nb_alternativas = c("Pagar hipoteca",
-                                          "Aquirir piso",
-                                          "Invertir fondo",
-                                          "Invertir franquicia"),
-                      nb_estados = c("Regulación alquileres",
-                                     "No regulación alquileres",
-                                     "Bolsa sube",
-                                     "Bolsa baja",
-                                     "Acierta ubicación",
-                                     "Falla ubicación"))
-                      
-
-
-```
-
-
-```{r}
 m11 <- 4000 + 30000 * 0.02
 m12 <- 4000 + 30000 * 0.02
 
@@ -440,6 +393,23 @@ m32 <- -200000 * 0.08 - 4000
 m41 <- 200000 * 0.1 - 4000
 m42 <- -200000 * 0.1 - 4000
 
+matriz_datos_2 <- matrix(c(m11, m12,
+                      m21, m22,
+                      m31, m32,
+                      m41, m42),
+                    nrow = 4,
+                    byrow = TRUE)
+tabla_datos_2 <- as.data.frame(matriz_datos_2)
+colnames(tabla_datos_2) <- c("Inversión exitosa", "Inversión fallida")
+rownames(tabla_datos_2) <- c("Pagar hipoteca",
+                             "Aquirir piso",
+                             "Invertir fondo",
+                             "Invertir franquicia")
+crea_tabla_estilo(tabla_datos_2, TRUE)
+```
+
+```{r}
+# Definir la tabla de decisión
 tabla_decision2 <- crea.tablaX(c(m11, m12,
                       m21, m22,
                       m31, m32,
@@ -456,9 +426,22 @@ tabla_decision2 <- crea.tablaX(c(m11, m12,
 ```
 
 
+### Caso favorable
+
+En la siguiente tabla se muestran los resultados de aplicar todos los criterios de decisión bajo incertidumbre para el caso favorable.
 ```{r}
 resultado2 <- criterio.Todos(tabla_decision2, alfa = 0.5, favorable = TRUE)
 res <- as.data.frame(resultado2)
 
 crea_tabla_estilo(res, nombresfila = TRUE)
+```
+
+### Caso desfavorable
+
+Vamos ahora a mostrar los resultados de aplicar todos los criterios de decisión bajo incertidumbre para el caso desfavorable, en la sieuiente tabla.
+
+```{r}
+resultado2_desfavorable <- criterio.Todos(tabla_decision2, alfa = 0.5, favorable = FALSE)
+res_desfavorable <- as.data.frame(resultado2_desfavorable)
+crea_tabla_estilo(res_desfavorable, nombresfila = TRUE)
 ```
