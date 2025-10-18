@@ -9,19 +9,57 @@ library(tinytable)
 
 # Cargar script con funciones
 source("teoriadecision_funciones_incertidumbre.R")
+
+# Preparar tema propio para tablas
+colores <- hcl.colors(5, palette = "Berlin")
+crea_vector_posiciones_tabla <- function(numero_columnas) {
+  posiciones <- ""
+  for(i in 1:numero_columnas) {
+    posiciones <- paste0(posiciones,"c")
+  }
+  return(posiciones)
+}
+
+crea_tabla_estilo <- function(tabla, nombresfila = TRUE) {
+
+  if (nombresfila == TRUE) {
+    rn <- rownames(tabla)
+    if (is.null(rn)) rn <- rep("", nrow(tabla))
+    tabla <- cbind(rn = rn, tabla, stringsAsFactors = FALSE)
+    colnames(tabla)[1] <- ""   
+    rownames(tabla) <- NULL 
+  }
+
+  t <- tt(tabla, theme = "empty") |>
+    style_tt(j = 1:ncol(tabla), align = crea_vector_posiciones_tabla(ncol(tabla)), alignv = "m") |>
+    style_tt(i = 0, line = "b", line_color = colores[2], line_width = 0.2,
+    background = colores[5], color = colores[3]) |> 
+    style_tt(i = 0, line = "t", line_color = colores[1], line_width = 0.1) |> 
+    style_tt(i = 1:nrow(tabla), line = "b", line_color = colores[1], line_width = 0.1) |> style_tt(j = 1:(ncol(tabla)-1), line = "r", line_color = colores[1], line_width = 0.1)
+
+  return(t)
+}
+
 ```
 
 ## Problema 1
 
 Se deben implementar todos los métodos de decisión bajo incertidumbre, tanto para el caso favorable como para el caso desfavorable (pesimista, optimista, Hurwicz, Savage, Laplace y punto ideal) para la siguiente tabla de decisión:
 
-|       | $\omega_1$ | $\omega_2$ | $\omega_3$ | $\omega_4$ |
-|-------|------------|------------|------------|------------|
-| $a_1$ | 5          | 15         | 8          | 18         |
-| $a_2$ | 7          | 13         | 14         | 20         |
-| $a_3$ | 6          | 17         | 11         | 17         |
-| $a_4$ | 4          | 14         | 16         | 16         |
-| $a_5$ | 10         | 10         | 13         | 15         |
+```{r}
+matriz_datos <- matrix(c(5, 15, 8, 18,
+                      7, 13, 14, 20,
+                      6, 17, 11, 17,
+                      4, 14, 16, 16,
+                      10, 10, 13, 15),
+                    nrow = 5,
+                    byrow = TRUE)
+tabla_datos <- as.data.frame(matriz_datos)
+colnames(tabla_datos) <- c("ω1", "ω2", "ω3", "ω4")
+rownames(tabla_datos) <- c("a1", "a2", "a3", "a4", "a5")
+crea_tabla_estilo(tabla_datos, TRUE)
+```
+
 
 ```{r}
  # Definir la tabla de decisión
@@ -33,7 +71,8 @@ Se deben implementar todos los métodos de decisión bajo incertidumbre, tanto p
                       10, 10, 13, 15),
                       numalternativas = 5, numestados = 4,
                       nb_alternativas = c("a1", "a2", "a3", "a4", "a5"),
-                      nb_estados = c("ω1", "ω2", "ω3", "ω4")) 
+                      nb_estados = c("ω1", "ω2", "ω3", "ω4"))
+
 ```
 
 ### Caso favorable
@@ -71,14 +110,15 @@ tb_Hurwicz <- data.frame(matrix(c(
                   nrow = length(alternativas_Hurwicz_alfas$AlternativaOptima), 
                   byrow = FALSE, 
                   ))
-colnames(tb_Hurwicz) <- c("Alfa", "Alternativa Óptima", "Valor Óptimo")
+colnames(tb_Hurwicz) <- c("Alfa", "Alternativa óptima", "Valor óptimo")
+
 ```
 
 Para el criterio de `{r} alternativa_Hurwicz$criterio`, en el caso `{r} alternativa_Hurwicz$metodo`, la alternativa `{r} alternativa_Hurwicz$AlternativaOpt` es la mejor y el valor óptimo es `{r} alternativa_Hurwicz$ValorOptimo`. Con un valor de alfa = `{r} alternativa_Hurwicz$alfa`.
 
 Se muestra a continuación una tabla con las alternativas óptimas y los valores óptimos para diferentes valores de alfa, que van desde 0 hasta 1 con incrementos de 0.1:
 
-`{r} tt(tb_Hurwicz)`
+`{r} crea_tabla_estilo(tb_Hurwicz, FALSE)`
 
 Y gráficamente:
 
@@ -146,7 +186,7 @@ resumen_favorable <- data.frame(
                          alternativa_puntoideal$AlternativaOpt)
 )
 
-tt(resumen_favorable)
+crea_tabla_estilo(resumen_favorable, FALSE)
 
 ```
 
@@ -255,7 +295,7 @@ resumen_desfavorable <- data.frame(
                alternativa_Savage_desfavorable$criterio,
                alternativa_Laplace_desfavorable$criterio,
                alternativa_puntoideal_desfavorable$criterio),
-  Alternativa_Óptima = c(alternativa_pesimista_desfavorable$AlternativaOpt,
+  `Alternativa Óptima` = c(alternativa_pesimista_desfavorable$AlternativaOpt,
                          alternativa_optimista_desfavorable$AlternativaOpt,
                          alternativa_Hurwicz_desfavorable$AlternativaOpt,
                          alternativa_Savage_desfavorable$AlternativaOpt,
@@ -263,7 +303,146 @@ resumen_desfavorable <- data.frame(
                          alternativa_puntoideal_desfavorable$AlternativaOpt)
 )
 
-tt(resumen_desfavorable)
+crea_vector_posiciones_tabla <- function(numero_columnas) {
+  posiciones <- ""
+  for(i in 1:numero_columnas) {
+    posiciones <- paste0(posiciones,"c")
+  }
+  return(posiciones)
+}
+
+tt(resumen_desfavorable, theme = "empty") |>
+  style_tt(j = 1:ncol(resumen_desfavorable), align = crea_vector_posiciones_tabla(ncol(resumen_desfavorable)), alignv = "m") |>
+  style_tt(i = 0, line = "b", line_color = colores[2], line_width = 0.2,
+  background = colores[5], color = colores[3]) |> 
+  style_tt(i = 0, line = "t", line_color = colores[1], line_width = 0.1) |> 
+  style_tt(i = 1:nrow(resumen_desfavorable), line = "b", line_color = colores[1], line_width = 0.1) |> 
+  style_tt(j = 1:(ncol(resumen_desfavorable)-1), line = "r", line_color = colores[1], line_width = 0.1)
+
 ```
 
 Vemos que las alternativas óptimas son diferentes según el criterio utilizado, siendo la alternativa $a_1$ la que más veces aparece como óptima (3 veces). La alternativa $a_4$ aparece en dos ocasiones como óptima, por último para el criterio pesimista la mejor alternativa es $a_5$ y es la mejor alternativa también para el criterio de Hurwicz con valores de $\alpha$ menores que ____ .
+
+## Problema 2
+
+Una persona recibe una herencia de 200.000 euros y se le presentan diferentes opciones de inversión para los próximos 10 años.
+
+Puede terminar de pagar su hipoteca actual, ahorrando 40.000 euros de intereses y le sobrarían 30.000 euros que pondría en una cuenta remunerada al 2% anual
+
+Puede seguir pagando su hipoteca y elegir una de las siguientes opciones
+
+- Adquirir un piso por esa cantidad y si los alquileres turísticos siguen siendo posibles podrá generar un 6% anual. Si por el contrario se regularan pasaría a perder un 1% anual.
+- Invertir en un fondo indexado que le puede generar un 7% anual pero si la bolsa baja perderá un 8%.
+- Invertir en una franquicia de una cadena de comida rápida. Si acierta con el sitio podrá generar un 10% anual pero si se equivoca al seleccionar el sitio incurrirá en unas pérdidas anuales del 10%
+
+### Planteamiento del problema
+
+Alternativas
+
+* a1: Pagar hipoteca
+* a2: Adquirir piso
+* a3: Invertir en un fondo
+* a4: Invertir en una franquicia
+
+Estados de la naturaleza
+
+* e1: Regulación alquileres
+* e2: No regulación alquileres
+* e3: Bolsa sube
+* e4: Bolsa baja
+* e5: Acierta con la ubicación
+* e6: Se equivoca con la ubicación
+
+Ahora vamos a construir la matriz de decisión para un año. Puesto que los estados de la naturaleza afectan por parejas (e1-e2, e3-e4, e5-e6) a las alternativas (a2, a3, a4). Se van a reducir a que la inversión de cada alternativa salga bien o mal ese año.
+
+* e1_red: Inversión exitosa
+* e2_red: Inversión fallida
+
+Puesto que la alternativa 1 no se ve afectada por los estados de la naturaleza esta alternativa tendrá valores fijos en todos ellos y no se va afectada por esta reducción.
+
+
+```{r}
+#| echo: true
+
+m11 <- 4000 + 30000 * 0.02
+m12 <- 4000 + 30000 * 0.02
+m13 <- 4000 + 30000 * 0.02
+m14 <- 4000 + 30000 * 0.02
+m15 <- 4000 + 30000 * 0.02
+m16 <- 4000 + 30000 * 0.02
+m21 <- -200000 * 0.01 - 4000
+m22 <- 200000 * 0.04 - 4000
+m23 <- 200000 * 0.04 - 4000
+m24 <- 200000 * 0.04 - 4000
+m25 <- 200000 * 0.04 - 4000
+m26 <- 200000 * 0.04 - 4000
+m31 <- 200000 * 0.07 - 4000
+m32 <- 200000 * 0.07 - 4000
+m33 <- 200000 * 0.07 - 4000
+m34 <- -200000 * 0.08 - 4000
+m35 <- 200000 * 0.07 - 4000
+m36 <- 200000 * 0.07 - 4000
+m41 <- 200000 * 0.1 - 4000
+m42 <- 200000 * 0.1 - 4000
+m43 <- 200000 * 0.1 - 4000
+m44 <- 200000 * 0.1 - 4000
+m45 <- 200000 * 0.1 - 4000
+m46 <- -200000 * 0.1 - 4000
+
+tabla_decision2 <- crea.tablaX(c(m11, m12, m13, m14, m15, m16,
+                      m21, m22, m23, m24, m25, m26,
+                      m31, m32, m33, m34, m35, m36,
+                      m41, m42, m43, m44, m45, m46),
+                      numalternativas = 4,
+                      numestados = 6,
+                      nb_alternativas = c("Pagar hipoteca",
+                                          "Aquirir piso",
+                                          "Invertir fondo",
+                                          "Invertir franquicia"),
+                      nb_estados = c("Regulación alquileres",
+                                     "No regulación alquileres",
+                                     "Bolsa sube",
+                                     "Bolsa baja",
+                                     "Acierta ubicación",
+                                     "Falla ubicación"))
+                      
+
+
+```
+
+
+```{r}
+m11 <- 4000 + 30000 * 0.02
+m12 <- 4000 + 30000 * 0.02
+
+m21 <- 200000 * 0.06 - 4000
+m22 <- -200000 * 0.01 - 4000
+
+m31 <- 200000 * 0.07 - 4000
+m32 <- -200000 * 0.08 - 4000
+
+m41 <- 200000 * 0.1 - 4000
+m42 <- -200000 * 0.1 - 4000
+
+tabla_decision2 <- crea.tablaX(c(m11, m12,
+                      m21, m22,
+                      m31, m32,
+                      m41, m42),
+                      numalternativas = 4,
+                      numestados = 2,
+                      nb_alternativas = c("Pagar hipoteca",
+                                          "Aquirir piso",
+                                          "Invertir fondo",
+                                          "Invertir franquicia"),
+                      nb_estados = c("Inversión exitosa",
+                                     "Inversión fallida"))
+                      
+```
+
+
+```{r}
+resultado2 <- criterio.Todos(tabla_decision2, alfa = 0.5, favorable = TRUE)
+res <- as.data.frame(resultado2)
+
+crea_tabla_estilo(res, nombresfila = TRUE)
+```
