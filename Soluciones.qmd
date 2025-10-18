@@ -1,6 +1,21 @@
 ---
 title: "Soluciones de los problemas"
-format: html
+format: 
+  typst-pdf: 
+    toc: true
+    number-sections: true
+    code-fold: false
+    theme: cosmo
+  html:
+    toc: true
+    toc-depth: 2
+    toc-location: left
+    number-sections: true
+    code-fold: false
+    theme: cosmo
+    fig-align: center
+    tbl-align: center
+lang: es
 ---
 
 ```{r}
@@ -30,7 +45,7 @@ crea_tabla_estilo <- function(tabla, nombresfila = TRUE) {
     rownames(tabla) <- NULL 
   }
 
-  t <- tt(tabla, theme = "empty") |>
+  t <- tt(tabla, theme = "empty", width = 1) |>
     style_tt(j = 1:ncol(tabla), align = crea_vector_posiciones_tabla(ncol(tabla)), alignv = "m") |>
     style_tt(i = 0, line = "b", line_color = colores[2], line_width = 0.2,
     background = colores[5], color = colores[3]) |> 
@@ -156,6 +171,7 @@ alternativa_Laplace <- criterio.Laplace(tabla_decision, favorable = TRUE)
 ```	
 
 Para el criterio de `{r} alternativa_Laplace$criterio`, en el caso `{r} alternativa_Laplace$metodo`, la alternativa `{r} alternativa_Laplace$AlternativaOpt` es la mejor y el valor óptimo es `{r} alternativa_Laplace$ValorOptimo`.
+
 #### Método punto ideal
 
 ```{r}

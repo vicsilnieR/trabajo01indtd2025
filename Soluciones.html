@@ -68,7 +68,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="Soluciones_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="Soluciones_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="Soluciones_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Soluciones_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="Soluciones_files/libs/bootstrap/bootstrap-813c323200a87c37e262811031999de4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -102,10 +102,21 @@ window.Quarto = {
 
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="quarto-light">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#problema-1" id="toc-problema-1" class="nav-link active" data-scroll-target="#problema-1"><span class="header-section-number">1</span> Problema 1</a></li>
+  <li><a href="#problema-2" id="toc-problema-2" class="nav-link" data-scroll-target="#problema-2"><span class="header-section-number">2</span> Problema 2</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Soluciones.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -164,8 +175,8 @@ window.Quarto = {
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(t)</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="problema-1" class="level2">
-<h2 class="anchored" data-anchor-id="problema-1">Problema 1</h2>
+<section id="problema-1" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="problema-1"><span class="header-section-number">1</span> Problema 1</h2>
 <p>Se deben implementar todos los métodos de decisión bajo incertidumbre, tanto para el caso favorable como para el caso desfavorable (pesimista, optimista, Hurwicz, Savage, Laplace y punto ideal) para la siguiente tabla de decisión:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>matriz_datos <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">15</span>, <span class="dv">8</span>, <span class="dv">18</span>,</span>
@@ -186,21 +197,21 @@ window.Quarto = {
 
     <script>
       // Create table-specific functions using external factory
-      const tableFns_yic89s9ayzy1adgmo9pt = TinyTable.createTableFunctions("tinytable_yic89s9ayzy1adgmo9pt");
+      const tableFns_410qogaqfn6pl1n65rxu = TinyTable.createTableFunctions("tinytable_410qogaqfn6pl1n65rxu");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '1', j: 5 }, { i: '2', j: 5 }, { i: '3', j: 5 }, { i: '4', j: 5 }, { i: '5', j: 5 } ], css_id: 'tinytable_css_9lw95gdpulfamjwydbyq',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '1', j: 3 }, { i: '1', j: 4 }, { i: '2', j: 1 }, { i: '2', j: 2 }, { i: '2', j: 3 }, { i: '2', j: 4 }, { i: '3', j: 1 }, { i: '3', j: 2 }, { i: '3', j: 3 }, { i: '3', j: 4 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '4', j: 3 }, { i: '4', j: 4 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 }, { i: '5', j: 4 } ], css_id: 'tinytable_css_yy0om2kcnb96zuhlx26x',}, 
-          { positions: [ { i: '0', j: 5 } ], css_id: 'tinytable_css_edtjaeg70efg6wipayca',}, 
-          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 } ], css_id: 'tinytable_css_ox9cijyplh7uqrbxp9z2',}, 
+          { positions: [ { i: '1', j: 5 }, { i: '2', j: 5 }, { i: '3', j: 5 }, { i: '4', j: 5 }, { i: '5', j: 5 } ], css_id: 'tinytable_css_bpr7guixjn9lujl12d75',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '1', j: 3 }, { i: '1', j: 4 }, { i: '2', j: 1 }, { i: '2', j: 2 }, { i: '2', j: 3 }, { i: '2', j: 4 }, { i: '3', j: 1 }, { i: '3', j: 2 }, { i: '3', j: 3 }, { i: '3', j: 4 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '4', j: 3 }, { i: '4', j: 4 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 }, { i: '5', j: 4 } ], css_id: 'tinytable_css_lr27tbq6sfnanf2p3evc',}, 
+          { positions: [ { i: '0', j: 5 } ], css_id: 'tinytable_css_aqremuy1yy01oi13trsp',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 } ], css_id: 'tinytable_css_zuyi2snc38307704ql1v',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  tableFns_yic89s9ayzy1adgmo9pt.styleCell(cell.i, cell.j, group.css_id);
+                  tableFns_410qogaqfn6pl1n65rxu.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -209,13 +220,13 @@ window.Quarto = {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
     /* tinytable css entries after */
-    #tinytable_yic89s9ayzy1adgmo9pt td.tinytable_css_9lw95gdpulfamjwydbyq, #tinytable_yic89s9ayzy1adgmo9pt th.tinytable_css_9lw95gdpulfamjwydbyq {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_yic89s9ayzy1adgmo9pt td.tinytable_css_yy0om2kcnb96zuhlx26x, #tinytable_yic89s9ayzy1adgmo9pt th.tinytable_css_yy0om2kcnb96zuhlx26x {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_yic89s9ayzy1adgmo9pt td.tinytable_css_edtjaeg70efg6wipayca, #tinytable_yic89s9ayzy1adgmo9pt th.tinytable_css_edtjaeg70efg6wipayca {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
-    #tinytable_yic89s9ayzy1adgmo9pt td.tinytable_css_ox9cijyplh7uqrbxp9z2, #tinytable_yic89s9ayzy1adgmo9pt th.tinytable_css_ox9cijyplh7uqrbxp9z2 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_410qogaqfn6pl1n65rxu td.tinytable_css_bpr7guixjn9lujl12d75, #tinytable_410qogaqfn6pl1n65rxu th.tinytable_css_bpr7guixjn9lujl12d75 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_410qogaqfn6pl1n65rxu td.tinytable_css_lr27tbq6sfnanf2p3evc, #tinytable_410qogaqfn6pl1n65rxu th.tinytable_css_lr27tbq6sfnanf2p3evc {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_410qogaqfn6pl1n65rxu td.tinytable_css_aqremuy1yy01oi13trsp, #tinytable_410qogaqfn6pl1n65rxu th.tinytable_css_aqremuy1yy01oi13trsp {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_410qogaqfn6pl1n65rxu td.tinytable_css_zuyi2snc38307704ql1v, #tinytable_410qogaqfn6pl1n65rxu th.tinytable_css_zuyi2snc38307704ql1v {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
     </style>
     <div class="container">
-      <table class="tinytable" id="tinytable_yic89s9ayzy1adgmo9pt" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="tinytable" id="tinytable_410qogaqfn6pl1n65rxu" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         
         <thead>
               <tr>
@@ -281,24 +292,24 @@ window.Quarto = {
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>                      <span class="at">nb_alternativas =</span> <span class="fu">c</span>(<span class="st">"a1"</span>, <span class="st">"a2"</span>, <span class="st">"a3"</span>, <span class="st">"a4"</span>, <span class="st">"a5"</span>),</span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                      <span class="at">nb_estados =</span> <span class="fu">c</span>(<span class="st">"ω1"</span>, <span class="st">"ω2"</span>, <span class="st">"ω3"</span>, <span class="st">"ω4"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="caso-favorable" class="level3">
-<h3 class="anchored" data-anchor-id="caso-favorable">Caso favorable</h3>
-<section id="método-pesimista" class="level4">
-<h4 class="anchored" data-anchor-id="método-pesimista">Método pesimista</h4>
+<section id="caso-favorable" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="caso-favorable"><span class="header-section-number">1.1</span> Caso favorable</h3>
+<section id="método-pesimista" class="level4" data-number="1.1.1">
+<h4 data-number="1.1.1" class="anchored" data-anchor-id="método-pesimista"><span class="header-section-number">1.1.1</span> Método pesimista</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>alternativa_pesimista <span class="ot">&lt;-</span> <span class="fu">criterio.Wald</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Para el criterio de Wald, en el caso favorable, la alternativa 5 es la mejor y el valor óptimo es 10.</p>
 </section>
-<section id="método-optimista" class="level4">
-<h4 class="anchored" data-anchor-id="método-optimista">Método optimista</h4>
+<section id="método-optimista" class="level4" data-number="1.1.2">
+<h4 data-number="1.1.2" class="anchored" data-anchor-id="método-optimista"><span class="header-section-number">1.1.2</span> Método optimista</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>alternativa_optimista <span class="ot">&lt;-</span> <span class="fu">criterio.Optimista</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Para el criterio Optimista, en el caso favorable, la alternativa 2 es la mejor y el valor óptimo es 20.</p>
 </section>
-<section id="método-hurwicz" class="level4">
-<h4 class="anchored" data-anchor-id="método-hurwicz">Método Hurwicz</h4>
+<section id="método-hurwicz" class="level4" data-number="1.1.3">
+<h4 data-number="1.1.3" class="anchored" data-anchor-id="método-hurwicz"><span class="header-section-number">1.1.3</span> Método Hurwicz</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>alternativa_Hurwicz <span class="ot">&lt;-</span> <span class="fu">criterio.Hurwicz</span>(tabla_decision, <span class="at">alfa =</span> <span class="fl">0.5</span>, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>alternativas_Hurwicz_alfas <span class="ot">&lt;-</span> <span class="fu">criterio.Hurwicz.General</span>(tabla_decision, <span class="at">alfa =</span> <span class="dv">10</span>, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span>
@@ -319,21 +330,21 @@ window.Quarto = {
 
     <script>
       // Create table-specific functions using external factory
-      const tableFns_nauudyvx093fmaokph4r = TinyTable.createTableFunctions("tinytable_nauudyvx093fmaokph4r");
+      const tableFns_m8if8awtm12kuwe75qmy = TinyTable.createTableFunctions("tinytable_m8if8awtm12kuwe75qmy");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '1', j: 3 }, { i: '10', j: 3 }, { i: '11', j: 3 }, { i: '2', j: 3 }, { i: '3', j: 3 }, { i: '4', j: 3 }, { i: '5', j: 3 }, { i: '6', j: 3 }, { i: '7', j: 3 }, { i: '8', j: 3 }, { i: '9', j: 3 } ], css_id: 'tinytable_css_stjle02zol12s6vsjbcd',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '10', j: 1 }, { i: '10', j: 2 }, { i: '11', j: 1 }, { i: '11', j: 2 }, { i: '2', j: 1 }, { i: '2', j: 2 }, { i: '3', j: 1 }, { i: '3', j: 2 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '6', j: 1 }, { i: '6', j: 2 }, { i: '7', j: 1 }, { i: '7', j: 2 }, { i: '8', j: 1 }, { i: '8', j: 2 }, { i: '9', j: 1 }, { i: '9', j: 2 } ], css_id: 'tinytable_css_q2xx00xw3jeumags7l8t',}, 
-          { positions: [ { i: '0', j: 3 } ], css_id: 'tinytable_css_5edrpx6fd4pcw0940v00',}, 
-          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 } ], css_id: 'tinytable_css_t46y2mjmm93sark3qfaf',}, 
+          { positions: [ { i: '1', j: 3 }, { i: '10', j: 3 }, { i: '11', j: 3 }, { i: '2', j: 3 }, { i: '3', j: 3 }, { i: '4', j: 3 }, { i: '5', j: 3 }, { i: '6', j: 3 }, { i: '7', j: 3 }, { i: '8', j: 3 }, { i: '9', j: 3 } ], css_id: 'tinytable_css_u33lvp7izgej5d6gev0j',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '10', j: 1 }, { i: '10', j: 2 }, { i: '11', j: 1 }, { i: '11', j: 2 }, { i: '2', j: 1 }, { i: '2', j: 2 }, { i: '3', j: 1 }, { i: '3', j: 2 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '6', j: 1 }, { i: '6', j: 2 }, { i: '7', j: 1 }, { i: '7', j: 2 }, { i: '8', j: 1 }, { i: '8', j: 2 }, { i: '9', j: 1 }, { i: '9', j: 2 } ], css_id: 'tinytable_css_v4gorupgev4wraqyzra4',}, 
+          { positions: [ { i: '0', j: 3 } ], css_id: 'tinytable_css_xeobi0k3wj0c5qh54t5c',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 } ], css_id: 'tinytable_css_yw8ll0zs1r2v6bvairhq',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  tableFns_nauudyvx093fmaokph4r.styleCell(cell.i, cell.j, group.css_id);
+                  tableFns_m8if8awtm12kuwe75qmy.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -342,13 +353,13 @@ window.Quarto = {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
     /* tinytable css entries after */
-    #tinytable_nauudyvx093fmaokph4r td.tinytable_css_stjle02zol12s6vsjbcd, #tinytable_nauudyvx093fmaokph4r th.tinytable_css_stjle02zol12s6vsjbcd {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_nauudyvx093fmaokph4r td.tinytable_css_q2xx00xw3jeumags7l8t, #tinytable_nauudyvx093fmaokph4r th.tinytable_css_q2xx00xw3jeumags7l8t {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_nauudyvx093fmaokph4r td.tinytable_css_5edrpx6fd4pcw0940v00, #tinytable_nauudyvx093fmaokph4r th.tinytable_css_5edrpx6fd4pcw0940v00 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
-    #tinytable_nauudyvx093fmaokph4r td.tinytable_css_t46y2mjmm93sark3qfaf, #tinytable_nauudyvx093fmaokph4r th.tinytable_css_t46y2mjmm93sark3qfaf {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_m8if8awtm12kuwe75qmy td.tinytable_css_u33lvp7izgej5d6gev0j, #tinytable_m8if8awtm12kuwe75qmy th.tinytable_css_u33lvp7izgej5d6gev0j {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_m8if8awtm12kuwe75qmy td.tinytable_css_v4gorupgev4wraqyzra4, #tinytable_m8if8awtm12kuwe75qmy th.tinytable_css_v4gorupgev4wraqyzra4 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_m8if8awtm12kuwe75qmy td.tinytable_css_xeobi0k3wj0c5qh54t5c, #tinytable_m8if8awtm12kuwe75qmy th.tinytable_css_xeobi0k3wj0c5qh54t5c {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_m8if8awtm12kuwe75qmy td.tinytable_css_yw8ll0zs1r2v6bvairhq, #tinytable_m8if8awtm12kuwe75qmy th.tinytable_css_yw8ll0zs1r2v6bvairhq {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
     </style>
     <div class="container">
-      <table class="tinytable" id="tinytable_nauudyvx093fmaokph4r" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="tinytable" id="tinytable_m8if8awtm12kuwe75qmy" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         
         <thead>
               <tr>
@@ -441,15 +452,15 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="método-savage" class="level4">
-<h4 class="anchored" data-anchor-id="método-savage">Método Savage</h4>
+<section id="método-savage" class="level4" data-number="1.1.4">
+<h4 data-number="1.1.4" class="anchored" data-anchor-id="método-savage"><span class="header-section-number">1.1.4</span> Método Savage</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>alternativa_Savage <span class="ot">&lt;-</span> <span class="fu">criterio.Savage</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Para el criterio de Savage, en el caso favorable, la alternativa 2 es la mejor y el valor óptimo es 4.</p>
 </section>
-<section id="método-laplace" class="level4">
-<h4 class="anchored" data-anchor-id="método-laplace">Método Laplace</h4>
+<section id="método-laplace" class="level4" data-number="1.1.5">
+<h4 data-number="1.1.5" class="anchored" data-anchor-id="método-laplace"><span class="header-section-number">1.1.5</span> Método Laplace</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>alternativa_Laplace <span class="ot">&lt;-</span> <span class="fu">criterio.Laplace</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -459,8 +470,8 @@ window.Quarto = {
 </div>
 <p>Para el criterio de Punto Ideal, en el caso favorable, la alternativa 2 es la mejor y el valor óptimo es 5.3851648.</p>
 </section>
-<section id="resumen-caso-favorable" class="level4">
-<h4 class="anchored" data-anchor-id="resumen-caso-favorable">Resumen caso favorable</h4>
+<section id="resumen-caso-favorable" class="level4" data-number="1.1.6">
+<h4 data-number="1.1.6" class="anchored" data-anchor-id="resumen-caso-favorable"><span class="header-section-number">1.1.6</span> Resumen caso favorable</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>resumen_favorable <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Criterio =</span> <span class="fu">c</span>(alternativa_pesimista<span class="sc">$</span>criterio,</span>
@@ -485,21 +496,21 @@ window.Quarto = {
 
     <script>
       // Create table-specific functions using external factory
-      const tableFns_jv75mqek2c410z21j2rw = TinyTable.createTableFunctions("tinytable_jv75mqek2c410z21j2rw");
+      const tableFns_mns9o9m6j5mrrybshy7i = TinyTable.createTableFunctions("tinytable_mns9o9m6j5mrrybshy7i");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 } ], css_id: 'tinytable_css_p545vgi2393kd5z1oqa0',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 } ], css_id: 'tinytable_css_g5rv1lpgh1clyxee1eww',}, 
-          { positions: [ { i: '0', j: 2 } ], css_id: 'tinytable_css_apusqzk5xxak66vtf6ft',}, 
-          { positions: [ { i: '0', j: 1 } ], css_id: 'tinytable_css_ytbet5062rjodhfug2a5',}, 
+          { positions: [ { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 } ], css_id: 'tinytable_css_s86q88dga3z4zro2wf8s',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 } ], css_id: 'tinytable_css_i5114sq56jjnwos52x76',}, 
+          { positions: [ { i: '0', j: 2 } ], css_id: 'tinytable_css_7tpbn3ezv3hjfe9k79sr',}, 
+          { positions: [ { i: '0', j: 1 } ], css_id: 'tinytable_css_a698efkjzyirz0tswk2e',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  tableFns_jv75mqek2c410z21j2rw.styleCell(cell.i, cell.j, group.css_id);
+                  tableFns_mns9o9m6j5mrrybshy7i.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -508,13 +519,13 @@ window.Quarto = {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
     /* tinytable css entries after */
-    #tinytable_jv75mqek2c410z21j2rw td.tinytable_css_p545vgi2393kd5z1oqa0, #tinytable_jv75mqek2c410z21j2rw th.tinytable_css_p545vgi2393kd5z1oqa0 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_jv75mqek2c410z21j2rw td.tinytable_css_g5rv1lpgh1clyxee1eww, #tinytable_jv75mqek2c410z21j2rw th.tinytable_css_g5rv1lpgh1clyxee1eww {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_jv75mqek2c410z21j2rw td.tinytable_css_apusqzk5xxak66vtf6ft, #tinytable_jv75mqek2c410z21j2rw th.tinytable_css_apusqzk5xxak66vtf6ft {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
-    #tinytable_jv75mqek2c410z21j2rw td.tinytable_css_ytbet5062rjodhfug2a5, #tinytable_jv75mqek2c410z21j2rw th.tinytable_css_ytbet5062rjodhfug2a5 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_mns9o9m6j5mrrybshy7i td.tinytable_css_s86q88dga3z4zro2wf8s, #tinytable_mns9o9m6j5mrrybshy7i th.tinytable_css_s86q88dga3z4zro2wf8s {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_mns9o9m6j5mrrybshy7i td.tinytable_css_i5114sq56jjnwos52x76, #tinytable_mns9o9m6j5mrrybshy7i th.tinytable_css_i5114sq56jjnwos52x76 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_mns9o9m6j5mrrybshy7i td.tinytable_css_7tpbn3ezv3hjfe9k79sr, #tinytable_mns9o9m6j5mrrybshy7i th.tinytable_css_7tpbn3ezv3hjfe9k79sr {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_mns9o9m6j5mrrybshy7i td.tinytable_css_a698efkjzyirz0tswk2e, #tinytable_mns9o9m6j5mrrybshy7i th.tinytable_css_a698efkjzyirz0tswk2e {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
     </style>
     <div class="container">
-      <table class="tinytable" id="tinytable_jv75mqek2c410z21j2rw" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="tinytable" id="tinytable_mns9o9m6j5mrrybshy7i" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         
         <thead>
               <tr>
@@ -557,24 +568,24 @@ window.Quarto = {
 <p>Vemos que las alternativas óptimas son diferentes según el criterio utilizado, siendo la alternativa <span class="math inline">\(a_2\)</span> la que más veces aparece como óptima (5 veces). Ya alternativa <span class="math inline">\(a_5\)</span> aparece una sola vez como óptima para el criterio pesimista y es la mejor alternativa también para el criterio de Hurwicz con valores de <span class="math inline">\(\alpha\)</span> menores que ____ .</p>
 </section>
 </section>
-<section id="caso-desfavorable" class="level3">
-<h3 class="anchored" data-anchor-id="caso-desfavorable">Caso desfavorable</h3>
-<section id="método-pesimista-1" class="level4">
-<h4 class="anchored" data-anchor-id="método-pesimista-1">Método pesimista</h4>
+<section id="caso-desfavorable" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="caso-desfavorable"><span class="header-section-number">1.2</span> Caso desfavorable</h3>
+<section id="método-pesimista-1" class="level4" data-number="1.2.1">
+<h4 data-number="1.2.1" class="anchored" data-anchor-id="método-pesimista-1"><span class="header-section-number">1.2.1</span> Método pesimista</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>alternativa_pesimista_desfavorable <span class="ot">&lt;-</span> <span class="fu">criterio.Wald</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Para el criterio de Wald, en el caso desfavorable, la alternativa 5 es la mejor y el valor óptimo es 15.</p>
 </section>
-<section id="método-optimista-1" class="level4">
-<h4 class="anchored" data-anchor-id="método-optimista-1">Método optimista</h4>
+<section id="método-optimista-1" class="level4" data-number="1.2.2">
+<h4 data-number="1.2.2" class="anchored" data-anchor-id="método-optimista-1"><span class="header-section-number">1.2.2</span> Método optimista</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>alternativa_optimista_desfavorable <span class="ot">&lt;-</span> <span class="fu">criterio.Optimista</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Para el criterio Optimista, en el caso desfavorable, la alternativa 4 es la mejor y el valor óptimo es 4.</p>
 </section>
-<section id="método-hurwicz-1" class="level4">
-<h4 class="anchored" data-anchor-id="método-hurwicz-1">Método Hurwicz</h4>
+<section id="método-hurwicz-1" class="level4" data-number="1.2.3">
+<h4 data-number="1.2.3" class="anchored" data-anchor-id="método-hurwicz-1"><span class="header-section-number">1.2.3</span> Método Hurwicz</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>alternativa_Hurwicz_desfavorable <span class="ot">&lt;-</span> <span class="fu">criterio.Hurwicz</span>(tabla_decision, <span class="at">alfa =</span> <span class="fl">0.5</span>, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>alternativas_Hurwicz_alfas_desfavorable <span class="ot">&lt;-</span> <span class="fu">criterio.Hurwicz.General</span>(tabla_decision, <span class="at">alfa =</span> <span class="dv">10</span>, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span>
@@ -595,19 +606,19 @@ window.Quarto = {
 
     <script>
       // Create table-specific functions using external factory
-      const tableFns_2o0xgkvyklae6i4p635f = TinyTable.createTableFunctions("tinytable_2o0xgkvyklae6i4p635f");
+      const tableFns_zch0dtaj4nrg1bfn0gvm = TinyTable.createTableFunctions("tinytable_zch0dtaj4nrg1bfn0gvm");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '11', j: 1 }, { i: '11', j: 2 }, { i: '11', j: 3 } ], css_id: 'tinytable_css_rycgjijm01irfhu7ymnb',}, 
-          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 } ], css_id: 'tinytable_css_ra8s9bxuyq55utth6u8x',}, 
+          { positions: [ { i: '11', j: 1 }, { i: '11', j: 2 }, { i: '11', j: 3 } ], css_id: 'tinytable_css_xhxvsfy8zarzzzsfpcf3',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 } ], css_id: 'tinytable_css_nlth0va5cawxtckhp9pg',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  tableFns_2o0xgkvyklae6i4p635f.styleCell(cell.i, cell.j, group.css_id);
+                  tableFns_zch0dtaj4nrg1bfn0gvm.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -616,11 +627,11 @@ window.Quarto = {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
     /* tinytable css entries after */
-    #tinytable_2o0xgkvyklae6i4p635f td.tinytable_css_rycgjijm01irfhu7ymnb, #tinytable_2o0xgkvyklae6i4p635f th.tinytable_css_rycgjijm01irfhu7ymnb {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: black; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
-    #tinytable_2o0xgkvyklae6i4p635f td.tinytable_css_ra8s9bxuyq55utth6u8x, #tinytable_2o0xgkvyklae6i4p635f th.tinytable_css_ra8s9bxuyq55utth6u8x {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: black; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_zch0dtaj4nrg1bfn0gvm td.tinytable_css_xhxvsfy8zarzzzsfpcf3, #tinytable_zch0dtaj4nrg1bfn0gvm th.tinytable_css_xhxvsfy8zarzzzsfpcf3 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: black; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_zch0dtaj4nrg1bfn0gvm td.tinytable_css_nlth0va5cawxtckhp9pg, #tinytable_zch0dtaj4nrg1bfn0gvm th.tinytable_css_nlth0va5cawxtckhp9pg {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: black; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
     </style>
     <div class="container">
-      <table class="tinytable" id="tinytable_2o0xgkvyklae6i4p635f" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="tinytable" id="tinytable_zch0dtaj4nrg1bfn0gvm" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         
         <thead>
               <tr>
@@ -713,29 +724,29 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="método-savage-1" class="level4">
-<h4 class="anchored" data-anchor-id="método-savage-1">Método Savage</h4>
+<section id="método-savage-1" class="level4" data-number="1.2.4">
+<h4 data-number="1.2.4" class="anchored" data-anchor-id="método-savage-1"><span class="header-section-number">1.2.4</span> Método Savage</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>alternativa_Savage_desfavorable <span class="ot">&lt;-</span> <span class="fu">criterio.Savage</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Para el criterio de Savage, en el caso desfavorable, la alternativa 1 es la mejor y el valor óptimo es 5.</p>
 </section>
-<section id="método-laplace-1" class="level4">
-<h4 class="anchored" data-anchor-id="método-laplace-1">Método Laplace</h4>
+<section id="método-laplace-1" class="level4" data-number="1.2.5">
+<h4 data-number="1.2.5" class="anchored" data-anchor-id="método-laplace-1"><span class="header-section-number">1.2.5</span> Método Laplace</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>alternativa_Laplace_desfavorable <span class="ot">&lt;-</span> <span class="fu">criterio.Laplace</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Para el criterio de Laplace, en el caso desfavorable, la alternativa 1 es la mejor y el valor óptimo es 11.5.</p>
 </section>
-<section id="método-punto-ideal" class="level4">
-<h4 class="anchored" data-anchor-id="método-punto-ideal">Método punto ideal</h4>
+<section id="método-punto-ideal" class="level4" data-number="1.2.6">
+<h4 data-number="1.2.6" class="anchored" data-anchor-id="método-punto-ideal"><span class="header-section-number">1.2.6</span> Método punto ideal</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>alternativa_puntoideal_desfavorable <span class="ot">&lt;-</span> <span class="fu">criterio.PuntoIdeal</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Para el criterio de Punto Ideal, en el caso desfavorable, la alternativa 1 es la mejor y el valor óptimo es 5.9160798.</p>
 </section>
-<section id="resumen-caso-desfavorable" class="level4">
-<h4 class="anchored" data-anchor-id="resumen-caso-desfavorable">Resumen caso desfavorable</h4>
+<section id="resumen-caso-desfavorable" class="level4" data-number="1.2.7">
+<h4 data-number="1.2.7" class="anchored" data-anchor-id="resumen-caso-desfavorable"><span class="header-section-number">1.2.7</span> Resumen caso desfavorable</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>resumen_desfavorable <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Criterio =</span> <span class="fu">c</span>(alternativa_pesimista_desfavorable<span class="sc">$</span>criterio,</span>
@@ -774,21 +785,21 @@ window.Quarto = {
 
     <script>
       // Create table-specific functions using external factory
-      const tableFns_gvznwkffgigqte2aymrq = TinyTable.createTableFunctions("tinytable_gvznwkffgigqte2aymrq");
+      const tableFns_gd0mtqupslupcyp7g6gz = TinyTable.createTableFunctions("tinytable_gd0mtqupslupcyp7g6gz");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 } ], css_id: 'tinytable_css_0dh8bw2h3k7hcegra46l',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 } ], css_id: 'tinytable_css_vqkfut7nk8mk5lwwvghd',}, 
-          { positions: [ { i: '0', j: 2 } ], css_id: 'tinytable_css_cknoenln26u1tf968evt',}, 
-          { positions: [ { i: '0', j: 1 } ], css_id: 'tinytable_css_hylxhnue0ibvacodpdoz',}, 
+          { positions: [ { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 } ], css_id: 'tinytable_css_hp7dbskegamhx7i3yadd',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 } ], css_id: 'tinytable_css_j10o1n4txn9c7iitppl5',}, 
+          { positions: [ { i: '0', j: 2 } ], css_id: 'tinytable_css_65n7f3djbp58sqyopaxz',}, 
+          { positions: [ { i: '0', j: 1 } ], css_id: 'tinytable_css_wy5tfko38y03c1gu6yf1',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  tableFns_gvznwkffgigqte2aymrq.styleCell(cell.i, cell.j, group.css_id);
+                  tableFns_gd0mtqupslupcyp7g6gz.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -797,13 +808,13 @@ window.Quarto = {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
     /* tinytable css entries after */
-    #tinytable_gvznwkffgigqte2aymrq td.tinytable_css_0dh8bw2h3k7hcegra46l, #tinytable_gvznwkffgigqte2aymrq th.tinytable_css_0dh8bw2h3k7hcegra46l {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_gvznwkffgigqte2aymrq td.tinytable_css_vqkfut7nk8mk5lwwvghd, #tinytable_gvznwkffgigqte2aymrq th.tinytable_css_vqkfut7nk8mk5lwwvghd {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_gvznwkffgigqte2aymrq td.tinytable_css_cknoenln26u1tf968evt, #tinytable_gvznwkffgigqte2aymrq th.tinytable_css_cknoenln26u1tf968evt {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
-    #tinytable_gvznwkffgigqte2aymrq td.tinytable_css_hylxhnue0ibvacodpdoz, #tinytable_gvznwkffgigqte2aymrq th.tinytable_css_hylxhnue0ibvacodpdoz {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_gd0mtqupslupcyp7g6gz td.tinytable_css_hp7dbskegamhx7i3yadd, #tinytable_gd0mtqupslupcyp7g6gz th.tinytable_css_hp7dbskegamhx7i3yadd {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_gd0mtqupslupcyp7g6gz td.tinytable_css_j10o1n4txn9c7iitppl5, #tinytable_gd0mtqupslupcyp7g6gz th.tinytable_css_j10o1n4txn9c7iitppl5 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_gd0mtqupslupcyp7g6gz td.tinytable_css_65n7f3djbp58sqyopaxz, #tinytable_gd0mtqupslupcyp7g6gz th.tinytable_css_65n7f3djbp58sqyopaxz {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_gd0mtqupslupcyp7g6gz td.tinytable_css_wy5tfko38y03c1gu6yf1, #tinytable_gd0mtqupslupcyp7g6gz th.tinytable_css_wy5tfko38y03c1gu6yf1 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
     </style>
     <div class="container">
-      <table class="tinytable" id="tinytable_gvznwkffgigqte2aymrq" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="tinytable" id="tinytable_gd0mtqupslupcyp7g6gz" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         
         <thead>
               <tr>
@@ -847,8 +858,8 @@ window.Quarto = {
 </section>
 </section>
 </section>
-<section id="problema-2" class="level2">
-<h2 class="anchored" data-anchor-id="problema-2">Problema 2</h2>
+<section id="problema-2" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="problema-2"><span class="header-section-number">2</span> Problema 2</h2>
 <p>Una persona recibe una herencia de 200.000 euros y se le presentan diferentes opciones de inversión para los próximos 10 años.</p>
 <p>Puede terminar de pagar su hipoteca actual, ahorrando 40.000 euros de intereses y le sobrarían 30.000 euros que pondría en una cuenta remunerada al 2% anual</p>
 <p>Puede seguir pagando su hipoteca y elegir una de las siguientes opciones</p>
@@ -857,8 +868,8 @@ window.Quarto = {
 <li>Invertir en un fondo indexado que le puede generar un 7% anual pero si la bolsa baja perderá un 8%.</li>
 <li>Invertir en una franquicia de una cadena de comida rápida. Si acierta con el sitio podrá generar un 10% anual pero si se equivoca al seleccionar el sitio incurrirá en unas pérdidas anuales del 10%</li>
 </ul>
-<section id="planteamiento-del-problema" class="level3">
-<h3 class="anchored" data-anchor-id="planteamiento-del-problema">Planteamiento del problema</h3>
+<section id="planteamiento-del-problema" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="planteamiento-del-problema"><span class="header-section-number">2.1</span> Planteamiento del problema</h3>
 <p>Alternativas</p>
 <ul>
 <li>a1: Pagar hipoteca</li>
@@ -962,21 +973,21 @@ window.Quarto = {
 
     <script>
       // Create table-specific functions using external factory
-      const tableFns_7gub95s3mew2c6yawiex = TinyTable.createTableFunctions("tinytable_7gub95s3mew2c6yawiex");
+      const tableFns_fqepvv9ou00ndpgxleuf = TinyTable.createTableFunctions("tinytable_fqepvv9ou00ndpgxleuf");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '1', j: 10 }, { i: '2', j: 10 }, { i: '3', j: 10 }, { i: '4', j: 10 }, { i: '5', j: 10 } ], css_id: 'tinytable_css_9qprosqm6vn44z8uibhf',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '1', j: 3 }, { i: '1', j: 4 }, { i: '1', j: 5 }, { i: '1', j: 6 }, { i: '1', j: 7 }, { i: '1', j: 8 }, { i: '1', j: 9 }, { i: '2', j: 1 }, { i: '2', j: 2 }, { i: '2', j: 3 }, { i: '2', j: 4 }, { i: '2', j: 5 }, { i: '2', j: 6 }, { i: '2', j: 7 }, { i: '2', j: 8 }, { i: '2', j: 9 }, { i: '3', j: 1 }, { i: '3', j: 2 }, { i: '3', j: 3 }, { i: '3', j: 4 }, { i: '3', j: 5 }, { i: '3', j: 6 }, { i: '3', j: 7 }, { i: '3', j: 8 }, { i: '3', j: 9 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '4', j: 3 }, { i: '4', j: 4 }, { i: '4', j: 5 }, { i: '4', j: 6 }, { i: '4', j: 7 }, { i: '4', j: 8 }, { i: '4', j: 9 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 }, { i: '5', j: 4 }, { i: '5', j: 5 }, { i: '5', j: 6 }, { i: '5', j: 7 }, { i: '5', j: 8 }, { i: '5', j: 9 } ], css_id: 'tinytable_css_x96k020j4ckfdxjsi9nh',}, 
-          { positions: [ { i: '0', j: 10 } ], css_id: 'tinytable_css_v9lmey5ewqcgkmo7xknf',}, 
-          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 }, { i: '0', j: 6 }, { i: '0', j: 7 }, { i: '0', j: 8 }, { i: '0', j: 9 } ], css_id: 'tinytable_css_avz1jrvv8xmwpo4i5vhk',}, 
+          { positions: [ { i: '1', j: 10 }, { i: '2', j: 10 }, { i: '3', j: 10 }, { i: '4', j: 10 }, { i: '5', j: 10 } ], css_id: 'tinytable_css_ua0ck3wlglfv1u304svv',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '1', j: 3 }, { i: '1', j: 4 }, { i: '1', j: 5 }, { i: '1', j: 6 }, { i: '1', j: 7 }, { i: '1', j: 8 }, { i: '1', j: 9 }, { i: '2', j: 1 }, { i: '2', j: 2 }, { i: '2', j: 3 }, { i: '2', j: 4 }, { i: '2', j: 5 }, { i: '2', j: 6 }, { i: '2', j: 7 }, { i: '2', j: 8 }, { i: '2', j: 9 }, { i: '3', j: 1 }, { i: '3', j: 2 }, { i: '3', j: 3 }, { i: '3', j: 4 }, { i: '3', j: 5 }, { i: '3', j: 6 }, { i: '3', j: 7 }, { i: '3', j: 8 }, { i: '3', j: 9 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '4', j: 3 }, { i: '4', j: 4 }, { i: '4', j: 5 }, { i: '4', j: 6 }, { i: '4', j: 7 }, { i: '4', j: 8 }, { i: '4', j: 9 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 }, { i: '5', j: 4 }, { i: '5', j: 5 }, { i: '5', j: 6 }, { i: '5', j: 7 }, { i: '5', j: 8 }, { i: '5', j: 9 } ], css_id: 'tinytable_css_681p1awpfr9opm27figb',}, 
+          { positions: [ { i: '0', j: 10 } ], css_id: 'tinytable_css_8xid59606yxsv3a7dl0q',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 }, { i: '0', j: 6 }, { i: '0', j: 7 }, { i: '0', j: 8 }, { i: '0', j: 9 } ], css_id: 'tinytable_css_u8qot7l7d2o5zdo2231b',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  tableFns_7gub95s3mew2c6yawiex.styleCell(cell.i, cell.j, group.css_id);
+                  tableFns_fqepvv9ou00ndpgxleuf.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -985,13 +996,13 @@ window.Quarto = {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
     /* tinytable css entries after */
-    #tinytable_7gub95s3mew2c6yawiex td.tinytable_css_9qprosqm6vn44z8uibhf, #tinytable_7gub95s3mew2c6yawiex th.tinytable_css_9qprosqm6vn44z8uibhf {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_7gub95s3mew2c6yawiex td.tinytable_css_x96k020j4ckfdxjsi9nh, #tinytable_7gub95s3mew2c6yawiex th.tinytable_css_x96k020j4ckfdxjsi9nh {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_7gub95s3mew2c6yawiex td.tinytable_css_v9lmey5ewqcgkmo7xknf, #tinytable_7gub95s3mew2c6yawiex th.tinytable_css_v9lmey5ewqcgkmo7xknf {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
-    #tinytable_7gub95s3mew2c6yawiex td.tinytable_css_avz1jrvv8xmwpo4i5vhk, #tinytable_7gub95s3mew2c6yawiex th.tinytable_css_avz1jrvv8xmwpo4i5vhk {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_fqepvv9ou00ndpgxleuf td.tinytable_css_ua0ck3wlglfv1u304svv, #tinytable_fqepvv9ou00ndpgxleuf th.tinytable_css_ua0ck3wlglfv1u304svv {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_fqepvv9ou00ndpgxleuf td.tinytable_css_681p1awpfr9opm27figb, #tinytable_fqepvv9ou00ndpgxleuf th.tinytable_css_681p1awpfr9opm27figb {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_fqepvv9ou00ndpgxleuf td.tinytable_css_8xid59606yxsv3a7dl0q, #tinytable_fqepvv9ou00ndpgxleuf th.tinytable_css_8xid59606yxsv3a7dl0q {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_fqepvv9ou00ndpgxleuf td.tinytable_css_u8qot7l7d2o5zdo2231b, #tinytable_fqepvv9ou00ndpgxleuf th.tinytable_css_u8qot7l7d2o5zdo2231b {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
     </style>
     <div class="container">
-      <table class="tinytable" id="tinytable_7gub95s3mew2c6yawiex" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="tinytable" id="tinytable_fqepvv9ou00ndpgxleuf" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         
         <thead>
               <tr>
