@@ -1,0 +1,13 @@
+
+color:
+  palette: 
+    primary: "#005682"
+    secondary: "#003f5c"
+
+typography: 
+    headings:
+      color: primary
+      weight: semi-bold
+    link:
+      color: primary
+      weight: semi-bold

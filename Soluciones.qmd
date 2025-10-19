@@ -1,21 +1,26 @@
 ---
 title: "Soluciones de los problemas"
+author: "Víctor Silva Nieves"
 format: 
-  typst-pdf: 
+  html:
+    toc: true
+    toc-depth: 4
+    toc-expand: true
+    toc-location: left
+    number-sections: true
+    code-fold: false
+    theme:
+      - cosmo
+      - tema.scss
+  typst: 
     toc: true
     number-sections: true
     include-before-body: toc-sep.typ
     code-fold: false
-    theme: cosmo
+    brand: _brand.yml
     fig-align: center
     tbl-align: center
-  html:
-    toc: true
-    toc-depth: 2
-    toc-location: left
-    number-sections: true
-    code-fold: false
-    theme: cosmo
+  
 lang: es
 ---
 

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Víctor Silva Nieves">
 
 <title>Soluciones de los problemas</title>
 <style>
@@ -68,7 +69,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="Soluciones_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="Soluciones_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="Soluciones_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Soluciones_files/libs/bootstrap/bootstrap-813c323200a87c37e262811031999de4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="Soluciones_files/libs/bootstrap/bootstrap-5d03c06c651cdcd395a6ee9c1faeb381.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -106,14 +107,40 @@ window.Quarto = {
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
 <div id="quarto-sidebar-toc-left" class="sidebar toc-left">
-  <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+  <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">Tabla de contenidos</h2>
    
+  <ul>
+  <li><a href="#problema-1" id="toc-problema-1" class="nav-link active" data-scroll-target="#problema-1"><span class="header-section-number">1</span> Problema 1</a>
+  <ul>
+  <li><a href="#caso-favorable" id="toc-caso-favorable" class="nav-link" data-scroll-target="#caso-favorable"><span class="header-section-number">1.1</span> Caso favorable</a>
   <ul class="collapse">
-  <li><a href="#problema-1" id="toc-problema-1" class="nav-link active" data-scroll-target="#problema-1"><span class="header-section-number">1</span> Problema 1</a></li>
-  <li><a href="#problema-2" id="toc-problema-2" class="nav-link" data-scroll-target="#problema-2"><span class="header-section-number">2</span> Problema 2</a></li>
+  <li><a href="#método-pesimista" id="toc-método-pesimista" class="nav-link" data-scroll-target="#método-pesimista"><span class="header-section-number">1.1.1</span> Método pesimista</a></li>
+  <li><a href="#método-optimista" id="toc-método-optimista" class="nav-link" data-scroll-target="#método-optimista"><span class="header-section-number">1.1.2</span> Método optimista</a></li>
+  <li><a href="#método-hurwicz" id="toc-método-hurwicz" class="nav-link" data-scroll-target="#método-hurwicz"><span class="header-section-number">1.1.3</span> Método Hurwicz</a></li>
+  <li><a href="#método-savage" id="toc-método-savage" class="nav-link" data-scroll-target="#método-savage"><span class="header-section-number">1.1.4</span> Método Savage</a></li>
+  <li><a href="#método-laplace" id="toc-método-laplace" class="nav-link" data-scroll-target="#método-laplace"><span class="header-section-number">1.1.5</span> Método Laplace</a></li>
+  <li><a href="#método-punto-ideal" id="toc-método-punto-ideal" class="nav-link" data-scroll-target="#método-punto-ideal"><span class="header-section-number">1.1.6</span> Método punto ideal</a></li>
+  <li><a href="#resumen-caso-favorable" id="toc-resumen-caso-favorable" class="nav-link" data-scroll-target="#resumen-caso-favorable"><span class="header-section-number">1.1.7</span> Resumen caso favorable</a></li>
+  </ul></li>
+  <li><a href="#caso-desfavorable" id="toc-caso-desfavorable" class="nav-link" data-scroll-target="#caso-desfavorable"><span class="header-section-number">1.2</span> Caso desfavorable</a>
+  <ul class="collapse">
+  <li><a href="#método-pesimista-1" id="toc-método-pesimista-1" class="nav-link" data-scroll-target="#método-pesimista-1"><span class="header-section-number">1.2.1</span> Método pesimista</a></li>
+  <li><a href="#método-optimista-1" id="toc-método-optimista-1" class="nav-link" data-scroll-target="#método-optimista-1"><span class="header-section-number">1.2.2</span> Método optimista</a></li>
+  <li><a href="#método-hurwicz-1" id="toc-método-hurwicz-1" class="nav-link" data-scroll-target="#método-hurwicz-1"><span class="header-section-number">1.2.3</span> Método Hurwicz</a></li>
+  <li><a href="#método-savage-1" id="toc-método-savage-1" class="nav-link" data-scroll-target="#método-savage-1"><span class="header-section-number">1.2.4</span> Método Savage</a></li>
+  <li><a href="#método-laplace-1" id="toc-método-laplace-1" class="nav-link" data-scroll-target="#método-laplace-1"><span class="header-section-number">1.2.5</span> Método Laplace</a></li>
+  <li><a href="#método-punto-ideal-1" id="toc-método-punto-ideal-1" class="nav-link" data-scroll-target="#método-punto-ideal-1"><span class="header-section-number">1.2.6</span> Método punto ideal</a></li>
+  <li><a href="#resumen-caso-desfavorable" id="toc-resumen-caso-desfavorable" class="nav-link" data-scroll-target="#resumen-caso-desfavorable"><span class="header-section-number">1.2.7</span> Resumen caso desfavorable</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#problema-2" id="toc-problema-2" class="nav-link" data-scroll-target="#problema-2"><span class="header-section-number">2</span> Problema 2</a>
+  <ul>
+  <li><a href="#planteamiento-del-problema" id="toc-planteamiento-del-problema" class="nav-link" data-scroll-target="#planteamiento-del-problema"><span class="header-section-number">2.1</span> Planteamiento del problema</a></li>
+  <li><a href="#resolución-del-problema" id="toc-resolución-del-problema" class="nav-link" data-scroll-target="#resolución-del-problema"><span class="header-section-number">2.2</span> Resolución del problema</a></li>
+  </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Soluciones.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="Soluciones.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
@@ -128,6 +155,12 @@ window.Quarto = {
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Víctor Silva Nieves </p>
+          </div>
+  </div>
     
   
     
@@ -147,33 +180,34 @@ window.Quarto = {
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Preparar tema propio para tablas</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>colores <span class="ot">&lt;-</span> <span class="fu">hcl.colors</span>(<span class="dv">5</span>, <span class="at">palette =</span> <span class="st">"Berlin"</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>crea_vector_posiciones_tabla <span class="ot">&lt;-</span> <span class="cf">function</span>(numero_columnas) {</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  posiciones <span class="ot">&lt;-</span> <span class="st">""</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>numero_columnas) {</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    posiciones <span class="ot">&lt;-</span> <span class="fu">paste0</span>(posiciones,<span class="st">"c"</span>)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(posiciones)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>crea_tabla_estilo <span class="ot">&lt;-</span> <span class="cf">function</span>(tabla, <span class="at">nombresfila =</span> <span class="cn">TRUE</span>) {</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (nombresfila <span class="sc">==</span> <span class="cn">TRUE</span>) {</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    rn <span class="ot">&lt;-</span> <span class="fu">rownames</span>(tabla)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">is.null</span>(rn)) rn <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="st">""</span>, <span class="fu">nrow</span>(tabla))</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    tabla <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">rn =</span> rn, tabla, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">colnames</span>(tabla)[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">""</span>   </span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rownames</span>(tabla) <span class="ot">&lt;-</span> <span class="cn">NULL</span> </span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  t <span class="ot">&lt;-</span> <span class="fu">tt</span>(tabla, <span class="at">theme =</span> <span class="st">"empty"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">style_tt</span>(<span class="at">j =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(tabla), <span class="at">align =</span> <span class="fu">crea_vector_posiciones_tabla</span>(<span class="fu">ncol</span>(tabla)), <span class="at">alignv =</span> <span class="st">"m"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">style_tt</span>(<span class="at">i =</span> <span class="dv">0</span>, <span class="at">line =</span> <span class="st">"b"</span>, <span class="at">line_color =</span> colores[<span class="dv">2</span>], <span class="at">line_width =</span> <span class="fl">0.2</span>,</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">background =</span> colores[<span class="dv">5</span>], <span class="at">color =</span> colores[<span class="dv">3</span>]) <span class="sc">|&gt;</span> </span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">style_tt</span>(<span class="at">i =</span> <span class="dv">0</span>, <span class="at">line =</span> <span class="st">"t"</span>, <span class="at">line_color =</span> colores[<span class="dv">1</span>], <span class="at">line_width =</span> <span class="fl">0.1</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">style_tt</span>(<span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(tabla), <span class="at">line =</span> <span class="st">"b"</span>, <span class="at">line_color =</span> colores[<span class="dv">1</span>], <span class="at">line_width =</span> <span class="fl">0.1</span>) <span class="sc">|&gt;</span> <span class="fu">style_tt</span>(<span class="at">j =</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">ncol</span>(tabla)<span class="sc">-</span><span class="dv">1</span>), <span class="at">line =</span> <span class="st">"r"</span>, <span class="at">line_color =</span> colores[<span class="dv">1</span>], <span class="at">line_width =</span> <span class="fl">0.1</span>)</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(t)</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>crea_vector_posiciones_tabla <span class="ot">&lt;-</span> <span class="cf">function</span>(numero_columnas) {</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  posiciones <span class="ot">&lt;-</span> <span class="st">""</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>numero_columnas) {</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    posiciones <span class="ot">&lt;-</span> <span class="fu">paste0</span>(posiciones,<span class="st">"c"</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(posiciones)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>crea_tabla_estilo <span class="ot">&lt;-</span> <span class="cf">function</span>(tabla, <span class="at">nombresfila =</span> <span class="cn">TRUE</span>) {</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (nombresfila <span class="sc">==</span> <span class="cn">TRUE</span>) {</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    rn <span class="ot">&lt;-</span> <span class="fu">rownames</span>(tabla)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">is.null</span>(rn)) rn <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="st">""</span>, <span class="fu">nrow</span>(tabla))</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    tabla <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">rn =</span> rn, tabla, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">colnames</span>(tabla)[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">""</span>   </span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rownames</span>(tabla) <span class="ot">&lt;-</span> <span class="cn">NULL</span> </span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  t <span class="ot">&lt;-</span> <span class="fu">tt</span>(tabla, <span class="at">theme =</span> <span class="st">"empty"</span>, <span class="at">width =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">style_tt</span>(<span class="at">j =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(tabla), <span class="at">align =</span> <span class="fu">crea_vector_posiciones_tabla</span>(<span class="fu">ncol</span>(tabla)), <span class="at">alignv =</span> <span class="st">"m"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">style_tt</span>(<span class="at">i =</span> <span class="dv">0</span>, <span class="at">line =</span> <span class="st">"b"</span>, <span class="at">line_color =</span> colores[<span class="dv">2</span>], <span class="at">line_width =</span> <span class="fl">0.2</span>,</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">background =</span> colores[<span class="dv">5</span>], <span class="at">color =</span> colores[<span class="dv">3</span>]) <span class="sc">|&gt;</span> </span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">style_tt</span>(<span class="at">i =</span> <span class="dv">0</span>, <span class="at">line =</span> <span class="st">"t"</span>, <span class="at">line_color =</span> colores[<span class="dv">1</span>], <span class="at">line_width =</span> <span class="fl">0.1</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">style_tt</span>(<span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(tabla), <span class="at">line =</span> <span class="st">"b"</span>, <span class="at">line_color =</span> colores[<span class="dv">1</span>], <span class="at">line_width =</span> <span class="fl">0.1</span>) <span class="sc">|&gt;</span> <span class="fu">style_tt</span>(<span class="at">j =</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">ncol</span>(tabla)<span class="sc">-</span><span class="dv">1</span>), <span class="at">line =</span> <span class="st">"r"</span>, <span class="at">line_color =</span> colores[<span class="dv">1</span>], <span class="at">line_width =</span> <span class="fl">0.1</span>)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(t)</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="problema-1" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="problema-1"><span class="header-section-number">1</span> Problema 1</h2>
@@ -189,7 +223,7 @@ window.Quarto = {
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>tabla_datos <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(matriz_datos)</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tabla_datos) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ω1"</span>, <span class="st">"ω2"</span>, <span class="st">"ω3"</span>, <span class="st">"ω4"</span>)</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(tabla_datos) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"a1"</span>, <span class="st">"a2"</span>, <span class="st">"a3"</span>, <span class="st">"a4"</span>, <span class="st">"a5"</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">crea_tabla_estilo</span>(tabla_datos, <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">crea_tabla_estilo</span>(tabla_datos, <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <!-- preamble start -->
 
@@ -197,21 +231,21 @@ window.Quarto = {
 
     <script>
       // Create table-specific functions using external factory
-      const tableFns_410qogaqfn6pl1n65rxu = TinyTable.createTableFunctions("tinytable_410qogaqfn6pl1n65rxu");
+      const tableFns_3x9yv6x86duqyqirfe8d = TinyTable.createTableFunctions("tinytable_3x9yv6x86duqyqirfe8d");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '1', j: 5 }, { i: '2', j: 5 }, { i: '3', j: 5 }, { i: '4', j: 5 }, { i: '5', j: 5 } ], css_id: 'tinytable_css_bpr7guixjn9lujl12d75',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '1', j: 3 }, { i: '1', j: 4 }, { i: '2', j: 1 }, { i: '2', j: 2 }, { i: '2', j: 3 }, { i: '2', j: 4 }, { i: '3', j: 1 }, { i: '3', j: 2 }, { i: '3', j: 3 }, { i: '3', j: 4 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '4', j: 3 }, { i: '4', j: 4 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 }, { i: '5', j: 4 } ], css_id: 'tinytable_css_lr27tbq6sfnanf2p3evc',}, 
-          { positions: [ { i: '0', j: 5 } ], css_id: 'tinytable_css_aqremuy1yy01oi13trsp',}, 
-          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 } ], css_id: 'tinytable_css_zuyi2snc38307704ql1v',}, 
+          { positions: [ { i: '1', j: 5 }, { i: '2', j: 5 }, { i: '3', j: 5 }, { i: '4', j: 5 }, { i: '5', j: 5 } ], css_id: 'tinytable_css_y3i8q9vx8tntnjtiyqaq',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '1', j: 3 }, { i: '1', j: 4 }, { i: '2', j: 1 }, { i: '2', j: 2 }, { i: '2', j: 3 }, { i: '2', j: 4 }, { i: '3', j: 1 }, { i: '3', j: 2 }, { i: '3', j: 3 }, { i: '3', j: 4 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '4', j: 3 }, { i: '4', j: 4 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 }, { i: '5', j: 4 } ], css_id: 'tinytable_css_eu6jyihn63v1d7zf6io8',}, 
+          { positions: [ { i: '0', j: 5 } ], css_id: 'tinytable_css_nnfe35olrbx9kwyjlwyx',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 } ], css_id: 'tinytable_css_l4cm106ug3tduo7o85j4',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  tableFns_410qogaqfn6pl1n65rxu.styleCell(cell.i, cell.j, group.css_id);
+                  tableFns_3x9yv6x86duqyqirfe8d.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -220,13 +254,13 @@ window.Quarto = {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
     /* tinytable css entries after */
-    #tinytable_410qogaqfn6pl1n65rxu td.tinytable_css_bpr7guixjn9lujl12d75, #tinytable_410qogaqfn6pl1n65rxu th.tinytable_css_bpr7guixjn9lujl12d75 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_410qogaqfn6pl1n65rxu td.tinytable_css_lr27tbq6sfnanf2p3evc, #tinytable_410qogaqfn6pl1n65rxu th.tinytable_css_lr27tbq6sfnanf2p3evc {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_410qogaqfn6pl1n65rxu td.tinytable_css_aqremuy1yy01oi13trsp, #tinytable_410qogaqfn6pl1n65rxu th.tinytable_css_aqremuy1yy01oi13trsp {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
-    #tinytable_410qogaqfn6pl1n65rxu td.tinytable_css_zuyi2snc38307704ql1v, #tinytable_410qogaqfn6pl1n65rxu th.tinytable_css_zuyi2snc38307704ql1v {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_3x9yv6x86duqyqirfe8d td.tinytable_css_y3i8q9vx8tntnjtiyqaq, #tinytable_3x9yv6x86duqyqirfe8d th.tinytable_css_y3i8q9vx8tntnjtiyqaq {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_3x9yv6x86duqyqirfe8d td.tinytable_css_eu6jyihn63v1d7zf6io8, #tinytable_3x9yv6x86duqyqirfe8d th.tinytable_css_eu6jyihn63v1d7zf6io8 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_3x9yv6x86duqyqirfe8d td.tinytable_css_nnfe35olrbx9kwyjlwyx, #tinytable_3x9yv6x86duqyqirfe8d th.tinytable_css_nnfe35olrbx9kwyjlwyx {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_3x9yv6x86duqyqirfe8d td.tinytable_css_l4cm106ug3tduo7o85j4, #tinytable_3x9yv6x86duqyqirfe8d th.tinytable_css_l4cm106ug3tduo7o85j4 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
     </style>
     <div class="container">
-      <table class="tinytable" id="tinytable_410qogaqfn6pl1n65rxu" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="tinytable" id="tinytable_3x9yv6x86duqyqirfe8d" style="table-layout: fixed; width: 100% !important; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         
         <thead>
               <tr>
@@ -290,23 +324,23 @@ window.Quarto = {
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                      <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">13</span>, <span class="dv">15</span>),</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                      <span class="at">numalternativas =</span> <span class="dv">5</span>, <span class="at">numestados =</span> <span class="dv">4</span>,</span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>                      <span class="at">nb_alternativas =</span> <span class="fu">c</span>(<span class="st">"a1"</span>, <span class="st">"a2"</span>, <span class="st">"a3"</span>, <span class="st">"a4"</span>, <span class="st">"a5"</span>),</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                      <span class="at">nb_estados =</span> <span class="fu">c</span>(<span class="st">"ω1"</span>, <span class="st">"ω2"</span>, <span class="st">"ω3"</span>, <span class="st">"ω4"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                      <span class="at">nb_estados =</span> <span class="fu">c</span>(<span class="st">"ω1"</span>, <span class="st">"ω2"</span>, <span class="st">"ω3"</span>, <span class="st">"ω4"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="caso-favorable" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="caso-favorable"><span class="header-section-number">1.1</span> Caso favorable</h3>
 <section id="método-pesimista" class="level4" data-number="1.1.1">
 <h4 data-number="1.1.1" class="anchored" data-anchor-id="método-pesimista"><span class="header-section-number">1.1.1</span> Método pesimista</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>alternativa_pesimista <span class="ot">&lt;-</span> <span class="fu">criterio.Wald</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>alternativa_pesimista <span class="ot">&lt;-</span> <span class="fu">criterio.Wald</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Para el criterio de Wald, en el caso favorable, la alternativa 5 es la mejor y el valor óptimo es 10.</p>
+<p>Para el criterio de Wald, en el caso favorable, la alternativa <span class="math inline">\(5\)</span> es la mejor y el valor óptimo es <span class="math inline">\(10.\)</span></p>
 </section>
 <section id="método-optimista" class="level4" data-number="1.1.2">
 <h4 data-number="1.1.2" class="anchored" data-anchor-id="método-optimista"><span class="header-section-number">1.1.2</span> Método optimista</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>alternativa_optimista <span class="ot">&lt;-</span> <span class="fu">criterio.Optimista</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>alternativa_optimista <span class="ot">&lt;-</span> <span class="fu">criterio.Optimista</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Para el criterio Optimista, en el caso favorable, la alternativa 2 es la mejor y el valor óptimo es 20.</p>
+<p>Para el criterio Optimista, en el caso favorable, la alternativa <span class="math inline">\(2\)</span> es la mejor y el valor óptimo es <span class="math inline">\(20\)</span>.</p>
 </section>
 <section id="método-hurwicz" class="level4" data-number="1.1.3">
 <h4 data-number="1.1.3" class="anchored" data-anchor-id="método-hurwicz"><span class="header-section-number">1.1.3</span> Método Hurwicz</h4>
@@ -320,9 +354,9 @@ window.Quarto = {
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">nrow =</span> <span class="fu">length</span>(alternativas_Hurwicz_alfas<span class="sc">$</span>AlternativaOptima), </span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">byrow =</span> <span class="cn">FALSE</span>, </span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>                  ))</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tb_Hurwicz) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Alfa"</span>, <span class="st">"Alternativa óptima"</span>, <span class="st">"Valor óptimo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tb_Hurwicz) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Alfa"</span>, <span class="st">"Alternativa óptima"</span>, <span class="st">"Valor óptimo"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Para el criterio de Hurwicz, en el caso favorable, la alternativa 2 es la mejor y el valor óptimo es 13.5. Con un valor de alfa = 0.5.</p>
+<p>Para el criterio de Hurwicz, en el caso favorable, la alternativa <span class="math inline">\(2\)</span> es la mejor y el valor óptimo es <span class="math inline">\(13.5\)</span>. Con un valor de <span class="math inline">\(\alpha =\)</span> <span class="math inline">\(0.5\)</span>.</p>
 <p>Se muestra a continuación una tabla con las alternativas óptimas y los valores óptimos para diferentes valores de alfa, que van desde 0 hasta 1 con incrementos de 0.1:</p>
 <!-- preamble start -->
 
@@ -330,21 +364,21 @@ window.Quarto = {
 
     <script>
       // Create table-specific functions using external factory
-      const tableFns_m8if8awtm12kuwe75qmy = TinyTable.createTableFunctions("tinytable_m8if8awtm12kuwe75qmy");
+      const tableFns_m230v4c4gz14xdcgavni = TinyTable.createTableFunctions("tinytable_m230v4c4gz14xdcgavni");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '1', j: 3 }, { i: '10', j: 3 }, { i: '11', j: 3 }, { i: '2', j: 3 }, { i: '3', j: 3 }, { i: '4', j: 3 }, { i: '5', j: 3 }, { i: '6', j: 3 }, { i: '7', j: 3 }, { i: '8', j: 3 }, { i: '9', j: 3 } ], css_id: 'tinytable_css_u33lvp7izgej5d6gev0j',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '10', j: 1 }, { i: '10', j: 2 }, { i: '11', j: 1 }, { i: '11', j: 2 }, { i: '2', j: 1 }, { i: '2', j: 2 }, { i: '3', j: 1 }, { i: '3', j: 2 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '6', j: 1 }, { i: '6', j: 2 }, { i: '7', j: 1 }, { i: '7', j: 2 }, { i: '8', j: 1 }, { i: '8', j: 2 }, { i: '9', j: 1 }, { i: '9', j: 2 } ], css_id: 'tinytable_css_v4gorupgev4wraqyzra4',}, 
-          { positions: [ { i: '0', j: 3 } ], css_id: 'tinytable_css_xeobi0k3wj0c5qh54t5c',}, 
-          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 } ], css_id: 'tinytable_css_yw8ll0zs1r2v6bvairhq',}, 
+          { positions: [ { i: '1', j: 3 }, { i: '10', j: 3 }, { i: '11', j: 3 }, { i: '2', j: 3 }, { i: '3', j: 3 }, { i: '4', j: 3 }, { i: '5', j: 3 }, { i: '6', j: 3 }, { i: '7', j: 3 }, { i: '8', j: 3 }, { i: '9', j: 3 } ], css_id: 'tinytable_css_nen3a1duo20ikx4yo12c',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '10', j: 1 }, { i: '10', j: 2 }, { i: '11', j: 1 }, { i: '11', j: 2 }, { i: '2', j: 1 }, { i: '2', j: 2 }, { i: '3', j: 1 }, { i: '3', j: 2 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '6', j: 1 }, { i: '6', j: 2 }, { i: '7', j: 1 }, { i: '7', j: 2 }, { i: '8', j: 1 }, { i: '8', j: 2 }, { i: '9', j: 1 }, { i: '9', j: 2 } ], css_id: 'tinytable_css_u6gb54kxuttvbyltgkgi',}, 
+          { positions: [ { i: '0', j: 3 } ], css_id: 'tinytable_css_1i77r9le0h9pv7finz64',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 } ], css_id: 'tinytable_css_69t2gqu05qbdtrshc8nq',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  tableFns_m8if8awtm12kuwe75qmy.styleCell(cell.i, cell.j, group.css_id);
+                  tableFns_m230v4c4gz14xdcgavni.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -353,13 +387,13 @@ window.Quarto = {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
     /* tinytable css entries after */
-    #tinytable_m8if8awtm12kuwe75qmy td.tinytable_css_u33lvp7izgej5d6gev0j, #tinytable_m8if8awtm12kuwe75qmy th.tinytable_css_u33lvp7izgej5d6gev0j {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_m8if8awtm12kuwe75qmy td.tinytable_css_v4gorupgev4wraqyzra4, #tinytable_m8if8awtm12kuwe75qmy th.tinytable_css_v4gorupgev4wraqyzra4 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_m8if8awtm12kuwe75qmy td.tinytable_css_xeobi0k3wj0c5qh54t5c, #tinytable_m8if8awtm12kuwe75qmy th.tinytable_css_xeobi0k3wj0c5qh54t5c {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
-    #tinytable_m8if8awtm12kuwe75qmy td.tinytable_css_yw8ll0zs1r2v6bvairhq, #tinytable_m8if8awtm12kuwe75qmy th.tinytable_css_yw8ll0zs1r2v6bvairhq {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_m230v4c4gz14xdcgavni td.tinytable_css_nen3a1duo20ikx4yo12c, #tinytable_m230v4c4gz14xdcgavni th.tinytable_css_nen3a1duo20ikx4yo12c {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_m230v4c4gz14xdcgavni td.tinytable_css_u6gb54kxuttvbyltgkgi, #tinytable_m230v4c4gz14xdcgavni th.tinytable_css_u6gb54kxuttvbyltgkgi {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_m230v4c4gz14xdcgavni td.tinytable_css_1i77r9le0h9pv7finz64, #tinytable_m230v4c4gz14xdcgavni th.tinytable_css_1i77r9le0h9pv7finz64 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_m230v4c4gz14xdcgavni td.tinytable_css_69t2gqu05qbdtrshc8nq, #tinytable_m230v4c4gz14xdcgavni th.tinytable_css_69t2gqu05qbdtrshc8nq {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
     </style>
     <div class="container">
-      <table class="tinytable" id="tinytable_m8if8awtm12kuwe75qmy" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="tinytable" id="tinytable_m230v4c4gz14xdcgavni" style="table-layout: fixed; width: 100% !important; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         
         <thead>
               <tr>
@@ -431,7 +465,7 @@ window.Quarto = {
 <!-- hack to avoid NA insertion in last line -->
 <p>Y gráficamente:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>gráfico_Hurwicz <span class="ot">&lt;-</span> <span class="fu">dibuja.criterio.Hurwicz</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>gráfico_Hurwicz <span class="ot">&lt;-</span> <span class="fu">dibuja.criterio.Hurwicz</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -442,7 +476,7 @@ window.Quarto = {
 </div>
 <p>Además, se muestra un gráfico donde se pueden apreciar los intervalos de las alternativas óptimas para diferentes valores de alfa:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>intervalos_Hurwicz <span class="ot">&lt;-</span> <span class="fu">dibuja.criterio.Hurwicz_Intervalos</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>intervalos_Hurwicz <span class="ot">&lt;-</span> <span class="fu">dibuja.criterio.Hurwicz_Intervalos</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -455,40 +489,44 @@ window.Quarto = {
 <section id="método-savage" class="level4" data-number="1.1.4">
 <h4 data-number="1.1.4" class="anchored" data-anchor-id="método-savage"><span class="header-section-number">1.1.4</span> Método Savage</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>alternativa_Savage <span class="ot">&lt;-</span> <span class="fu">criterio.Savage</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>alternativa_Savage <span class="ot">&lt;-</span> <span class="fu">criterio.Savage</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Para el criterio de Savage, en el caso favorable, la alternativa 2 es la mejor y el valor óptimo es 4.</p>
+<p>Para el criterio de Savage, en el caso favorable, la alternativa <span class="math inline">\(2\)</span> es la mejor y el valor óptimo es <span class="math inline">\(4\)</span>.</p>
 </section>
 <section id="método-laplace" class="level4" data-number="1.1.5">
 <h4 data-number="1.1.5" class="anchored" data-anchor-id="método-laplace"><span class="header-section-number">1.1.5</span> Método Laplace</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>alternativa_Laplace <span class="ot">&lt;-</span> <span class="fu">criterio.Laplace</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>alternativa_Laplace <span class="ot">&lt;-</span> <span class="fu">criterio.Laplace</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Para el criterio de Laplace, en el caso favorable, la alternativa 2 es la mejor y el valor óptimo es 13.5. #### Método punto ideal</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>alternativa_puntoideal <span class="ot">&lt;-</span> <span class="fu">criterio.PuntoIdeal</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Para el criterio de Punto Ideal, en el caso favorable, la alternativa 2 es la mejor y el valor óptimo es 5.3851648.</p>
+<p>Para el criterio de Laplace, en el caso favorable, la alternativa <span class="math inline">\(2\)</span> es la mejor y el valor óptimo es <span class="math inline">\(13.5\)</span>.</p>
 </section>
-<section id="resumen-caso-favorable" class="level4" data-number="1.1.6">
-<h4 data-number="1.1.6" class="anchored" data-anchor-id="resumen-caso-favorable"><span class="header-section-number">1.1.6</span> Resumen caso favorable</h4>
+<section id="método-punto-ideal" class="level4" data-number="1.1.6">
+<h4 data-number="1.1.6" class="anchored" data-anchor-id="método-punto-ideal"><span class="header-section-number">1.1.6</span> Método punto ideal</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>resumen_favorable <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Criterio =</span> <span class="fu">c</span>(alternativa_pesimista<span class="sc">$</span>criterio,</span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>alternativa_puntoideal <span class="ot">&lt;-</span> <span class="fu">criterio.PuntoIdeal</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para el criterio de Punto Ideal, en el caso favorable, la alternativa <span class="math inline">\(2\)</span> es la mejor y el valor óptimo es <span class="math inline">\(5.39\)</span>.</p>
+</section>
+<section id="resumen-caso-favorable" class="level4" data-number="1.1.7">
+<h4 data-number="1.1.7" class="anchored" data-anchor-id="resumen-caso-favorable"><span class="header-section-number">1.1.7</span> Resumen caso favorable</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>matriz_resumen_favorable <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>              alternativa_pesimista<span class="sc">$</span>criterio,</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>               alternativa_optimista<span class="sc">$</span>criterio,</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>               alternativa_Hurwicz<span class="sc">$</span>criterio,</span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>               alternativa_Savage<span class="sc">$</span>criterio,</span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>               alternativa_Laplace<span class="sc">$</span>criterio,</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>               alternativa_puntoideal<span class="sc">$</span>criterio),</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  Alternativa_Ó<span class="at">ptima =</span> <span class="fu">c</span>(alternativa_pesimista<span class="sc">$</span>AlternativaOpt,</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>                         alternativa_optimista<span class="sc">$</span>AlternativaOpt,</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>                         alternativa_Hurwicz<span class="sc">$</span>AlternativaOpt,</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>                         alternativa_Savage<span class="sc">$</span>AlternativaOpt,</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>                         alternativa_Laplace<span class="sc">$</span>AlternativaOpt,</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>                         alternativa_puntoideal<span class="sc">$</span>AlternativaOpt)</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="fu">crea_tabla_estilo</span>(resumen_favorable, <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>               alternativa_puntoideal<span class="sc">$</span>criterio,alternativa_pesimista<span class="sc">$</span>AlternativaOpt,</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>               alternativa_optimista<span class="sc">$</span>AlternativaOpt,</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>               alternativa_Hurwicz<span class="sc">$</span>AlternativaOpt,</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>               alternativa_Savage<span class="sc">$</span>AlternativaOpt,</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>               alternativa_Laplace<span class="sc">$</span>AlternativaOpt,</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>               alternativa_puntoideal<span class="sc">$</span>AlternativaOpt),</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">nrow =</span> <span class="dv">6</span>, <span class="at">byrow =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>resumen_favorable <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(matriz_resumen_favorable)</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(resumen_favorable) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Criterio"</span>, <span class="st">"Alternativa óptima"</span>)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="fu">crea_tabla_estilo</span>(resumen_favorable, <span class="cn">FALSE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <!-- preamble start -->
 
@@ -496,21 +534,21 @@ window.Quarto = {
 
     <script>
       // Create table-specific functions using external factory
-      const tableFns_mns9o9m6j5mrrybshy7i = TinyTable.createTableFunctions("tinytable_mns9o9m6j5mrrybshy7i");
+      const tableFns_z83hqpxblvjnu1v8zmy3 = TinyTable.createTableFunctions("tinytable_z83hqpxblvjnu1v8zmy3");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 } ], css_id: 'tinytable_css_s86q88dga3z4zro2wf8s',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 } ], css_id: 'tinytable_css_i5114sq56jjnwos52x76',}, 
-          { positions: [ { i: '0', j: 2 } ], css_id: 'tinytable_css_7tpbn3ezv3hjfe9k79sr',}, 
-          { positions: [ { i: '0', j: 1 } ], css_id: 'tinytable_css_a698efkjzyirz0tswk2e',}, 
+          { positions: [ { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 } ], css_id: 'tinytable_css_vatku2tojq7ip9r5vrki',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 } ], css_id: 'tinytable_css_w48mcb75fmpeytvz0b35',}, 
+          { positions: [ { i: '0', j: 2 } ], css_id: 'tinytable_css_ndb8m6807ctv6r073ubm',}, 
+          { positions: [ { i: '0', j: 1 } ], css_id: 'tinytable_css_q9ap36ca1fcgxf70717a',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  tableFns_mns9o9m6j5mrrybshy7i.styleCell(cell.i, cell.j, group.css_id);
+                  tableFns_z83hqpxblvjnu1v8zmy3.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -519,18 +557,18 @@ window.Quarto = {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
     /* tinytable css entries after */
-    #tinytable_mns9o9m6j5mrrybshy7i td.tinytable_css_s86q88dga3z4zro2wf8s, #tinytable_mns9o9m6j5mrrybshy7i th.tinytable_css_s86q88dga3z4zro2wf8s {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_mns9o9m6j5mrrybshy7i td.tinytable_css_i5114sq56jjnwos52x76, #tinytable_mns9o9m6j5mrrybshy7i th.tinytable_css_i5114sq56jjnwos52x76 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_mns9o9m6j5mrrybshy7i td.tinytable_css_7tpbn3ezv3hjfe9k79sr, #tinytable_mns9o9m6j5mrrybshy7i th.tinytable_css_7tpbn3ezv3hjfe9k79sr {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
-    #tinytable_mns9o9m6j5mrrybshy7i td.tinytable_css_a698efkjzyirz0tswk2e, #tinytable_mns9o9m6j5mrrybshy7i th.tinytable_css_a698efkjzyirz0tswk2e {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_z83hqpxblvjnu1v8zmy3 td.tinytable_css_vatku2tojq7ip9r5vrki, #tinytable_z83hqpxblvjnu1v8zmy3 th.tinytable_css_vatku2tojq7ip9r5vrki {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_z83hqpxblvjnu1v8zmy3 td.tinytable_css_w48mcb75fmpeytvz0b35, #tinytable_z83hqpxblvjnu1v8zmy3 th.tinytable_css_w48mcb75fmpeytvz0b35 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_z83hqpxblvjnu1v8zmy3 td.tinytable_css_ndb8m6807ctv6r073ubm, #tinytable_z83hqpxblvjnu1v8zmy3 th.tinytable_css_ndb8m6807ctv6r073ubm {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_z83hqpxblvjnu1v8zmy3 td.tinytable_css_q9ap36ca1fcgxf70717a, #tinytable_z83hqpxblvjnu1v8zmy3 th.tinytable_css_q9ap36ca1fcgxf70717a {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
     </style>
     <div class="container">
-      <table class="tinytable" id="tinytable_mns9o9m6j5mrrybshy7i" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="tinytable" id="tinytable_z83hqpxblvjnu1v8zmy3" style="table-layout: fixed; width: 100% !important; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         
         <thead>
               <tr>
                 <th scope="col" data-row="0" data-col="1">Criterio</th>
-                <th scope="col" data-row="0" data-col="2">Alternativa_Óptima</th>
+                <th scope="col" data-row="0" data-col="2">Alternativa óptima</th>
               </tr>
         </thead>
         
@@ -565,7 +603,20 @@ window.Quarto = {
 <!-- hack to avoid NA insertion in last line -->
 </div>
 </div>
-<p>Vemos que las alternativas óptimas son diferentes según el criterio utilizado, siendo la alternativa <span class="math inline">\(a_2\)</span> la que más veces aparece como óptima (5 veces). Ya alternativa <span class="math inline">\(a_5\)</span> aparece una sola vez como óptima para el criterio pesimista y es la mejor alternativa también para el criterio de Hurwicz con valores de <span class="math inline">\(\alpha\)</span> menores que ____ .</p>
+<p>Vemos que las alternativas óptimas son diferentes según el criterio utilizado, siendo la alternativa <span class="math inline">\(a_2\)</span> la que más veces aparece como óptima (5 veces). Ya alternativa <span class="math inline">\(a_5\)</span> aparece una sola vez como óptima para el criterio pesimista y es la mejor alternativa también para el criterio de Hurwicz con valores de <span class="math inline">\(\alpha\)</span> menores que <span class="math inline">\(0.375\)</span> .</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Decisión final
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En este caso se va a optar por la alternativa <span class="math inline">\(a_2\)</span> dado que es la que mayor número de veces aparece como óptima. En todos los criterios excepto en el persimista.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="caso-desfavorable" class="level3" data-number="1.2">
@@ -573,16 +624,16 @@ window.Quarto = {
 <section id="método-pesimista-1" class="level4" data-number="1.2.1">
 <h4 data-number="1.2.1" class="anchored" data-anchor-id="método-pesimista-1"><span class="header-section-number">1.2.1</span> Método pesimista</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>alternativa_pesimista_desfavorable <span class="ot">&lt;-</span> <span class="fu">criterio.Wald</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>alternativa_pesimista_desfavorable <span class="ot">&lt;-</span> <span class="fu">criterio.Wald</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Para el criterio de Wald, en el caso desfavorable, la alternativa 5 es la mejor y el valor óptimo es 15.</p>
+<p>Para el criterio de Wald, en el caso desfavorable, la alternativa <span class="math inline">\(5\)</span> es la mejor y el valor óptimo es <span class="math inline">\(15\)</span>.</p>
 </section>
 <section id="método-optimista-1" class="level4" data-number="1.2.2">
 <h4 data-number="1.2.2" class="anchored" data-anchor-id="método-optimista-1"><span class="header-section-number">1.2.2</span> Método optimista</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>alternativa_optimista_desfavorable <span class="ot">&lt;-</span> <span class="fu">criterio.Optimista</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>alternativa_optimista_desfavorable <span class="ot">&lt;-</span> <span class="fu">criterio.Optimista</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Para el criterio Optimista, en el caso desfavorable, la alternativa 4 es la mejor y el valor óptimo es 4.</p>
+<p>Para el criterio Optimista, en el caso desfavorable, la alternativa <span class="math inline">\(4\)</span> es la mejor y el valor óptimo es <span class="math inline">\(4\)</span>.</p>
 </section>
 <section id="método-hurwicz-1" class="level4" data-number="1.2.3">
 <h4 data-number="1.2.3" class="anchored" data-anchor-id="método-hurwicz-1"><span class="header-section-number">1.2.3</span> Método Hurwicz</h4>
@@ -596,9 +647,9 @@ window.Quarto = {
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">nrow =</span> <span class="fu">length</span>(alternativas_Hurwicz_alfas_desfavorable<span class="sc">$</span>AlternativaOptima), </span>
 <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">byrow =</span> <span class="cn">FALSE</span>, </span>
 <span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>                  ))</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tb_Hurwicz_desfavorable) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Alfa"</span>, <span class="st">"Alternativa Óptima"</span>, <span class="st">"Valor Óptimo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tb_Hurwicz_desfavorable) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Alfa"</span>, <span class="st">"Alternativa óptima"</span>, <span class="st">"Valor óptimo"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Para el criterio de Hurwicz, en el caso desfavorable, la alternativa 4 es la mejor y el valor óptimo es 10. Con un valor de alfa = 0.5.</p>
+<p>Para el criterio de Hurwicz, en el caso desfavorable, la alternativa <span class="math inline">\(4\)</span> es la mejor y el valor óptimo es <span class="math inline">\(10\)</span>. Con un valor de <span class="math inline">\(\alpha =\)</span> <span class="math inline">\(0.5\)</span>.</p>
 <p>Se muestra a continuación una tabla con las alternativas óptimas y los valores óptimos para diferentes valores de alfa, que van desde 0 hasta 1 con incrementos de 0.1:</p>
 <!-- preamble start -->
 
@@ -606,19 +657,21 @@ window.Quarto = {
 
     <script>
       // Create table-specific functions using external factory
-      const tableFns_zch0dtaj4nrg1bfn0gvm = TinyTable.createTableFunctions("tinytable_zch0dtaj4nrg1bfn0gvm");
+      const tableFns_d6pqei5ljuqb44ct9ybq = TinyTable.createTableFunctions("tinytable_d6pqei5ljuqb44ct9ybq");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '11', j: 1 }, { i: '11', j: 2 }, { i: '11', j: 3 } ], css_id: 'tinytable_css_xhxvsfy8zarzzzsfpcf3',}, 
-          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 } ], css_id: 'tinytable_css_nlth0va5cawxtckhp9pg',}, 
+          { positions: [ { i: '1', j: 3 }, { i: '10', j: 3 }, { i: '11', j: 3 }, { i: '2', j: 3 }, { i: '3', j: 3 }, { i: '4', j: 3 }, { i: '5', j: 3 }, { i: '6', j: 3 }, { i: '7', j: 3 }, { i: '8', j: 3 }, { i: '9', j: 3 } ], css_id: 'tinytable_css_7guqdoy4npawv3ua249p',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '10', j: 1 }, { i: '10', j: 2 }, { i: '11', j: 1 }, { i: '11', j: 2 }, { i: '2', j: 1 }, { i: '2', j: 2 }, { i: '3', j: 1 }, { i: '3', j: 2 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '6', j: 1 }, { i: '6', j: 2 }, { i: '7', j: 1 }, { i: '7', j: 2 }, { i: '8', j: 1 }, { i: '8', j: 2 }, { i: '9', j: 1 }, { i: '9', j: 2 } ], css_id: 'tinytable_css_pt1g6h11sslabcxihicg',}, 
+          { positions: [ { i: '0', j: 3 } ], css_id: 'tinytable_css_u79rovczzsj4f961yh6z',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 } ], css_id: 'tinytable_css_lceiium5h5ofq1govzog',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  tableFns_zch0dtaj4nrg1bfn0gvm.styleCell(cell.i, cell.j, group.css_id);
+                  tableFns_d6pqei5ljuqb44ct9ybq.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -627,17 +680,19 @@ window.Quarto = {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
     /* tinytable css entries after */
-    #tinytable_zch0dtaj4nrg1bfn0gvm td.tinytable_css_xhxvsfy8zarzzzsfpcf3, #tinytable_zch0dtaj4nrg1bfn0gvm th.tinytable_css_xhxvsfy8zarzzzsfpcf3 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: black; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
-    #tinytable_zch0dtaj4nrg1bfn0gvm td.tinytable_css_nlth0va5cawxtckhp9pg, #tinytable_zch0dtaj4nrg1bfn0gvm th.tinytable_css_nlth0va5cawxtckhp9pg {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: black; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_d6pqei5ljuqb44ct9ybq td.tinytable_css_7guqdoy4npawv3ua249p, #tinytable_d6pqei5ljuqb44ct9ybq th.tinytable_css_7guqdoy4npawv3ua249p {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_d6pqei5ljuqb44ct9ybq td.tinytable_css_pt1g6h11sslabcxihicg, #tinytable_d6pqei5ljuqb44ct9ybq th.tinytable_css_pt1g6h11sslabcxihicg {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_d6pqei5ljuqb44ct9ybq td.tinytable_css_u79rovczzsj4f961yh6z, #tinytable_d6pqei5ljuqb44ct9ybq th.tinytable_css_u79rovczzsj4f961yh6z {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_d6pqei5ljuqb44ct9ybq td.tinytable_css_lceiium5h5ofq1govzog, #tinytable_d6pqei5ljuqb44ct9ybq th.tinytable_css_lceiium5h5ofq1govzog {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
     </style>
     <div class="container">
-      <table class="tinytable" id="tinytable_zch0dtaj4nrg1bfn0gvm" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="tinytable" id="tinytable_d6pqei5ljuqb44ct9ybq" style="table-layout: fixed; width: 100% !important; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         
         <thead>
               <tr>
                 <th scope="col" data-row="0" data-col="1">Alfa</th>
-                <th scope="col" data-row="0" data-col="2">Alternativa Óptima</th>
-                <th scope="col" data-row="0" data-col="3">Valor Óptimo</th>
+                <th scope="col" data-row="0" data-col="2">Alternativa óptima</th>
+                <th scope="col" data-row="0" data-col="3">Valor óptimo</th>
               </tr>
         </thead>
         
@@ -703,7 +758,7 @@ window.Quarto = {
 <!-- hack to avoid NA insertion in last line -->
 <p>Y gráficamente:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>gráfico_Hurwicz_desfavorable <span class="ot">&lt;-</span> <span class="fu">dibuja.criterio.Hurwicz</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>gráfico_Hurwicz_desfavorable <span class="ot">&lt;-</span> <span class="fu">dibuja.criterio.Hurwicz</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -714,7 +769,7 @@ window.Quarto = {
 </div>
 <p>Además, se muestra un gráfico donde se pueden apreciar los intervalos de las alternativas óptimas para diferentes valores de alfa:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>intervalos_Hurwicz_desfavorable <span class="ot">&lt;-</span> <span class="fu">dibuja.criterio.Hurwicz_Intervalos</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>intervalos_Hurwicz_desfavorable <span class="ot">&lt;-</span> <span class="fu">dibuja.criterio.Hurwicz_Intervalos</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -727,57 +782,45 @@ window.Quarto = {
 <section id="método-savage-1" class="level4" data-number="1.2.4">
 <h4 data-number="1.2.4" class="anchored" data-anchor-id="método-savage-1"><span class="header-section-number">1.2.4</span> Método Savage</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>alternativa_Savage_desfavorable <span class="ot">&lt;-</span> <span class="fu">criterio.Savage</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>alternativa_Savage_desfavorable <span class="ot">&lt;-</span> <span class="fu">criterio.Savage</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Para el criterio de Savage, en el caso desfavorable, la alternativa 1 es la mejor y el valor óptimo es 5.</p>
+<p>Para el criterio de Savage, en el caso desfavorable, la alternativa <span class="math inline">\(1\)</span> es la mejor y el valor óptimo es <span class="math inline">\(5\)</span>.</p>
 </section>
 <section id="método-laplace-1" class="level4" data-number="1.2.5">
 <h4 data-number="1.2.5" class="anchored" data-anchor-id="método-laplace-1"><span class="header-section-number">1.2.5</span> Método Laplace</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>alternativa_Laplace_desfavorable <span class="ot">&lt;-</span> <span class="fu">criterio.Laplace</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>alternativa_Laplace_desfavorable <span class="ot">&lt;-</span> <span class="fu">criterio.Laplace</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Para el criterio de Laplace, en el caso desfavorable, la alternativa 1 es la mejor y el valor óptimo es 11.5.</p>
+<p>Para el criterio de Laplace, en el caso desfavorable, la alternativa <span class="math inline">\(1\)</span> es la mejor y el valor óptimo es <span class="math inline">\(11.5\)</span>.</p>
 </section>
-<section id="método-punto-ideal" class="level4" data-number="1.2.6">
-<h4 data-number="1.2.6" class="anchored" data-anchor-id="método-punto-ideal"><span class="header-section-number">1.2.6</span> Método punto ideal</h4>
+<section id="método-punto-ideal-1" class="level4" data-number="1.2.6">
+<h4 data-number="1.2.6" class="anchored" data-anchor-id="método-punto-ideal-1"><span class="header-section-number">1.2.6</span> Método punto ideal</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>alternativa_puntoideal_desfavorable <span class="ot">&lt;-</span> <span class="fu">criterio.PuntoIdeal</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>alternativa_puntoideal_desfavorable <span class="ot">&lt;-</span> <span class="fu">criterio.PuntoIdeal</span>(tabla_decision, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Para el criterio de Punto Ideal, en el caso desfavorable, la alternativa 1 es la mejor y el valor óptimo es 5.9160798.</p>
+<p>Para el criterio de Punto Ideal, en el caso desfavorable, la alternativa <span class="math inline">\(1\)</span> es la mejor y el valor óptimo es <span class="math inline">\(5.92\)</span>.</p>
 </section>
 <section id="resumen-caso-desfavorable" class="level4" data-number="1.2.7">
 <h4 data-number="1.2.7" class="anchored" data-anchor-id="resumen-caso-desfavorable"><span class="header-section-number">1.2.7</span> Resumen caso desfavorable</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>resumen_desfavorable <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Criterio =</span> <span class="fu">c</span>(alternativa_pesimista_desfavorable<span class="sc">$</span>criterio,</span>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>matriz_resumen_desfavorable <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>               alternativa_pesimista_desfavorable<span class="sc">$</span>criterio,</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>               alternativa_optimista_desfavorable<span class="sc">$</span>criterio,</span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>               alternativa_Hurwicz_desfavorable<span class="sc">$</span>criterio,</span>
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>               alternativa_Savage_desfavorable<span class="sc">$</span>criterio,</span>
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>               alternativa_Laplace_desfavorable<span class="sc">$</span>criterio,</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>               alternativa_puntoideal_desfavorable<span class="sc">$</span>criterio),</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Alternativa Óptima</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(alternativa_pesimista_desfavorable<span class="sc">$</span>AlternativaOpt,</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>                         alternativa_optimista_desfavorable<span class="sc">$</span>AlternativaOpt,</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>                         alternativa_Hurwicz_desfavorable<span class="sc">$</span>AlternativaOpt,</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>                         alternativa_Savage_desfavorable<span class="sc">$</span>AlternativaOpt,</span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>                         alternativa_Laplace_desfavorable<span class="sc">$</span>AlternativaOpt,</span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>                         alternativa_puntoideal_desfavorable<span class="sc">$</span>AlternativaOpt)</span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>               alternativa_puntoideal_desfavorable<span class="sc">$</span>criterio,</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>               alternativa_pesimista_desfavorable<span class="sc">$</span>AlternativaOpt,</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>               alternativa_optimista_desfavorable<span class="sc">$</span>AlternativaOpt,</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>               alternativa_Hurwicz_desfavorable<span class="sc">$</span>AlternativaOpt,</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>               alternativa_Savage_desfavorable<span class="sc">$</span>AlternativaOpt,</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>               alternativa_Laplace_desfavorable<span class="sc">$</span>AlternativaOpt,</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>               alternativa_puntoideal_desfavorable<span class="sc">$</span>AlternativaOpt),</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">nrow =</span> <span class="dv">6</span>, <span class="at">byrow =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>crea_vector_posiciones_tabla <span class="ot">&lt;-</span> <span class="cf">function</span>(numero_columnas) {</span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>  posiciones <span class="ot">&lt;-</span> <span class="st">""</span></span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>numero_columnas) {</span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>    posiciones <span class="ot">&lt;-</span> <span class="fu">paste0</span>(posiciones,<span class="st">"c"</span>)</span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(posiciones)</span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a><span class="fu">tt</span>(resumen_desfavorable, <span class="at">theme =</span> <span class="st">"empty"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">style_tt</span>(<span class="at">j =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(resumen_desfavorable), <span class="at">align =</span> <span class="fu">crea_vector_posiciones_tabla</span>(<span class="fu">ncol</span>(resumen_desfavorable)), <span class="at">alignv =</span> <span class="st">"m"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">style_tt</span>(<span class="at">i =</span> <span class="dv">0</span>, <span class="at">line =</span> <span class="st">"b"</span>, <span class="at">line_color =</span> colores[<span class="dv">2</span>], <span class="at">line_width =</span> <span class="fl">0.2</span>,</span>
-<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">background =</span> colores[<span class="dv">5</span>], <span class="at">color =</span> colores[<span class="dv">3</span>]) <span class="sc">|&gt;</span> </span>
-<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">style_tt</span>(<span class="at">i =</span> <span class="dv">0</span>, <span class="at">line =</span> <span class="st">"t"</span>, <span class="at">line_color =</span> colores[<span class="dv">1</span>], <span class="at">line_width =</span> <span class="fl">0.1</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">style_tt</span>(<span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(resumen_desfavorable), <span class="at">line =</span> <span class="st">"b"</span>, <span class="at">line_color =</span> colores[<span class="dv">1</span>], <span class="at">line_width =</span> <span class="fl">0.1</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">style_tt</span>(<span class="at">j =</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">ncol</span>(resumen_desfavorable)<span class="sc">-</span><span class="dv">1</span>), <span class="at">line =</span> <span class="st">"r"</span>, <span class="at">line_color =</span> colores[<span class="dv">1</span>], <span class="at">line_width =</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>resumen_desfavorable <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(matriz_resumen_desfavorable)</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(resumen_desfavorable) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Criterio"</span>, <span class="st">"Alternativa óptima"</span>)</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a><span class="fu">crea_tabla_estilo</span>(resumen_desfavorable, <span class="cn">FALSE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <!-- preamble start -->
 
@@ -785,21 +828,21 @@ window.Quarto = {
 
     <script>
       // Create table-specific functions using external factory
-      const tableFns_gd0mtqupslupcyp7g6gz = TinyTable.createTableFunctions("tinytable_gd0mtqupslupcyp7g6gz");
+      const tableFns_b5xqifafzounseyzo995 = TinyTable.createTableFunctions("tinytable_b5xqifafzounseyzo995");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 } ], css_id: 'tinytable_css_hp7dbskegamhx7i3yadd',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 } ], css_id: 'tinytable_css_j10o1n4txn9c7iitppl5',}, 
-          { positions: [ { i: '0', j: 2 } ], css_id: 'tinytable_css_65n7f3djbp58sqyopaxz',}, 
-          { positions: [ { i: '0', j: 1 } ], css_id: 'tinytable_css_wy5tfko38y03c1gu6yf1',}, 
+          { positions: [ { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 } ], css_id: 'tinytable_css_p26y4k4inetj9juce17l',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 } ], css_id: 'tinytable_css_3smo70xzg6lik5pganea',}, 
+          { positions: [ { i: '0', j: 2 } ], css_id: 'tinytable_css_rg818v9ctubeurly6hcb',}, 
+          { positions: [ { i: '0', j: 1 } ], css_id: 'tinytable_css_cru4grhgf20962gzm6m1',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  tableFns_gd0mtqupslupcyp7g6gz.styleCell(cell.i, cell.j, group.css_id);
+                  tableFns_b5xqifafzounseyzo995.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -808,18 +851,18 @@ window.Quarto = {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
     /* tinytable css entries after */
-    #tinytable_gd0mtqupslupcyp7g6gz td.tinytable_css_hp7dbskegamhx7i3yadd, #tinytable_gd0mtqupslupcyp7g6gz th.tinytable_css_hp7dbskegamhx7i3yadd {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_gd0mtqupslupcyp7g6gz td.tinytable_css_j10o1n4txn9c7iitppl5, #tinytable_gd0mtqupslupcyp7g6gz th.tinytable_css_j10o1n4txn9c7iitppl5 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_gd0mtqupslupcyp7g6gz td.tinytable_css_65n7f3djbp58sqyopaxz, #tinytable_gd0mtqupslupcyp7g6gz th.tinytable_css_65n7f3djbp58sqyopaxz {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
-    #tinytable_gd0mtqupslupcyp7g6gz td.tinytable_css_wy5tfko38y03c1gu6yf1, #tinytable_gd0mtqupslupcyp7g6gz th.tinytable_css_wy5tfko38y03c1gu6yf1 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_b5xqifafzounseyzo995 td.tinytable_css_p26y4k4inetj9juce17l, #tinytable_b5xqifafzounseyzo995 th.tinytable_css_p26y4k4inetj9juce17l {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_b5xqifafzounseyzo995 td.tinytable_css_3smo70xzg6lik5pganea, #tinytable_b5xqifafzounseyzo995 th.tinytable_css_3smo70xzg6lik5pganea {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_b5xqifafzounseyzo995 td.tinytable_css_rg818v9ctubeurly6hcb, #tinytable_b5xqifafzounseyzo995 th.tinytable_css_rg818v9ctubeurly6hcb {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_b5xqifafzounseyzo995 td.tinytable_css_cru4grhgf20962gzm6m1, #tinytable_b5xqifafzounseyzo995 th.tinytable_css_cru4grhgf20962gzm6m1 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
     </style>
     <div class="container">
-      <table class="tinytable" id="tinytable_gd0mtqupslupcyp7g6gz" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="tinytable" id="tinytable_b5xqifafzounseyzo995" style="table-layout: fixed; width: 100% !important; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         
         <thead>
               <tr>
                 <th scope="col" data-row="0" data-col="1">Criterio</th>
-                <th scope="col" data-row="0" data-col="2">Alternativa.Óptima</th>
+                <th scope="col" data-row="0" data-col="2">Alternativa óptima</th>
               </tr>
         </thead>
         
@@ -854,7 +897,20 @@ window.Quarto = {
 <!-- hack to avoid NA insertion in last line -->
 </div>
 </div>
-<p>Vemos que las alternativas óptimas son diferentes según el criterio utilizado, siendo la alternativa <span class="math inline">\(a_1\)</span> la que más veces aparece como óptima (3 veces). La alternativa <span class="math inline">\(a_4\)</span> aparece en dos ocasiones como óptima, por último para el criterio pesimista la mejor alternativa es <span class="math inline">\(a_5\)</span> y es la mejor alternativa también para el criterio de Hurwicz con valores de <span class="math inline">\(\alpha\)</span> menores que ____ .</p>
+<p>Vemos que las alternativas óptimas son diferentes según el criterio utilizado, siendo la alternativa <span class="math inline">\(a_1\)</span> la que más veces aparece como óptima (3 veces). La alternativa <span class="math inline">\(a_4\)</span> aparece en dos ocasiones como óptima, por último para el criterio pesimista la mejor alternativa es <span class="math inline">\(a_5\)</span> y es la mejor alternativa también para el criterio de Hurwicz con valores de <span class="math inline">\(\alpha\)</span> menores que 0.143 .</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Decisión final
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En este caso se va a optar por la alternativa <span class="math inline">\(a_1\)</span> dado que es la que mayor número de veces aparece como óptima y en el criterio de Hurwicz el gráfico nos muestra que es bastante equilibrada para todos los valores de alfa, aunque nunca sea la mejor.</p>
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -891,81 +947,34 @@ window.Quarto = {
 <li>e1_red: Inversión exitosa</li>
 <li>e2_red: Inversión fallida</li>
 </ul>
-<p>Puesto que la alternativa 1 no se ve afectada por los estados de la naturaleza esta alternativa tendrá valores fijos en todos ellos y no se va afectada por esta reducción.</p>
+<p>Puesto que la alternativa 1 no se ve afectada por los estados de la naturaleza esta alternativa tendrá valores fijos en todos ellos y no se ve alterada por esta reducción.</p>
+<p>Vamos a hacer una tabla para un año y luego aplicaremos los criterios de decisión bajo incertidumbre para ver qué alternativa es la mejor.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>m11 <span class="ot">&lt;-</span> <span class="dv">4000</span> <span class="sc">+</span> <span class="dv">30000</span> <span class="sc">*</span> <span class="fl">0.02</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>m12 <span class="ot">&lt;-</span> <span class="dv">4000</span> <span class="sc">+</span> <span class="dv">30000</span> <span class="sc">*</span> <span class="fl">0.02</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>m13 <span class="ot">&lt;-</span> <span class="dv">4000</span> <span class="sc">+</span> <span class="dv">30000</span> <span class="sc">*</span> <span class="fl">0.02</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>m14 <span class="ot">&lt;-</span> <span class="dv">4000</span> <span class="sc">+</span> <span class="dv">30000</span> <span class="sc">*</span> <span class="fl">0.02</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>m15 <span class="ot">&lt;-</span> <span class="dv">4000</span> <span class="sc">+</span> <span class="dv">30000</span> <span class="sc">*</span> <span class="fl">0.02</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>m16 <span class="ot">&lt;-</span> <span class="dv">4000</span> <span class="sc">+</span> <span class="dv">30000</span> <span class="sc">*</span> <span class="fl">0.02</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>m21 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.01</span> <span class="sc">-</span> <span class="dv">4000</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>m22 <span class="ot">&lt;-</span> <span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.04</span> <span class="sc">-</span> <span class="dv">4000</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>m23 <span class="ot">&lt;-</span> <span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.04</span> <span class="sc">-</span> <span class="dv">4000</span></span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>m24 <span class="ot">&lt;-</span> <span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.04</span> <span class="sc">-</span> <span class="dv">4000</span></span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>m25 <span class="ot">&lt;-</span> <span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.04</span> <span class="sc">-</span> <span class="dv">4000</span></span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>m26 <span class="ot">&lt;-</span> <span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.04</span> <span class="sc">-</span> <span class="dv">4000</span></span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>m31 <span class="ot">&lt;-</span> <span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.07</span> <span class="sc">-</span> <span class="dv">4000</span></span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>m32 <span class="ot">&lt;-</span> <span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.07</span> <span class="sc">-</span> <span class="dv">4000</span></span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>m33 <span class="ot">&lt;-</span> <span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.07</span> <span class="sc">-</span> <span class="dv">4000</span></span>
-<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>m34 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.08</span> <span class="sc">-</span> <span class="dv">4000</span></span>
-<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>m35 <span class="ot">&lt;-</span> <span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.07</span> <span class="sc">-</span> <span class="dv">4000</span></span>
-<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>m36 <span class="ot">&lt;-</span> <span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.07</span> <span class="sc">-</span> <span class="dv">4000</span></span>
-<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>m41 <span class="ot">&lt;-</span> <span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.1</span> <span class="sc">-</span> <span class="dv">4000</span></span>
-<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>m42 <span class="ot">&lt;-</span> <span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.1</span> <span class="sc">-</span> <span class="dv">4000</span></span>
-<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>m43 <span class="ot">&lt;-</span> <span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.1</span> <span class="sc">-</span> <span class="dv">4000</span></span>
-<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>m44 <span class="ot">&lt;-</span> <span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.1</span> <span class="sc">-</span> <span class="dv">4000</span></span>
-<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>m45 <span class="ot">&lt;-</span> <span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.1</span> <span class="sc">-</span> <span class="dv">4000</span></span>
-<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>m46 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.1</span> <span class="sc">-</span> <span class="dv">4000</span></span>
-<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>tabla_decision2 <span class="ot">&lt;-</span> <span class="fu">crea.tablaX</span>(<span class="fu">c</span>(m11, m12, m13, m14, m15, m16,</span>
-<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>                      m21, m22, m23, m24, m25, m26,</span>
-<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>                      m31, m32, m33, m34, m35, m36,</span>
-<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>                      m41, m42, m43, m44, m45, m46),</span>
-<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a>                      <span class="at">numalternativas =</span> <span class="dv">4</span>,</span>
-<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a>                      <span class="at">numestados =</span> <span class="dv">6</span>,</span>
-<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a>                      <span class="at">nb_alternativas =</span> <span class="fu">c</span>(<span class="st">"Pagar hipoteca"</span>,</span>
-<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">"Aquirir piso"</span>,</span>
-<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">"Invertir fondo"</span>,</span>
-<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">"Invertir franquicia"</span>),</span>
-<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a>                      <span class="at">nb_estados =</span> <span class="fu">c</span>(<span class="st">"Regulación alquileres"</span>,</span>
-<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"No regulación alquileres"</span>,</span>
-<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"Bolsa sube"</span>,</span>
-<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"Bolsa baja"</span>,</span>
-<span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"Acierta ubicación"</span>,</span>
-<span id="cb22-41"><a href="#cb22-41" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"Falla ubicación"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>m11 <span class="ot">&lt;-</span> <span class="dv">4000</span> <span class="sc">+</span> <span class="dv">30000</span> <span class="sc">*</span> <span class="fl">0.02</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>m12 <span class="ot">&lt;-</span> <span class="dv">4000</span> <span class="sc">+</span> <span class="dv">30000</span> <span class="sc">*</span> <span class="fl">0.02</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>m21 <span class="ot">&lt;-</span> <span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.06</span> <span class="sc">-</span> <span class="dv">4000</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>m22 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.01</span> <span class="sc">-</span> <span class="dv">4000</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>m31 <span class="ot">&lt;-</span> <span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.07</span> <span class="sc">-</span> <span class="dv">4000</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>m32 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.08</span> <span class="sc">-</span> <span class="dv">4000</span></span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>m41 <span class="ot">&lt;-</span> <span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.1</span> <span class="sc">-</span> <span class="dv">4000</span></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>m42 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.1</span> <span class="sc">-</span> <span class="dv">4000</span></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>tabla_decision2 <span class="ot">&lt;-</span> <span class="fu">crea.tablaX</span>(<span class="fu">c</span>(m11, m12,</span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>                      m21, m22,</span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>                      m31, m32,</span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>                      m41, m42),</span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>                      <span class="at">numalternativas =</span> <span class="dv">4</span>,</span>
-<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>                      <span class="at">numestados =</span> <span class="dv">2</span>,</span>
-<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>                      <span class="at">nb_alternativas =</span> <span class="fu">c</span>(<span class="st">"Pagar hipoteca"</span>,</span>
-<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">"Aquirir piso"</span>,</span>
-<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">"Invertir fondo"</span>,</span>
-<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">"Invertir franquicia"</span>),</span>
-<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>                      <span class="at">nb_estados =</span> <span class="fu">c</span>(<span class="st">"Inversión exitosa"</span>,</span>
-<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"Inversión fallida"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>resultado2 <span class="ot">&lt;-</span> <span class="fu">criterio.Todos</span>(tabla_decision2, <span class="at">alfa =</span> <span class="fl">0.5</span>, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(resultado2)</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">crea_tabla_estilo</span>(res, <span class="at">nombresfila =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>m21 <span class="ot">&lt;-</span> <span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.06</span> <span class="sc">-</span> <span class="dv">4000</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>m22 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.01</span> <span class="sc">-</span> <span class="dv">4000</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>m31 <span class="ot">&lt;-</span> <span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.07</span> <span class="sc">-</span> <span class="dv">4000</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>m32 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.08</span> <span class="sc">-</span> <span class="dv">4000</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>m41 <span class="ot">&lt;-</span> <span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.1</span> <span class="sc">-</span> <span class="dv">4000</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>m42 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">200000</span> <span class="sc">*</span> <span class="fl">0.1</span> <span class="sc">-</span> <span class="dv">4000</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>matriz_datos_2 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(m11, m12,</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>                      m21, m22,</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>                      m31, m32,</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>                      m41, m42),</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>                    <span class="at">nrow =</span> <span class="dv">4</span>,</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>                    <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>tabla_datos_2 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(matriz_datos_2)</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tabla_datos_2) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Inversión exitosa"</span>, <span class="st">"Inversión fallida"</span>)</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(tabla_datos_2) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Pagar hipoteca"</span>,</span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Aquirir piso"</span>,</span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Invertir fondo"</span>,</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Invertir franquicia"</span>)</span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a><span class="fu">crea_tabla_estilo</span>(tabla_datos_2, <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <!-- preamble start -->
 
@@ -973,21 +982,21 @@ window.Quarto = {
 
     <script>
       // Create table-specific functions using external factory
-      const tableFns_fqepvv9ou00ndpgxleuf = TinyTable.createTableFunctions("tinytable_fqepvv9ou00ndpgxleuf");
+      const tableFns_11xnxxwcycv8seh2642b = TinyTable.createTableFunctions("tinytable_11xnxxwcycv8seh2642b");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '1', j: 10 }, { i: '2', j: 10 }, { i: '3', j: 10 }, { i: '4', j: 10 }, { i: '5', j: 10 } ], css_id: 'tinytable_css_ua0ck3wlglfv1u304svv',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '1', j: 3 }, { i: '1', j: 4 }, { i: '1', j: 5 }, { i: '1', j: 6 }, { i: '1', j: 7 }, { i: '1', j: 8 }, { i: '1', j: 9 }, { i: '2', j: 1 }, { i: '2', j: 2 }, { i: '2', j: 3 }, { i: '2', j: 4 }, { i: '2', j: 5 }, { i: '2', j: 6 }, { i: '2', j: 7 }, { i: '2', j: 8 }, { i: '2', j: 9 }, { i: '3', j: 1 }, { i: '3', j: 2 }, { i: '3', j: 3 }, { i: '3', j: 4 }, { i: '3', j: 5 }, { i: '3', j: 6 }, { i: '3', j: 7 }, { i: '3', j: 8 }, { i: '3', j: 9 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '4', j: 3 }, { i: '4', j: 4 }, { i: '4', j: 5 }, { i: '4', j: 6 }, { i: '4', j: 7 }, { i: '4', j: 8 }, { i: '4', j: 9 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 }, { i: '5', j: 4 }, { i: '5', j: 5 }, { i: '5', j: 6 }, { i: '5', j: 7 }, { i: '5', j: 8 }, { i: '5', j: 9 } ], css_id: 'tinytable_css_681p1awpfr9opm27figb',}, 
-          { positions: [ { i: '0', j: 10 } ], css_id: 'tinytable_css_8xid59606yxsv3a7dl0q',}, 
-          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 }, { i: '0', j: 6 }, { i: '0', j: 7 }, { i: '0', j: 8 }, { i: '0', j: 9 } ], css_id: 'tinytable_css_u8qot7l7d2o5zdo2231b',}, 
+          { positions: [ { i: '1', j: 3 }, { i: '2', j: 3 }, { i: '3', j: 3 }, { i: '4', j: 3 } ], css_id: 'tinytable_css_ge7jzxescdz6bdzpzw54',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '2', j: 1 }, { i: '2', j: 2 }, { i: '3', j: 1 }, { i: '3', j: 2 }, { i: '4', j: 1 }, { i: '4', j: 2 } ], css_id: 'tinytable_css_ilqwqnfu3sz8mqo458mq',}, 
+          { positions: [ { i: '0', j: 3 } ], css_id: 'tinytable_css_te74yrs2mf9vdo7up4nb',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 } ], css_id: 'tinytable_css_6fa53o9m6yd54jew30sg',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  tableFns_fqepvv9ou00ndpgxleuf.styleCell(cell.i, cell.j, group.css_id);
+                  tableFns_11xnxxwcycv8seh2642b.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -996,13 +1005,110 @@ window.Quarto = {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
     /* tinytable css entries after */
-    #tinytable_fqepvv9ou00ndpgxleuf td.tinytable_css_ua0ck3wlglfv1u304svv, #tinytable_fqepvv9ou00ndpgxleuf th.tinytable_css_ua0ck3wlglfv1u304svv {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_fqepvv9ou00ndpgxleuf td.tinytable_css_681p1awpfr9opm27figb, #tinytable_fqepvv9ou00ndpgxleuf th.tinytable_css_681p1awpfr9opm27figb {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_fqepvv9ou00ndpgxleuf td.tinytable_css_8xid59606yxsv3a7dl0q, #tinytable_fqepvv9ou00ndpgxleuf th.tinytable_css_8xid59606yxsv3a7dl0q {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
-    #tinytable_fqepvv9ou00ndpgxleuf td.tinytable_css_u8qot7l7d2o5zdo2231b, #tinytable_fqepvv9ou00ndpgxleuf th.tinytable_css_u8qot7l7d2o5zdo2231b {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_11xnxxwcycv8seh2642b td.tinytable_css_ge7jzxescdz6bdzpzw54, #tinytable_11xnxxwcycv8seh2642b th.tinytable_css_ge7jzxescdz6bdzpzw54 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_11xnxxwcycv8seh2642b td.tinytable_css_ilqwqnfu3sz8mqo458mq, #tinytable_11xnxxwcycv8seh2642b th.tinytable_css_ilqwqnfu3sz8mqo458mq {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_11xnxxwcycv8seh2642b td.tinytable_css_te74yrs2mf9vdo7up4nb, #tinytable_11xnxxwcycv8seh2642b th.tinytable_css_te74yrs2mf9vdo7up4nb {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_11xnxxwcycv8seh2642b td.tinytable_css_6fa53o9m6yd54jew30sg, #tinytable_11xnxxwcycv8seh2642b th.tinytable_css_6fa53o9m6yd54jew30sg {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
     </style>
     <div class="container">
-      <table class="tinytable" id="tinytable_fqepvv9ou00ndpgxleuf" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="tinytable" id="tinytable_11xnxxwcycv8seh2642b" style="table-layout: fixed; width: 100% !important; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        
+        <thead>
+              <tr>
+                <th scope="col" data-row="0" data-col="1"></th>
+                <th scope="col" data-row="0" data-col="2">Inversión exitosa</th>
+                <th scope="col" data-row="0" data-col="3">Inversión fallida</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td data-row="1" data-col="1">Pagar hipoteca</td>
+                  <td data-row="1" data-col="2">4600</td>
+                  <td data-row="1" data-col="3">4600</td>
+                </tr>
+                <tr>
+                  <td data-row="2" data-col="1">Aquirir piso</td>
+                  <td data-row="2" data-col="2">8000</td>
+                  <td data-row="2" data-col="3">-6000</td>
+                </tr>
+                <tr>
+                  <td data-row="3" data-col="1">Invertir fondo</td>
+                  <td data-row="3" data-col="2">10000</td>
+                  <td data-row="3" data-col="3">-20000</td>
+                </tr>
+                <tr>
+                  <td data-row="4" data-col="1">Invertir franquicia</td>
+                  <td data-row="4" data-col="2">16000</td>
+                  <td data-row="4" data-col="3">-24000</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir la tabla de decisión</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>tabla_decision2 <span class="ot">&lt;-</span> <span class="fu">crea.tablaX</span>(<span class="fu">c</span>(m11, m12,</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>                      m21, m22,</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>                      m31, m32,</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>                      m41, m42),</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">numalternativas =</span> <span class="dv">4</span>,</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>                      <span class="at">numestados =</span> <span class="dv">2</span>,</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>                      <span class="at">nb_alternativas =</span> <span class="fu">c</span>(<span class="st">"Pagar hipoteca"</span>,</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">"Aquirir piso"</span>,</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">"Invertir fondo"</span>,</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">"Invertir franquicia"</span>),</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>                      <span class="at">nb_estados =</span> <span class="fu">c</span>(<span class="st">"Inversión exitosa"</span>,</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"Inversión fallida"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="resolución-del-problema" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="resolución-del-problema"><span class="header-section-number">2.2</span> Resolución del problema</h3>
+<p>En la siguiente tabla se muestran los resultados de aplicar todos los criterios de decisión bajo incertidumbre para el caso favorable.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>resultado2 <span class="ot">&lt;-</span> <span class="fu">criterio.Todos</span>(tabla_decision2, <span class="at">alfa =</span> <span class="fl">0.5</span>, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(resultado2)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">crea_tabla_estilo</span>(res, <span class="at">nombresfila =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<!-- preamble start -->
+
+    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
+
+    <script>
+      // Create table-specific functions using external factory
+      const tableFns_ngkd1yibfx6pctt2qxlx = TinyTable.createTableFunctions("tinytable_ngkd1yibfx6pctt2qxlx");
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: '1', j: 10 }, { i: '2', j: 10 }, { i: '3', j: 10 }, { i: '4', j: 10 }, { i: '5', j: 10 } ], css_id: 'tinytable_css_nok91kwe5tsblqr4moy0',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '1', j: 3 }, { i: '1', j: 4 }, { i: '1', j: 5 }, { i: '1', j: 6 }, { i: '1', j: 7 }, { i: '1', j: 8 }, { i: '1', j: 9 }, { i: '2', j: 1 }, { i: '2', j: 2 }, { i: '2', j: 3 }, { i: '2', j: 4 }, { i: '2', j: 5 }, { i: '2', j: 6 }, { i: '2', j: 7 }, { i: '2', j: 8 }, { i: '2', j: 9 }, { i: '3', j: 1 }, { i: '3', j: 2 }, { i: '3', j: 3 }, { i: '3', j: 4 }, { i: '3', j: 5 }, { i: '3', j: 6 }, { i: '3', j: 7 }, { i: '3', j: 8 }, { i: '3', j: 9 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '4', j: 3 }, { i: '4', j: 4 }, { i: '4', j: 5 }, { i: '4', j: 6 }, { i: '4', j: 7 }, { i: '4', j: 8 }, { i: '4', j: 9 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 }, { i: '5', j: 4 }, { i: '5', j: 5 }, { i: '5', j: 6 }, { i: '5', j: 7 }, { i: '5', j: 8 }, { i: '5', j: 9 } ], css_id: 'tinytable_css_vrr5axxf25jgf8lyzu2j',}, 
+          { positions: [ { i: '0', j: 10 } ], css_id: 'tinytable_css_9gyre22c4hcz1tgtcdsl',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 }, { i: '0', j: 6 }, { i: '0', j: 7 }, { i: '0', j: 8 }, { i: '0', j: 9 } ], css_id: 'tinytable_css_pnn85svdwhxlm7hfx6h2',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  tableFns_ngkd1yibfx6pctt2qxlx.styleCell(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
+    <style>
+    /* tinytable css entries after */
+    #tinytable_ngkd1yibfx6pctt2qxlx td.tinytable_css_nok91kwe5tsblqr4moy0, #tinytable_ngkd1yibfx6pctt2qxlx th.tinytable_css_nok91kwe5tsblqr4moy0 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_ngkd1yibfx6pctt2qxlx td.tinytable_css_vrr5axxf25jgf8lyzu2j, #tinytable_ngkd1yibfx6pctt2qxlx th.tinytable_css_vrr5axxf25jgf8lyzu2j {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_ngkd1yibfx6pctt2qxlx td.tinytable_css_9gyre22c4hcz1tgtcdsl, #tinytable_ngkd1yibfx6pctt2qxlx th.tinytable_css_9gyre22c4hcz1tgtcdsl {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_ngkd1yibfx6pctt2qxlx td.tinytable_css_pnn85svdwhxlm7hfx6h2, #tinytable_ngkd1yibfx6pctt2qxlx th.tinytable_css_pnn85svdwhxlm7hfx6h2 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    </style>
+    <div class="container">
+      <table class="tinytable" id="tinytable_ngkd1yibfx6pctt2qxlx" style="table-layout: fixed; width: 100% !important; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         
         <thead>
               <tr>
@@ -1086,6 +1192,20 @@ window.Quarto = {
 <!-- hack to avoid NA insertion in last line -->
 </div>
 </div>
+<p>Observamos que para 4 de los 6 criterios la alternativa óptima es “Pagar hipoteca”, siendo las otras dos alternativas óptimas “Invertir en una franquicia” para el criterio optimista y “Adquirir un piso” para el criterio de Hurwicz.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Decisión final
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Se va a optar por la alternativa “Pagar hipoteca” ya que es la que más veces aparece como óptima y además es la opción más segura, ya que las demás alternativas conllevan un riesgo mayor de pérdida económica.</p>
+</div>
+</div>
 </section>
 </section>
 
@@ -1116,12 +1236,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Copiado");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Copiado");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
