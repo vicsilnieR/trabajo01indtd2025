@@ -18,8 +18,6 @@ format:
     include-before-body: toc-sep.typ
     code-fold: false
     brand: _brand.yml
-    fig-align: center
-    tbl-align: center
 lang: es
 ---
 

@@ -199,15 +199,16 @@ window.Quarto = {
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rownames</span>(tabla) <span class="ot">&lt;-</span> <span class="cn">NULL</span> </span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  t <span class="ot">&lt;-</span> <span class="fu">tt</span>(tabla, <span class="at">theme =</span> <span class="st">"empty"</span>, <span class="at">width =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">style_tt</span>(<span class="at">j =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(tabla), <span class="at">align =</span> <span class="fu">crea_vector_posiciones_tabla</span>(<span class="fu">ncol</span>(tabla)), <span class="at">alignv =</span> <span class="st">"m"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">style_tt</span>(<span class="at">i =</span> <span class="dv">0</span>, <span class="at">line =</span> <span class="st">"b"</span>, <span class="at">line_color =</span> colores[<span class="dv">2</span>], <span class="at">line_width =</span> <span class="fl">0.2</span>,</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">background =</span> colores[<span class="dv">5</span>], <span class="at">color =</span> colores[<span class="dv">3</span>]) <span class="sc">|&gt;</span> </span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">style_tt</span>(<span class="at">i =</span> <span class="dv">0</span>, <span class="at">line =</span> <span class="st">"t"</span>, <span class="at">line_color =</span> colores[<span class="dv">1</span>], <span class="at">line_width =</span> <span class="fl">0.1</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">style_tt</span>(<span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(tabla), <span class="at">line =</span> <span class="st">"b"</span>, <span class="at">line_color =</span> colores[<span class="dv">1</span>], <span class="at">line_width =</span> <span class="fl">0.1</span>) <span class="sc">|&gt;</span> <span class="fu">style_tt</span>(<span class="at">j =</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">ncol</span>(tabla)<span class="sc">-</span><span class="dv">1</span>), <span class="at">line =</span> <span class="st">"r"</span>, <span class="at">line_color =</span> colores[<span class="dv">1</span>], <span class="at">line_width =</span> <span class="fl">0.1</span>)</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(t)</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  t <span class="ot">&lt;-</span> <span class="fu">tt</span>(tabla, <span class="at">theme =</span> <span class="st">"empty"</span>, <span class="at">width=</span><span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">format_tt</span>(<span class="at">quarto=</span><span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">style_tt</span>(<span class="at">j =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(tabla), <span class="at">align =</span> <span class="fu">crea_vector_posiciones_tabla</span>(<span class="fu">ncol</span>(tabla)), <span class="at">alignv =</span> <span class="st">"m"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">style_tt</span>(<span class="at">i =</span> <span class="dv">0</span>, <span class="at">line =</span> <span class="st">"b"</span>, <span class="at">line_color =</span> colores[<span class="dv">2</span>], <span class="at">line_width =</span> <span class="fl">0.2</span>,</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">background =</span> colores[<span class="dv">5</span>], <span class="at">color =</span> colores[<span class="dv">3</span>]) <span class="sc">|&gt;</span> </span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">style_tt</span>(<span class="at">i =</span> <span class="dv">0</span>, <span class="at">line =</span> <span class="st">"t"</span>, <span class="at">line_color =</span> colores[<span class="dv">1</span>], <span class="at">line_width =</span> <span class="fl">0.1</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">style_tt</span>(<span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(tabla), <span class="at">line =</span> <span class="st">"b"</span>, <span class="at">line_color =</span> colores[<span class="dv">1</span>], <span class="at">line_width =</span> <span class="fl">0.1</span>) <span class="sc">|&gt;</span> <span class="fu">style_tt</span>(<span class="at">j =</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">ncol</span>(tabla)<span class="sc">-</span><span class="dv">1</span>), <span class="at">line =</span> <span class="st">"r"</span>, <span class="at">line_color =</span> colores[<span class="dv">1</span>], <span class="at">line_width =</span> <span class="fl">0.1</span>)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(t)</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="problema-1" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="problema-1"><span class="header-section-number">1</span> Problema 1</h2>
@@ -231,21 +232,21 @@ window.Quarto = {
 
     <script>
       // Create table-specific functions using external factory
-      const tableFns_3x9yv6x86duqyqirfe8d = TinyTable.createTableFunctions("tinytable_3x9yv6x86duqyqirfe8d");
+      const tableFns_gdbfgnjlrnqi2v2u0i7l = TinyTable.createTableFunctions("tinytable_gdbfgnjlrnqi2v2u0i7l");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '1', j: 5 }, { i: '2', j: 5 }, { i: '3', j: 5 }, { i: '4', j: 5 }, { i: '5', j: 5 } ], css_id: 'tinytable_css_y3i8q9vx8tntnjtiyqaq',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '1', j: 3 }, { i: '1', j: 4 }, { i: '2', j: 1 }, { i: '2', j: 2 }, { i: '2', j: 3 }, { i: '2', j: 4 }, { i: '3', j: 1 }, { i: '3', j: 2 }, { i: '3', j: 3 }, { i: '3', j: 4 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '4', j: 3 }, { i: '4', j: 4 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 }, { i: '5', j: 4 } ], css_id: 'tinytable_css_eu6jyihn63v1d7zf6io8',}, 
-          { positions: [ { i: '0', j: 5 } ], css_id: 'tinytable_css_nnfe35olrbx9kwyjlwyx',}, 
-          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 } ], css_id: 'tinytable_css_l4cm106ug3tduo7o85j4',}, 
+          { positions: [ { i: '1', j: 5 }, { i: '2', j: 5 }, { i: '3', j: 5 }, { i: '4', j: 5 }, { i: '5', j: 5 } ], css_id: 'tinytable_css_od337prqjxusey8qhr7o',}, 
+          { positions: [ { i: '0', j: 5 } ], css_id: 'tinytable_css_a2gn85d2b3ne8ltdae16',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '1', j: 3 }, { i: '2', j: 3 }, { i: '3', j: 3 }, { i: '4', j: 3 }, { i: '5', j: 3 }, { i: '1', j: 4 }, { i: '2', j: 4 }, { i: '3', j: 4 }, { i: '4', j: 4 }, { i: '5', j: 4 } ], css_id: 'tinytable_css_u11epdp8mc81dj2j3vsi',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 } ], css_id: 'tinytable_css_9barntgptvrkc1hxkdy4',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  tableFns_3x9yv6x86duqyqirfe8d.styleCell(cell.i, cell.j, group.css_id);
+                  tableFns_gdbfgnjlrnqi2v2u0i7l.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -254,62 +255,62 @@ window.Quarto = {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
     /* tinytable css entries after */
-    #tinytable_3x9yv6x86duqyqirfe8d td.tinytable_css_y3i8q9vx8tntnjtiyqaq, #tinytable_3x9yv6x86duqyqirfe8d th.tinytable_css_y3i8q9vx8tntnjtiyqaq {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_3x9yv6x86duqyqirfe8d td.tinytable_css_eu6jyihn63v1d7zf6io8, #tinytable_3x9yv6x86duqyqirfe8d th.tinytable_css_eu6jyihn63v1d7zf6io8 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_3x9yv6x86duqyqirfe8d td.tinytable_css_nnfe35olrbx9kwyjlwyx, #tinytable_3x9yv6x86duqyqirfe8d th.tinytable_css_nnfe35olrbx9kwyjlwyx {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
-    #tinytable_3x9yv6x86duqyqirfe8d td.tinytable_css_l4cm106ug3tduo7o85j4, #tinytable_3x9yv6x86duqyqirfe8d th.tinytable_css_l4cm106ug3tduo7o85j4 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_gdbfgnjlrnqi2v2u0i7l td.tinytable_css_od337prqjxusey8qhr7o, #tinytable_gdbfgnjlrnqi2v2u0i7l th.tinytable_css_od337prqjxusey8qhr7o {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_gdbfgnjlrnqi2v2u0i7l td.tinytable_css_a2gn85d2b3ne8ltdae16, #tinytable_gdbfgnjlrnqi2v2u0i7l th.tinytable_css_a2gn85d2b3ne8ltdae16 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_gdbfgnjlrnqi2v2u0i7l td.tinytable_css_u11epdp8mc81dj2j3vsi, #tinytable_gdbfgnjlrnqi2v2u0i7l th.tinytable_css_u11epdp8mc81dj2j3vsi {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_gdbfgnjlrnqi2v2u0i7l td.tinytable_css_9barntgptvrkc1hxkdy4, #tinytable_gdbfgnjlrnqi2v2u0i7l th.tinytable_css_9barntgptvrkc1hxkdy4 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
     </style>
     <div class="container">
-      <table class="tinytable" id="tinytable_3x9yv6x86duqyqirfe8d" style="table-layout: fixed; width: 100% !important; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
-        
-        <thead>
-              <tr>
-                <th scope="col" data-row="0" data-col="1"></th>
-                <th scope="col" data-row="0" data-col="2">ω1</th>
-                <th scope="col" data-row="0" data-col="3">ω2</th>
-                <th scope="col" data-row="0" data-col="4">ω3</th>
-                <th scope="col" data-row="0" data-col="5">ω4</th>
-              </tr>
-        </thead>
-        
-        <tbody>
-                <tr>
-                  <td data-row="1" data-col="1">a1</td>
-                  <td data-row="1" data-col="2">5</td>
-                  <td data-row="1" data-col="3">15</td>
-                  <td data-row="1" data-col="4">8</td>
-                  <td data-row="1" data-col="5">18</td>
-                </tr>
-                <tr>
-                  <td data-row="2" data-col="1">a2</td>
-                  <td data-row="2" data-col="2">7</td>
-                  <td data-row="2" data-col="3">13</td>
-                  <td data-row="2" data-col="4">14</td>
-                  <td data-row="2" data-col="5">20</td>
-                </tr>
-                <tr>
-                  <td data-row="3" data-col="1">a3</td>
-                  <td data-row="3" data-col="2">6</td>
-                  <td data-row="3" data-col="3">17</td>
-                  <td data-row="3" data-col="4">11</td>
-                  <td data-row="3" data-col="5">17</td>
-                </tr>
-                <tr>
-                  <td data-row="4" data-col="1">a4</td>
-                  <td data-row="4" data-col="2">4</td>
-                  <td data-row="4" data-col="3">14</td>
-                  <td data-row="4" data-col="4">16</td>
-                  <td data-row="4" data-col="5">16</td>
-                </tr>
-                <tr>
-                  <td data-row="5" data-col="1">a5</td>
-                  <td data-row="5" data-col="2">10</td>
-                  <td data-row="5" data-col="3">10</td>
-                  <td data-row="5" data-col="4">13</td>
-                  <td data-row="5" data-col="5">15</td>
-                </tr>
-        </tbody>
-      </table>
+      
+<table id="tinytable_gdbfgnjlrnqi2v2u0i7l" class="tinytable caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="1"></th>
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="2">ω1</th>
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="3">ω2</th>
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="4">ω3</th>
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="5">ω4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-row="1" data-col="1">a1</td>
+<td data-row="1" data-col="2">5</td>
+<td data-row="1" data-col="3">15</td>
+<td data-row="1" data-col="4">8</td>
+<td data-row="1" data-col="5">18</td>
+</tr>
+<tr class="even">
+<td data-row="2" data-col="1">a2</td>
+<td data-row="2" data-col="2">7</td>
+<td data-row="2" data-col="3">13</td>
+<td data-row="2" data-col="4">14</td>
+<td data-row="2" data-col="5">20</td>
+</tr>
+<tr class="odd">
+<td data-row="3" data-col="1">a3</td>
+<td data-row="3" data-col="2">6</td>
+<td data-row="3" data-col="3">17</td>
+<td data-row="3" data-col="4">11</td>
+<td data-row="3" data-col="5">17</td>
+</tr>
+<tr class="even">
+<td data-row="4" data-col="1">a4</td>
+<td data-row="4" data-col="2">4</td>
+<td data-row="4" data-col="3">14</td>
+<td data-row="4" data-col="4">16</td>
+<td data-row="4" data-col="5">16</td>
+</tr>
+<tr class="odd">
+<td data-row="5" data-col="1">a5</td>
+<td data-row="5" data-col="2">10</td>
+<td data-row="5" data-col="3">10</td>
+<td data-row="5" data-col="4">13</td>
+<td data-row="5" data-col="5">15</td>
+</tr>
+</tbody>
+</table>
+
     </div>
 <!-- hack to avoid NA insertion in last line -->
 </div>
@@ -364,21 +365,21 @@ window.Quarto = {
 
     <script>
       // Create table-specific functions using external factory
-      const tableFns_m230v4c4gz14xdcgavni = TinyTable.createTableFunctions("tinytable_m230v4c4gz14xdcgavni");
+      const tableFns_r0fhiluqm59xdfsl03py = TinyTable.createTableFunctions("tinytable_r0fhiluqm59xdfsl03py");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '1', j: 3 }, { i: '10', j: 3 }, { i: '11', j: 3 }, { i: '2', j: 3 }, { i: '3', j: 3 }, { i: '4', j: 3 }, { i: '5', j: 3 }, { i: '6', j: 3 }, { i: '7', j: 3 }, { i: '8', j: 3 }, { i: '9', j: 3 } ], css_id: 'tinytable_css_nen3a1duo20ikx4yo12c',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '10', j: 1 }, { i: '10', j: 2 }, { i: '11', j: 1 }, { i: '11', j: 2 }, { i: '2', j: 1 }, { i: '2', j: 2 }, { i: '3', j: 1 }, { i: '3', j: 2 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '6', j: 1 }, { i: '6', j: 2 }, { i: '7', j: 1 }, { i: '7', j: 2 }, { i: '8', j: 1 }, { i: '8', j: 2 }, { i: '9', j: 1 }, { i: '9', j: 2 } ], css_id: 'tinytable_css_u6gb54kxuttvbyltgkgi',}, 
-          { positions: [ { i: '0', j: 3 } ], css_id: 'tinytable_css_1i77r9le0h9pv7finz64',}, 
-          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 } ], css_id: 'tinytable_css_69t2gqu05qbdtrshc8nq',}, 
+          { positions: [ { i: '1', j: 3 }, { i: '2', j: 3 }, { i: '3', j: 3 }, { i: '4', j: 3 }, { i: '5', j: 3 }, { i: '6', j: 3 }, { i: '7', j: 3 }, { i: '8', j: 3 }, { i: '9', j: 3 }, { i: '10', j: 3 }, { i: '11', j: 3 } ], css_id: 'tinytable_css_m26bzf8buc17ezar52lx',}, 
+          { positions: [ { i: '0', j: 3 } ], css_id: 'tinytable_css_j78uzysku4ih7gr7960h',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 }, { i: '7', j: 1 }, { i: '8', j: 1 }, { i: '9', j: 1 }, { i: '10', j: 1 }, { i: '11', j: 1 }, { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 }, { i: '7', j: 2 }, { i: '8', j: 2 }, { i: '9', j: 2 }, { i: '10', j: 2 }, { i: '11', j: 2 } ], css_id: 'tinytable_css_hycy6r1nj3vhg8owai9s',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 } ], css_id: 'tinytable_css_t95emxj5tj6lbv3lc2jx',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  tableFns_m230v4c4gz14xdcgavni.styleCell(cell.i, cell.j, group.css_id);
+                  tableFns_r0fhiluqm59xdfsl03py.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -387,80 +388,80 @@ window.Quarto = {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
     /* tinytable css entries after */
-    #tinytable_m230v4c4gz14xdcgavni td.tinytable_css_nen3a1duo20ikx4yo12c, #tinytable_m230v4c4gz14xdcgavni th.tinytable_css_nen3a1duo20ikx4yo12c {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_m230v4c4gz14xdcgavni td.tinytable_css_u6gb54kxuttvbyltgkgi, #tinytable_m230v4c4gz14xdcgavni th.tinytable_css_u6gb54kxuttvbyltgkgi {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_m230v4c4gz14xdcgavni td.tinytable_css_1i77r9le0h9pv7finz64, #tinytable_m230v4c4gz14xdcgavni th.tinytable_css_1i77r9le0h9pv7finz64 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
-    #tinytable_m230v4c4gz14xdcgavni td.tinytable_css_69t2gqu05qbdtrshc8nq, #tinytable_m230v4c4gz14xdcgavni th.tinytable_css_69t2gqu05qbdtrshc8nq {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_r0fhiluqm59xdfsl03py td.tinytable_css_m26bzf8buc17ezar52lx, #tinytable_r0fhiluqm59xdfsl03py th.tinytable_css_m26bzf8buc17ezar52lx {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_r0fhiluqm59xdfsl03py td.tinytable_css_j78uzysku4ih7gr7960h, #tinytable_r0fhiluqm59xdfsl03py th.tinytable_css_j78uzysku4ih7gr7960h {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_r0fhiluqm59xdfsl03py td.tinytable_css_hycy6r1nj3vhg8owai9s, #tinytable_r0fhiluqm59xdfsl03py th.tinytable_css_hycy6r1nj3vhg8owai9s {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_r0fhiluqm59xdfsl03py td.tinytable_css_t95emxj5tj6lbv3lc2jx, #tinytable_r0fhiluqm59xdfsl03py th.tinytable_css_t95emxj5tj6lbv3lc2jx {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
     </style>
     <div class="container">
-      <table class="tinytable" id="tinytable_m230v4c4gz14xdcgavni" style="table-layout: fixed; width: 100% !important; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
-        
-        <thead>
-              <tr>
-                <th scope="col" data-row="0" data-col="1">Alfa</th>
-                <th scope="col" data-row="0" data-col="2">Alternativa óptima</th>
-                <th scope="col" data-row="0" data-col="3">Valor óptimo</th>
-              </tr>
-        </thead>
-        
-        <tbody>
-                <tr>
-                  <td data-row="1" data-col="1">0.0</td>
-                  <td data-row="1" data-col="2">5</td>
-                  <td data-row="1" data-col="3">10.0</td>
-                </tr>
-                <tr>
-                  <td data-row="2" data-col="1">0.1</td>
-                  <td data-row="2" data-col="2">5</td>
-                  <td data-row="2" data-col="3">10.5</td>
-                </tr>
-                <tr>
-                  <td data-row="3" data-col="1">0.2</td>
-                  <td data-row="3" data-col="2">5</td>
-                  <td data-row="3" data-col="3">11.0</td>
-                </tr>
-                <tr>
-                  <td data-row="4" data-col="1">0.3</td>
-                  <td data-row="4" data-col="2">5</td>
-                  <td data-row="4" data-col="3">11.5</td>
-                </tr>
-                <tr>
-                  <td data-row="5" data-col="1">0.4</td>
-                  <td data-row="5" data-col="2">2</td>
-                  <td data-row="5" data-col="3">12.2</td>
-                </tr>
-                <tr>
-                  <td data-row="6" data-col="1">0.5</td>
-                  <td data-row="6" data-col="2">2</td>
-                  <td data-row="6" data-col="3">13.5</td>
-                </tr>
-                <tr>
-                  <td data-row="7" data-col="1">0.6</td>
-                  <td data-row="7" data-col="2">2</td>
-                  <td data-row="7" data-col="3">14.8</td>
-                </tr>
-                <tr>
-                  <td data-row="8" data-col="1">0.7</td>
-                  <td data-row="8" data-col="2">2</td>
-                  <td data-row="8" data-col="3">16.1</td>
-                </tr>
-                <tr>
-                  <td data-row="9" data-col="1">0.8</td>
-                  <td data-row="9" data-col="2">2</td>
-                  <td data-row="9" data-col="3">17.4</td>
-                </tr>
-                <tr>
-                  <td data-row="10" data-col="1">0.9</td>
-                  <td data-row="10" data-col="2">2</td>
-                  <td data-row="10" data-col="3">18.7</td>
-                </tr>
-                <tr>
-                  <td data-row="11" data-col="1">1.0</td>
-                  <td data-row="11" data-col="2">2</td>
-                  <td data-row="11" data-col="3">20.0</td>
-                </tr>
-        </tbody>
-      </table>
+      
+<table id="tinytable_r0fhiluqm59xdfsl03py" class="tinytable caption-top table" data-quarto-postprocess="true" data-quarto-disable-processing="false">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="1">Alfa</th>
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="2">Alternativa óptima</th>
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="3">Valor óptimo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-row="1" data-col="1">0.0</td>
+<td data-row="1" data-col="2">5</td>
+<td data-row="1" data-col="3">10.0</td>
+</tr>
+<tr class="even">
+<td data-row="2" data-col="1">0.1</td>
+<td data-row="2" data-col="2">5</td>
+<td data-row="2" data-col="3">10.5</td>
+</tr>
+<tr class="odd">
+<td data-row="3" data-col="1">0.2</td>
+<td data-row="3" data-col="2">5</td>
+<td data-row="3" data-col="3">11.0</td>
+</tr>
+<tr class="even">
+<td data-row="4" data-col="1">0.3</td>
+<td data-row="4" data-col="2">5</td>
+<td data-row="4" data-col="3">11.5</td>
+</tr>
+<tr class="odd">
+<td data-row="5" data-col="1">0.4</td>
+<td data-row="5" data-col="2">2</td>
+<td data-row="5" data-col="3">12.2</td>
+</tr>
+<tr class="even">
+<td data-row="6" data-col="1">0.5</td>
+<td data-row="6" data-col="2">2</td>
+<td data-row="6" data-col="3">13.5</td>
+</tr>
+<tr class="odd">
+<td data-row="7" data-col="1">0.6</td>
+<td data-row="7" data-col="2">2</td>
+<td data-row="7" data-col="3">14.8</td>
+</tr>
+<tr class="even">
+<td data-row="8" data-col="1">0.7</td>
+<td data-row="8" data-col="2">2</td>
+<td data-row="8" data-col="3">16.1</td>
+</tr>
+<tr class="odd">
+<td data-row="9" data-col="1">0.8</td>
+<td data-row="9" data-col="2">2</td>
+<td data-row="9" data-col="3">17.4</td>
+</tr>
+<tr class="even">
+<td data-row="10" data-col="1">0.9</td>
+<td data-row="10" data-col="2">2</td>
+<td data-row="10" data-col="3">18.7</td>
+</tr>
+<tr class="odd">
+<td data-row="11" data-col="1">1.0</td>
+<td data-row="11" data-col="2">2</td>
+<td data-row="11" data-col="3">20.0</td>
+</tr>
+</tbody>
+</table>
+
     </div>
 <!-- hack to avoid NA insertion in last line -->
 <p>Y gráficamente:</p>
@@ -534,21 +535,21 @@ window.Quarto = {
 
     <script>
       // Create table-specific functions using external factory
-      const tableFns_z83hqpxblvjnu1v8zmy3 = TinyTable.createTableFunctions("tinytable_z83hqpxblvjnu1v8zmy3");
+      const tableFns_ha51gfvgc5lq5cf4sg7r = TinyTable.createTableFunctions("tinytable_ha51gfvgc5lq5cf4sg7r");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 } ], css_id: 'tinytable_css_vatku2tojq7ip9r5vrki',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 } ], css_id: 'tinytable_css_w48mcb75fmpeytvz0b35',}, 
-          { positions: [ { i: '0', j: 2 } ], css_id: 'tinytable_css_ndb8m6807ctv6r073ubm',}, 
-          { positions: [ { i: '0', j: 1 } ], css_id: 'tinytable_css_q9ap36ca1fcgxf70717a',}, 
+          { positions: [ { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 } ], css_id: 'tinytable_css_zgcn6ue2fc160libbuq4',}, 
+          { positions: [ { i: '0', j: 2 } ], css_id: 'tinytable_css_0ci3u929bvfloymz3v4x',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 } ], css_id: 'tinytable_css_hsfps42zknjm7ruk8yhs',}, 
+          { positions: [ { i: '0', j: 1 } ], css_id: 'tinytable_css_bvd5ttab6ze6tus1j1uk',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  tableFns_z83hqpxblvjnu1v8zmy3.styleCell(cell.i, cell.j, group.css_id);
+                  tableFns_ha51gfvgc5lq5cf4sg7r.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -557,48 +558,48 @@ window.Quarto = {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
     /* tinytable css entries after */
-    #tinytable_z83hqpxblvjnu1v8zmy3 td.tinytable_css_vatku2tojq7ip9r5vrki, #tinytable_z83hqpxblvjnu1v8zmy3 th.tinytable_css_vatku2tojq7ip9r5vrki {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_z83hqpxblvjnu1v8zmy3 td.tinytable_css_w48mcb75fmpeytvz0b35, #tinytable_z83hqpxblvjnu1v8zmy3 th.tinytable_css_w48mcb75fmpeytvz0b35 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_z83hqpxblvjnu1v8zmy3 td.tinytable_css_ndb8m6807ctv6r073ubm, #tinytable_z83hqpxblvjnu1v8zmy3 th.tinytable_css_ndb8m6807ctv6r073ubm {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
-    #tinytable_z83hqpxblvjnu1v8zmy3 td.tinytable_css_q9ap36ca1fcgxf70717a, #tinytable_z83hqpxblvjnu1v8zmy3 th.tinytable_css_q9ap36ca1fcgxf70717a {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_ha51gfvgc5lq5cf4sg7r td.tinytable_css_zgcn6ue2fc160libbuq4, #tinytable_ha51gfvgc5lq5cf4sg7r th.tinytable_css_zgcn6ue2fc160libbuq4 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_ha51gfvgc5lq5cf4sg7r td.tinytable_css_0ci3u929bvfloymz3v4x, #tinytable_ha51gfvgc5lq5cf4sg7r th.tinytable_css_0ci3u929bvfloymz3v4x {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_ha51gfvgc5lq5cf4sg7r td.tinytable_css_hsfps42zknjm7ruk8yhs, #tinytable_ha51gfvgc5lq5cf4sg7r th.tinytable_css_hsfps42zknjm7ruk8yhs {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_ha51gfvgc5lq5cf4sg7r td.tinytable_css_bvd5ttab6ze6tus1j1uk, #tinytable_ha51gfvgc5lq5cf4sg7r th.tinytable_css_bvd5ttab6ze6tus1j1uk {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
     </style>
     <div class="container">
-      <table class="tinytable" id="tinytable_z83hqpxblvjnu1v8zmy3" style="table-layout: fixed; width: 100% !important; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
-        
-        <thead>
-              <tr>
-                <th scope="col" data-row="0" data-col="1">Criterio</th>
-                <th scope="col" data-row="0" data-col="2">Alternativa óptima</th>
-              </tr>
-        </thead>
-        
-        <tbody>
-                <tr>
-                  <td data-row="1" data-col="1">Wald</td>
-                  <td data-row="1" data-col="2">5</td>
-                </tr>
-                <tr>
-                  <td data-row="2" data-col="1">Optimista</td>
-                  <td data-row="2" data-col="2">2</td>
-                </tr>
-                <tr>
-                  <td data-row="3" data-col="1">Hurwicz</td>
-                  <td data-row="3" data-col="2">2</td>
-                </tr>
-                <tr>
-                  <td data-row="4" data-col="1">Savage</td>
-                  <td data-row="4" data-col="2">2</td>
-                </tr>
-                <tr>
-                  <td data-row="5" data-col="1">Laplace</td>
-                  <td data-row="5" data-col="2">2</td>
-                </tr>
-                <tr>
-                  <td data-row="6" data-col="1">Punto Ideal</td>
-                  <td data-row="6" data-col="2">2</td>
-                </tr>
-        </tbody>
-      </table>
+      
+<table id="tinytable_ha51gfvgc5lq5cf4sg7r" class="tinytable caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="1">Criterio</th>
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="2">Alternativa óptima</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-row="1" data-col="1">Wald</td>
+<td data-row="1" data-col="2">5</td>
+</tr>
+<tr class="even">
+<td data-row="2" data-col="1">Optimista</td>
+<td data-row="2" data-col="2">2</td>
+</tr>
+<tr class="odd">
+<td data-row="3" data-col="1">Hurwicz</td>
+<td data-row="3" data-col="2">2</td>
+</tr>
+<tr class="even">
+<td data-row="4" data-col="1">Savage</td>
+<td data-row="4" data-col="2">2</td>
+</tr>
+<tr class="odd">
+<td data-row="5" data-col="1">Laplace</td>
+<td data-row="5" data-col="2">2</td>
+</tr>
+<tr class="even">
+<td data-row="6" data-col="1">Punto Ideal</td>
+<td data-row="6" data-col="2">2</td>
+</tr>
+</tbody>
+</table>
+
     </div>
 <!-- hack to avoid NA insertion in last line -->
 </div>
@@ -657,21 +658,21 @@ Decisión final
 
     <script>
       // Create table-specific functions using external factory
-      const tableFns_d6pqei5ljuqb44ct9ybq = TinyTable.createTableFunctions("tinytable_d6pqei5ljuqb44ct9ybq");
+      const tableFns_311wk9mrsgw9o5spc799 = TinyTable.createTableFunctions("tinytable_311wk9mrsgw9o5spc799");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '1', j: 3 }, { i: '10', j: 3 }, { i: '11', j: 3 }, { i: '2', j: 3 }, { i: '3', j: 3 }, { i: '4', j: 3 }, { i: '5', j: 3 }, { i: '6', j: 3 }, { i: '7', j: 3 }, { i: '8', j: 3 }, { i: '9', j: 3 } ], css_id: 'tinytable_css_7guqdoy4npawv3ua249p',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '10', j: 1 }, { i: '10', j: 2 }, { i: '11', j: 1 }, { i: '11', j: 2 }, { i: '2', j: 1 }, { i: '2', j: 2 }, { i: '3', j: 1 }, { i: '3', j: 2 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '6', j: 1 }, { i: '6', j: 2 }, { i: '7', j: 1 }, { i: '7', j: 2 }, { i: '8', j: 1 }, { i: '8', j: 2 }, { i: '9', j: 1 }, { i: '9', j: 2 } ], css_id: 'tinytable_css_pt1g6h11sslabcxihicg',}, 
-          { positions: [ { i: '0', j: 3 } ], css_id: 'tinytable_css_u79rovczzsj4f961yh6z',}, 
-          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 } ], css_id: 'tinytable_css_lceiium5h5ofq1govzog',}, 
+          { positions: [ { i: '1', j: 3 }, { i: '2', j: 3 }, { i: '3', j: 3 }, { i: '4', j: 3 }, { i: '5', j: 3 }, { i: '6', j: 3 }, { i: '7', j: 3 }, { i: '8', j: 3 }, { i: '9', j: 3 }, { i: '10', j: 3 }, { i: '11', j: 3 } ], css_id: 'tinytable_css_ohi50pm3k260qryatdcw',}, 
+          { positions: [ { i: '0', j: 3 } ], css_id: 'tinytable_css_6w0oek1hsi02unybzagb',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 }, { i: '7', j: 1 }, { i: '8', j: 1 }, { i: '9', j: 1 }, { i: '10', j: 1 }, { i: '11', j: 1 }, { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 }, { i: '7', j: 2 }, { i: '8', j: 2 }, { i: '9', j: 2 }, { i: '10', j: 2 }, { i: '11', j: 2 } ], css_id: 'tinytable_css_4i0uzjf83l0cmic2p7ed',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 } ], css_id: 'tinytable_css_azw2g68b6r7cpw499yk9',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  tableFns_d6pqei5ljuqb44ct9ybq.styleCell(cell.i, cell.j, group.css_id);
+                  tableFns_311wk9mrsgw9o5spc799.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -680,80 +681,80 @@ Decisión final
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
     /* tinytable css entries after */
-    #tinytable_d6pqei5ljuqb44ct9ybq td.tinytable_css_7guqdoy4npawv3ua249p, #tinytable_d6pqei5ljuqb44ct9ybq th.tinytable_css_7guqdoy4npawv3ua249p {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_d6pqei5ljuqb44ct9ybq td.tinytable_css_pt1g6h11sslabcxihicg, #tinytable_d6pqei5ljuqb44ct9ybq th.tinytable_css_pt1g6h11sslabcxihicg {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_d6pqei5ljuqb44ct9ybq td.tinytable_css_u79rovczzsj4f961yh6z, #tinytable_d6pqei5ljuqb44ct9ybq th.tinytable_css_u79rovczzsj4f961yh6z {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
-    #tinytable_d6pqei5ljuqb44ct9ybq td.tinytable_css_lceiium5h5ofq1govzog, #tinytable_d6pqei5ljuqb44ct9ybq th.tinytable_css_lceiium5h5ofq1govzog {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_311wk9mrsgw9o5spc799 td.tinytable_css_ohi50pm3k260qryatdcw, #tinytable_311wk9mrsgw9o5spc799 th.tinytable_css_ohi50pm3k260qryatdcw {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_311wk9mrsgw9o5spc799 td.tinytable_css_6w0oek1hsi02unybzagb, #tinytable_311wk9mrsgw9o5spc799 th.tinytable_css_6w0oek1hsi02unybzagb {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_311wk9mrsgw9o5spc799 td.tinytable_css_4i0uzjf83l0cmic2p7ed, #tinytable_311wk9mrsgw9o5spc799 th.tinytable_css_4i0uzjf83l0cmic2p7ed {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_311wk9mrsgw9o5spc799 td.tinytable_css_azw2g68b6r7cpw499yk9, #tinytable_311wk9mrsgw9o5spc799 th.tinytable_css_azw2g68b6r7cpw499yk9 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
     </style>
     <div class="container">
-      <table class="tinytable" id="tinytable_d6pqei5ljuqb44ct9ybq" style="table-layout: fixed; width: 100% !important; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
-        
-        <thead>
-              <tr>
-                <th scope="col" data-row="0" data-col="1">Alfa</th>
-                <th scope="col" data-row="0" data-col="2">Alternativa óptima</th>
-                <th scope="col" data-row="0" data-col="3">Valor óptimo</th>
-              </tr>
-        </thead>
-        
-        <tbody>
-                <tr>
-                  <td data-row="1" data-col="1">0.0</td>
-                  <td data-row="1" data-col="2">5</td>
-                  <td data-row="1" data-col="3">15.0</td>
-                </tr>
-                <tr>
-                  <td data-row="2" data-col="1">0.1</td>
-                  <td data-row="2" data-col="2">5</td>
-                  <td data-row="2" data-col="3">14.5</td>
-                </tr>
-                <tr>
-                  <td data-row="3" data-col="1">0.2</td>
-                  <td data-row="3" data-col="2">4</td>
-                  <td data-row="3" data-col="3">13.6</td>
-                </tr>
-                <tr>
-                  <td data-row="4" data-col="1">0.3</td>
-                  <td data-row="4" data-col="2">4</td>
-                  <td data-row="4" data-col="3">12.4</td>
-                </tr>
-                <tr>
-                  <td data-row="5" data-col="1">0.4</td>
-                  <td data-row="5" data-col="2">4</td>
-                  <td data-row="5" data-col="3">11.2</td>
-                </tr>
-                <tr>
-                  <td data-row="6" data-col="1">0.5</td>
-                  <td data-row="6" data-col="2">4</td>
-                  <td data-row="6" data-col="3">10.0</td>
-                </tr>
-                <tr>
-                  <td data-row="7" data-col="1">0.6</td>
-                  <td data-row="7" data-col="2">4</td>
-                  <td data-row="7" data-col="3">8.8</td>
-                </tr>
-                <tr>
-                  <td data-row="8" data-col="1">0.7</td>
-                  <td data-row="8" data-col="2">4</td>
-                  <td data-row="8" data-col="3">7.6</td>
-                </tr>
-                <tr>
-                  <td data-row="9" data-col="1">0.8</td>
-                  <td data-row="9" data-col="2">4</td>
-                  <td data-row="9" data-col="3">6.4</td>
-                </tr>
-                <tr>
-                  <td data-row="10" data-col="1">0.9</td>
-                  <td data-row="10" data-col="2">4</td>
-                  <td data-row="10" data-col="3">5.2</td>
-                </tr>
-                <tr>
-                  <td data-row="11" data-col="1">1.0</td>
-                  <td data-row="11" data-col="2">4</td>
-                  <td data-row="11" data-col="3">4.0</td>
-                </tr>
-        </tbody>
-      </table>
+      
+<table id="tinytable_311wk9mrsgw9o5spc799" class="tinytable caption-top table" data-quarto-postprocess="true" data-quarto-disable-processing="false">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="1">Alfa</th>
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="2">Alternativa óptima</th>
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="3">Valor óptimo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-row="1" data-col="1">0.0</td>
+<td data-row="1" data-col="2">5</td>
+<td data-row="1" data-col="3">15.0</td>
+</tr>
+<tr class="even">
+<td data-row="2" data-col="1">0.1</td>
+<td data-row="2" data-col="2">5</td>
+<td data-row="2" data-col="3">14.5</td>
+</tr>
+<tr class="odd">
+<td data-row="3" data-col="1">0.2</td>
+<td data-row="3" data-col="2">4</td>
+<td data-row="3" data-col="3">13.6</td>
+</tr>
+<tr class="even">
+<td data-row="4" data-col="1">0.3</td>
+<td data-row="4" data-col="2">4</td>
+<td data-row="4" data-col="3">12.4</td>
+</tr>
+<tr class="odd">
+<td data-row="5" data-col="1">0.4</td>
+<td data-row="5" data-col="2">4</td>
+<td data-row="5" data-col="3">11.2</td>
+</tr>
+<tr class="even">
+<td data-row="6" data-col="1">0.5</td>
+<td data-row="6" data-col="2">4</td>
+<td data-row="6" data-col="3">10.0</td>
+</tr>
+<tr class="odd">
+<td data-row="7" data-col="1">0.6</td>
+<td data-row="7" data-col="2">4</td>
+<td data-row="7" data-col="3">8.8</td>
+</tr>
+<tr class="even">
+<td data-row="8" data-col="1">0.7</td>
+<td data-row="8" data-col="2">4</td>
+<td data-row="8" data-col="3">7.6</td>
+</tr>
+<tr class="odd">
+<td data-row="9" data-col="1">0.8</td>
+<td data-row="9" data-col="2">4</td>
+<td data-row="9" data-col="3">6.4</td>
+</tr>
+<tr class="even">
+<td data-row="10" data-col="1">0.9</td>
+<td data-row="10" data-col="2">4</td>
+<td data-row="10" data-col="3">5.2</td>
+</tr>
+<tr class="odd">
+<td data-row="11" data-col="1">1.0</td>
+<td data-row="11" data-col="2">4</td>
+<td data-row="11" data-col="3">4.0</td>
+</tr>
+</tbody>
+</table>
+
     </div>
 <!-- hack to avoid NA insertion in last line -->
 <p>Y gráficamente:</p>
@@ -828,21 +829,21 @@ Decisión final
 
     <script>
       // Create table-specific functions using external factory
-      const tableFns_b5xqifafzounseyzo995 = TinyTable.createTableFunctions("tinytable_b5xqifafzounseyzo995");
+      const tableFns_2u4aypnhrlsdfs66meei = TinyTable.createTableFunctions("tinytable_2u4aypnhrlsdfs66meei");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 } ], css_id: 'tinytable_css_p26y4k4inetj9juce17l',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 } ], css_id: 'tinytable_css_3smo70xzg6lik5pganea',}, 
-          { positions: [ { i: '0', j: 2 } ], css_id: 'tinytable_css_rg818v9ctubeurly6hcb',}, 
-          { positions: [ { i: '0', j: 1 } ], css_id: 'tinytable_css_cru4grhgf20962gzm6m1',}, 
+          { positions: [ { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 } ], css_id: 'tinytable_css_xj9vqd8ao1w0svuby7r3',}, 
+          { positions: [ { i: '0', j: 2 } ], css_id: 'tinytable_css_40hjokpcxqnnkjz7zilw',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 } ], css_id: 'tinytable_css_z33zrjcxnpze5g8q54y0',}, 
+          { positions: [ { i: '0', j: 1 } ], css_id: 'tinytable_css_scdzh73vmneya4081aav',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  tableFns_b5xqifafzounseyzo995.styleCell(cell.i, cell.j, group.css_id);
+                  tableFns_2u4aypnhrlsdfs66meei.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -851,48 +852,48 @@ Decisión final
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
     /* tinytable css entries after */
-    #tinytable_b5xqifafzounseyzo995 td.tinytable_css_p26y4k4inetj9juce17l, #tinytable_b5xqifafzounseyzo995 th.tinytable_css_p26y4k4inetj9juce17l {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_b5xqifafzounseyzo995 td.tinytable_css_3smo70xzg6lik5pganea, #tinytable_b5xqifafzounseyzo995 th.tinytable_css_3smo70xzg6lik5pganea {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_b5xqifafzounseyzo995 td.tinytable_css_rg818v9ctubeurly6hcb, #tinytable_b5xqifafzounseyzo995 th.tinytable_css_rg818v9ctubeurly6hcb {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
-    #tinytable_b5xqifafzounseyzo995 td.tinytable_css_cru4grhgf20962gzm6m1, #tinytable_b5xqifafzounseyzo995 th.tinytable_css_cru4grhgf20962gzm6m1 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_2u4aypnhrlsdfs66meei td.tinytable_css_xj9vqd8ao1w0svuby7r3, #tinytable_2u4aypnhrlsdfs66meei th.tinytable_css_xj9vqd8ao1w0svuby7r3 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_2u4aypnhrlsdfs66meei td.tinytable_css_40hjokpcxqnnkjz7zilw, #tinytable_2u4aypnhrlsdfs66meei th.tinytable_css_40hjokpcxqnnkjz7zilw {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_2u4aypnhrlsdfs66meei td.tinytable_css_z33zrjcxnpze5g8q54y0, #tinytable_2u4aypnhrlsdfs66meei th.tinytable_css_z33zrjcxnpze5g8q54y0 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_2u4aypnhrlsdfs66meei td.tinytable_css_scdzh73vmneya4081aav, #tinytable_2u4aypnhrlsdfs66meei th.tinytable_css_scdzh73vmneya4081aav {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
     </style>
     <div class="container">
-      <table class="tinytable" id="tinytable_b5xqifafzounseyzo995" style="table-layout: fixed; width: 100% !important; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
-        
-        <thead>
-              <tr>
-                <th scope="col" data-row="0" data-col="1">Criterio</th>
-                <th scope="col" data-row="0" data-col="2">Alternativa óptima</th>
-              </tr>
-        </thead>
-        
-        <tbody>
-                <tr>
-                  <td data-row="1" data-col="1">Wald</td>
-                  <td data-row="1" data-col="2">5</td>
-                </tr>
-                <tr>
-                  <td data-row="2" data-col="1">Optimista</td>
-                  <td data-row="2" data-col="2">4</td>
-                </tr>
-                <tr>
-                  <td data-row="3" data-col="1">Hurwicz</td>
-                  <td data-row="3" data-col="2">4</td>
-                </tr>
-                <tr>
-                  <td data-row="4" data-col="1">Savage</td>
-                  <td data-row="4" data-col="2">1</td>
-                </tr>
-                <tr>
-                  <td data-row="5" data-col="1">Laplace</td>
-                  <td data-row="5" data-col="2">1</td>
-                </tr>
-                <tr>
-                  <td data-row="6" data-col="1">Punto Ideal</td>
-                  <td data-row="6" data-col="2">1</td>
-                </tr>
-        </tbody>
-      </table>
+      
+<table id="tinytable_2u4aypnhrlsdfs66meei" class="tinytable caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="1">Criterio</th>
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="2">Alternativa óptima</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-row="1" data-col="1">Wald</td>
+<td data-row="1" data-col="2">5</td>
+</tr>
+<tr class="even">
+<td data-row="2" data-col="1">Optimista</td>
+<td data-row="2" data-col="2">4</td>
+</tr>
+<tr class="odd">
+<td data-row="3" data-col="1">Hurwicz</td>
+<td data-row="3" data-col="2">4</td>
+</tr>
+<tr class="even">
+<td data-row="4" data-col="1">Savage</td>
+<td data-row="4" data-col="2">1</td>
+</tr>
+<tr class="odd">
+<td data-row="5" data-col="1">Laplace</td>
+<td data-row="5" data-col="2">1</td>
+</tr>
+<tr class="even">
+<td data-row="6" data-col="1">Punto Ideal</td>
+<td data-row="6" data-col="2">1</td>
+</tr>
+</tbody>
+</table>
+
     </div>
 <!-- hack to avoid NA insertion in last line -->
 </div>
@@ -911,6 +912,7 @@ Decisión final
 <p>En este caso se va a optar por la alternativa <span class="math inline">\(a_1\)</span> dado que es la que mayor número de veces aparece como óptima y en el criterio de Hurwicz el gráfico nos muestra que es bastante equilibrada para todos los valores de alfa, aunque nunca sea la mejor.</p>
 </div>
 </div>
+<div style="page-break-after: always;"></div>
 </section>
 </section>
 </section>
@@ -982,21 +984,21 @@ Decisión final
 
     <script>
       // Create table-specific functions using external factory
-      const tableFns_11xnxxwcycv8seh2642b = TinyTable.createTableFunctions("tinytable_11xnxxwcycv8seh2642b");
+      const tableFns_ghnzdekxlow6ru27hmc1 = TinyTable.createTableFunctions("tinytable_ghnzdekxlow6ru27hmc1");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '1', j: 3 }, { i: '2', j: 3 }, { i: '3', j: 3 }, { i: '4', j: 3 } ], css_id: 'tinytable_css_ge7jzxescdz6bdzpzw54',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '2', j: 1 }, { i: '2', j: 2 }, { i: '3', j: 1 }, { i: '3', j: 2 }, { i: '4', j: 1 }, { i: '4', j: 2 } ], css_id: 'tinytable_css_ilqwqnfu3sz8mqo458mq',}, 
-          { positions: [ { i: '0', j: 3 } ], css_id: 'tinytable_css_te74yrs2mf9vdo7up4nb',}, 
-          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 } ], css_id: 'tinytable_css_6fa53o9m6yd54jew30sg',}, 
+          { positions: [ { i: '1', j: 3 }, { i: '2', j: 3 }, { i: '3', j: 3 }, { i: '4', j: 3 } ], css_id: 'tinytable_css_cbcgq31h1x97ny4iszhm',}, 
+          { positions: [ { i: '0', j: 3 } ], css_id: 'tinytable_css_k76yfo7ghejdnmjzzcew',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 } ], css_id: 'tinytable_css_mydkw6x6dr3ii4v3bmgi',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 } ], css_id: 'tinytable_css_n9sem456nz89oeqdecg3',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  tableFns_11xnxxwcycv8seh2642b.styleCell(cell.i, cell.j, group.css_id);
+                  tableFns_ghnzdekxlow6ru27hmc1.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -1005,45 +1007,45 @@ Decisión final
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
     /* tinytable css entries after */
-    #tinytable_11xnxxwcycv8seh2642b td.tinytable_css_ge7jzxescdz6bdzpzw54, #tinytable_11xnxxwcycv8seh2642b th.tinytable_css_ge7jzxescdz6bdzpzw54 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_11xnxxwcycv8seh2642b td.tinytable_css_ilqwqnfu3sz8mqo458mq, #tinytable_11xnxxwcycv8seh2642b th.tinytable_css_ilqwqnfu3sz8mqo458mq {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_11xnxxwcycv8seh2642b td.tinytable_css_te74yrs2mf9vdo7up4nb, #tinytable_11xnxxwcycv8seh2642b th.tinytable_css_te74yrs2mf9vdo7up4nb {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
-    #tinytable_11xnxxwcycv8seh2642b td.tinytable_css_6fa53o9m6yd54jew30sg, #tinytable_11xnxxwcycv8seh2642b th.tinytable_css_6fa53o9m6yd54jew30sg {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_ghnzdekxlow6ru27hmc1 td.tinytable_css_cbcgq31h1x97ny4iszhm, #tinytable_ghnzdekxlow6ru27hmc1 th.tinytable_css_cbcgq31h1x97ny4iszhm {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_ghnzdekxlow6ru27hmc1 td.tinytable_css_k76yfo7ghejdnmjzzcew, #tinytable_ghnzdekxlow6ru27hmc1 th.tinytable_css_k76yfo7ghejdnmjzzcew {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_ghnzdekxlow6ru27hmc1 td.tinytable_css_mydkw6x6dr3ii4v3bmgi, #tinytable_ghnzdekxlow6ru27hmc1 th.tinytable_css_mydkw6x6dr3ii4v3bmgi {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_ghnzdekxlow6ru27hmc1 td.tinytable_css_n9sem456nz89oeqdecg3, #tinytable_ghnzdekxlow6ru27hmc1 th.tinytable_css_n9sem456nz89oeqdecg3 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
     </style>
     <div class="container">
-      <table class="tinytable" id="tinytable_11xnxxwcycv8seh2642b" style="table-layout: fixed; width: 100% !important; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
-        
-        <thead>
-              <tr>
-                <th scope="col" data-row="0" data-col="1"></th>
-                <th scope="col" data-row="0" data-col="2">Inversión exitosa</th>
-                <th scope="col" data-row="0" data-col="3">Inversión fallida</th>
-              </tr>
-        </thead>
-        
-        <tbody>
-                <tr>
-                  <td data-row="1" data-col="1">Pagar hipoteca</td>
-                  <td data-row="1" data-col="2">4600</td>
-                  <td data-row="1" data-col="3">4600</td>
-                </tr>
-                <tr>
-                  <td data-row="2" data-col="1">Aquirir piso</td>
-                  <td data-row="2" data-col="2">8000</td>
-                  <td data-row="2" data-col="3">-6000</td>
-                </tr>
-                <tr>
-                  <td data-row="3" data-col="1">Invertir fondo</td>
-                  <td data-row="3" data-col="2">10000</td>
-                  <td data-row="3" data-col="3">-20000</td>
-                </tr>
-                <tr>
-                  <td data-row="4" data-col="1">Invertir franquicia</td>
-                  <td data-row="4" data-col="2">16000</td>
-                  <td data-row="4" data-col="3">-24000</td>
-                </tr>
-        </tbody>
-      </table>
+      
+<table id="tinytable_ghnzdekxlow6ru27hmc1" class="tinytable caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="1"></th>
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="2">Inversión exitosa</th>
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="3">Inversión fallida</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-row="1" data-col="1">Pagar hipoteca</td>
+<td data-row="1" data-col="2">4600</td>
+<td data-row="1" data-col="3">4600</td>
+</tr>
+<tr class="even">
+<td data-row="2" data-col="1">Aquirir piso</td>
+<td data-row="2" data-col="2">8000</td>
+<td data-row="2" data-col="3">-6000</td>
+</tr>
+<tr class="odd">
+<td data-row="3" data-col="1">Invertir fondo</td>
+<td data-row="3" data-col="2">10000</td>
+<td data-row="3" data-col="3">-20000</td>
+</tr>
+<tr class="even">
+<td data-row="4" data-col="1">Invertir franquicia</td>
+<td data-row="4" data-col="2">16000</td>
+<td data-row="4" data-col="3">-24000</td>
+</tr>
+</tbody>
+</table>
+
     </div>
 <!-- hack to avoid NA insertion in last line -->
 </div>
@@ -1079,21 +1081,21 @@ Decisión final
 
     <script>
       // Create table-specific functions using external factory
-      const tableFns_ngkd1yibfx6pctt2qxlx = TinyTable.createTableFunctions("tinytable_ngkd1yibfx6pctt2qxlx");
+      const tableFns_1cceurtucdorr4x7v92s = TinyTable.createTableFunctions("tinytable_1cceurtucdorr4x7v92s");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '1', j: 10 }, { i: '2', j: 10 }, { i: '3', j: 10 }, { i: '4', j: 10 }, { i: '5', j: 10 } ], css_id: 'tinytable_css_nok91kwe5tsblqr4moy0',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '1', j: 2 }, { i: '1', j: 3 }, { i: '1', j: 4 }, { i: '1', j: 5 }, { i: '1', j: 6 }, { i: '1', j: 7 }, { i: '1', j: 8 }, { i: '1', j: 9 }, { i: '2', j: 1 }, { i: '2', j: 2 }, { i: '2', j: 3 }, { i: '2', j: 4 }, { i: '2', j: 5 }, { i: '2', j: 6 }, { i: '2', j: 7 }, { i: '2', j: 8 }, { i: '2', j: 9 }, { i: '3', j: 1 }, { i: '3', j: 2 }, { i: '3', j: 3 }, { i: '3', j: 4 }, { i: '3', j: 5 }, { i: '3', j: 6 }, { i: '3', j: 7 }, { i: '3', j: 8 }, { i: '3', j: 9 }, { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '4', j: 3 }, { i: '4', j: 4 }, { i: '4', j: 5 }, { i: '4', j: 6 }, { i: '4', j: 7 }, { i: '4', j: 8 }, { i: '4', j: 9 }, { i: '5', j: 1 }, { i: '5', j: 2 }, { i: '5', j: 3 }, { i: '5', j: 4 }, { i: '5', j: 5 }, { i: '5', j: 6 }, { i: '5', j: 7 }, { i: '5', j: 8 }, { i: '5', j: 9 } ], css_id: 'tinytable_css_vrr5axxf25jgf8lyzu2j',}, 
-          { positions: [ { i: '0', j: 10 } ], css_id: 'tinytable_css_9gyre22c4hcz1tgtcdsl',}, 
-          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 }, { i: '0', j: 6 }, { i: '0', j: 7 }, { i: '0', j: 8 }, { i: '0', j: 9 } ], css_id: 'tinytable_css_pnn85svdwhxlm7hfx6h2',}, 
+          { positions: [ { i: '1', j: 10 }, { i: '2', j: 10 }, { i: '3', j: 10 }, { i: '4', j: 10 }, { i: '5', j: 10 } ], css_id: 'tinytable_css_g7eg8u1ibbj91ww8bcin',}, 
+          { positions: [ { i: '0', j: 10 } ], css_id: 'tinytable_css_p6lsmkoyk8v9owtqo1og',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '1', j: 3 }, { i: '2', j: 3 }, { i: '3', j: 3 }, { i: '4', j: 3 }, { i: '5', j: 3 }, { i: '1', j: 4 }, { i: '2', j: 4 }, { i: '3', j: 4 }, { i: '4', j: 4 }, { i: '5', j: 4 }, { i: '1', j: 5 }, { i: '2', j: 5 }, { i: '3', j: 5 }, { i: '4', j: 5 }, { i: '5', j: 5 }, { i: '1', j: 6 }, { i: '2', j: 6 }, { i: '3', j: 6 }, { i: '4', j: 6 }, { i: '5', j: 6 }, { i: '1', j: 7 }, { i: '2', j: 7 }, { i: '3', j: 7 }, { i: '4', j: 7 }, { i: '5', j: 7 }, { i: '1', j: 8 }, { i: '2', j: 8 }, { i: '3', j: 8 }, { i: '4', j: 8 }, { i: '5', j: 8 }, { i: '1', j: 9 }, { i: '2', j: 9 }, { i: '3', j: 9 }, { i: '4', j: 9 }, { i: '5', j: 9 } ], css_id: 'tinytable_css_jcji60xlreek80vruq31',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 }, { i: '0', j: 6 }, { i: '0', j: 7 }, { i: '0', j: 8 }, { i: '0', j: 9 } ], css_id: 'tinytable_css_lrq2dt9yyzb1xcap8wny',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  tableFns_ngkd1yibfx6pctt2qxlx.styleCell(cell.i, cell.j, group.css_id);
+                  tableFns_1cceurtucdorr4x7v92s.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -1102,92 +1104,92 @@ Decisión final
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
     /* tinytable css entries after */
-    #tinytable_ngkd1yibfx6pctt2qxlx td.tinytable_css_nok91kwe5tsblqr4moy0, #tinytable_ngkd1yibfx6pctt2qxlx th.tinytable_css_nok91kwe5tsblqr4moy0 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_ngkd1yibfx6pctt2qxlx td.tinytable_css_vrr5axxf25jgf8lyzu2j, #tinytable_ngkd1yibfx6pctt2qxlx th.tinytable_css_vrr5axxf25jgf8lyzu2j {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
-    #tinytable_ngkd1yibfx6pctt2qxlx td.tinytable_css_9gyre22c4hcz1tgtcdsl, #tinytable_ngkd1yibfx6pctt2qxlx th.tinytable_css_9gyre22c4hcz1tgtcdsl {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
-    #tinytable_ngkd1yibfx6pctt2qxlx td.tinytable_css_pnn85svdwhxlm7hfx6h2, #tinytable_ngkd1yibfx6pctt2qxlx th.tinytable_css_pnn85svdwhxlm7hfx6h2 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_1cceurtucdorr4x7v92s td.tinytable_css_g7eg8u1ibbj91ww8bcin, #tinytable_1cceurtucdorr4x7v92s th.tinytable_css_g7eg8u1ibbj91ww8bcin {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: black; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_1cceurtucdorr4x7v92s td.tinytable_css_p6lsmkoyk8v9owtqo1og, #tinytable_1cceurtucdorr4x7v92s th.tinytable_css_p6lsmkoyk8v9owtqo1og {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: black; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
+    #tinytable_1cceurtucdorr4x7v92s td.tinytable_css_jcji60xlreek80vruq31, #tinytable_1cceurtucdorr4x7v92s th.tinytable_css_jcji60xlreek80vruq31 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 0; --line-color-bottom: #7FBFF5; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: black; --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle }
+    #tinytable_1cceurtucdorr4x7v92s td.tinytable_css_lrq2dt9yyzb1xcap8wny, #tinytable_1cceurtucdorr4x7v92s th.tinytable_css_lrq2dt9yyzb1xcap8wny {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 1; --border-top: 1; --line-color-bottom: #004B73; --line-color-left: black; --line-color-right: #7FBFF5; --line-color-top: #7FBFF5; --line-width-bottom: 0.2em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center; vertical-align: middle; color: #111111; background-color: #F8A29E }
     </style>
     <div class="container">
-      <table class="tinytable" id="tinytable_ngkd1yibfx6pctt2qxlx" style="table-layout: fixed; width: 100% !important; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
-        
-        <thead>
-              <tr>
-                <th scope="col" data-row="0" data-col="1"></th>
-                <th scope="col" data-row="0" data-col="2">Inversión exitosa</th>
-                <th scope="col" data-row="0" data-col="3">Inversión fallida</th>
-                <th scope="col" data-row="0" data-col="4">Wald</th>
-                <th scope="col" data-row="0" data-col="5">Optimista</th>
-                <th scope="col" data-row="0" data-col="6">Hurwicz</th>
-                <th scope="col" data-row="0" data-col="7">Savage</th>
-                <th scope="col" data-row="0" data-col="8">Laplace</th>
-                <th scope="col" data-row="0" data-col="9">Punto Ideal</th>
-                <th scope="col" data-row="0" data-col="10">Veces Optima</th>
-              </tr>
-        </thead>
-        
-        <tbody>
-                <tr>
-                  <td data-row="1" data-col="1">Pagar hipoteca</td>
-                  <td data-row="1" data-col="2">4600</td>
-                  <td data-row="1" data-col="3">4600</td>
-                  <td data-row="1" data-col="4">4600</td>
-                  <td data-row="1" data-col="5">4600</td>
-                  <td data-row="1" data-col="6">4600</td>
-                  <td data-row="1" data-col="7">11400</td>
-                  <td data-row="1" data-col="8">4600</td>
-                  <td data-row="1" data-col="9">11400</td>
-                  <td data-row="1" data-col="10">4</td>
-                </tr>
-                <tr>
-                  <td data-row="2" data-col="1">Aquirir piso</td>
-                  <td data-row="2" data-col="2">8000</td>
-                  <td data-row="2" data-col="3">-6000</td>
-                  <td data-row="2" data-col="4">-6000</td>
-                  <td data-row="2" data-col="5">8000</td>
-                  <td data-row="2" data-col="6">1000</td>
-                  <td data-row="2" data-col="7">10600</td>
-                  <td data-row="2" data-col="8">1000</td>
-                  <td data-row="2" data-col="9">13280</td>
-                  <td data-row="2" data-col="10">1</td>
-                </tr>
-                <tr>
-                  <td data-row="3" data-col="1">Invertir fondo</td>
-                  <td data-row="3" data-col="2">10000</td>
-                  <td data-row="3" data-col="3">-20000</td>
-                  <td data-row="3" data-col="4">-20000</td>
-                  <td data-row="3" data-col="5">10000</td>
-                  <td data-row="3" data-col="6">-5000</td>
-                  <td data-row="3" data-col="7">24600</td>
-                  <td data-row="3" data-col="8">-5000</td>
-                  <td data-row="3" data-col="9">25321</td>
-                  <td data-row="3" data-col="10">0</td>
-                </tr>
-                <tr>
-                  <td data-row="4" data-col="1">Invertir franquicia</td>
-                  <td data-row="4" data-col="2">16000</td>
-                  <td data-row="4" data-col="3">-24000</td>
-                  <td data-row="4" data-col="4">-24000</td>
-                  <td data-row="4" data-col="5">16000</td>
-                  <td data-row="4" data-col="6">-4000</td>
-                  <td data-row="4" data-col="7">28600</td>
-                  <td data-row="4" data-col="8">-4000</td>
-                  <td data-row="4" data-col="9">28600</td>
-                  <td data-row="4" data-col="10">1</td>
-                </tr>
-                <tr>
-                  <td data-row="5" data-col="1">iAlt.Opt (fav.)</td>
-                  <td data-row="5" data-col="2">--</td>
-                  <td data-row="5" data-col="3">--</td>
-                  <td data-row="5" data-col="4">Pagar hipoteca</td>
-                  <td data-row="5" data-col="5">Invertir franquicia</td>
-                  <td data-row="5" data-col="6">Pagar hipoteca</td>
-                  <td data-row="5" data-col="7">Aquirir piso</td>
-                  <td data-row="5" data-col="8">Pagar hipoteca</td>
-                  <td data-row="5" data-col="9">Pagar hipoteca</td>
-                  <td data-row="5" data-col="10">Pagar hipoteca</td>
-                </tr>
-        </tbody>
-      </table>
+      
+<table id="tinytable_1cceurtucdorr4x7v92s" class="tinytable caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="1"></th>
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="2">Inversión exitosa</th>
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="3">Inversión fallida</th>
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="4">Wald</th>
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="5">Optimista</th>
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="6">Hurwicz</th>
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="7">Savage</th>
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="8">Laplace</th>
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="9">Punto Ideal</th>
+<th data-quarto-table-cell-role="th" scope="col" data-row="0" data-col="10">Veces Optima</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-row="1" data-col="1">Pagar hipoteca</td>
+<td data-row="1" data-col="2">4600</td>
+<td data-row="1" data-col="3">4600</td>
+<td data-row="1" data-col="4">4600</td>
+<td data-row="1" data-col="5">4600</td>
+<td data-row="1" data-col="6">4600</td>
+<td data-row="1" data-col="7">11400</td>
+<td data-row="1" data-col="8">4600</td>
+<td data-row="1" data-col="9">11400</td>
+<td data-row="1" data-col="10">4</td>
+</tr>
+<tr class="even">
+<td data-row="2" data-col="1">Aquirir piso</td>
+<td data-row="2" data-col="2">8000</td>
+<td data-row="2" data-col="3">-6000</td>
+<td data-row="2" data-col="4">-6000</td>
+<td data-row="2" data-col="5">8000</td>
+<td data-row="2" data-col="6">1000</td>
+<td data-row="2" data-col="7">10600</td>
+<td data-row="2" data-col="8">1000</td>
+<td data-row="2" data-col="9">13280</td>
+<td data-row="2" data-col="10">1</td>
+</tr>
+<tr class="odd">
+<td data-row="3" data-col="1">Invertir fondo</td>
+<td data-row="3" data-col="2">10000</td>
+<td data-row="3" data-col="3">-20000</td>
+<td data-row="3" data-col="4">-20000</td>
+<td data-row="3" data-col="5">10000</td>
+<td data-row="3" data-col="6">-5000</td>
+<td data-row="3" data-col="7">24600</td>
+<td data-row="3" data-col="8">-5000</td>
+<td data-row="3" data-col="9">25321</td>
+<td data-row="3" data-col="10">0</td>
+</tr>
+<tr class="even">
+<td data-row="4" data-col="1">Invertir franquicia</td>
+<td data-row="4" data-col="2">16000</td>
+<td data-row="4" data-col="3">-24000</td>
+<td data-row="4" data-col="4">-24000</td>
+<td data-row="4" data-col="5">16000</td>
+<td data-row="4" data-col="6">-4000</td>
+<td data-row="4" data-col="7">28600</td>
+<td data-row="4" data-col="8">-4000</td>
+<td data-row="4" data-col="9">28600</td>
+<td data-row="4" data-col="10">1</td>
+</tr>
+<tr class="odd">
+<td data-row="5" data-col="1">iAlt.Opt (fav.)</td>
+<td data-row="5" data-col="2">–</td>
+<td data-row="5" data-col="3">–</td>
+<td data-row="5" data-col="4">Pagar hipoteca</td>
+<td data-row="5" data-col="5">Invertir franquicia</td>
+<td data-row="5" data-col="6">Pagar hipoteca</td>
+<td data-row="5" data-col="7">Aquirir piso</td>
+<td data-row="5" data-col="8">Pagar hipoteca</td>
+<td data-row="5" data-col="9">Pagar hipoteca</td>
+<td data-row="5" data-col="10">Pagar hipoteca</td>
+</tr>
+</tbody>
+</table>
+
     </div>
 <!-- hack to avoid NA insertion in last line -->
 </div>

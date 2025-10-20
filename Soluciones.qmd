@@ -11,16 +11,13 @@ format:
     code-fold: false
     theme:
       - cosmo
-      - tema.scss
+      - estilo/tema.scss
   typst: 
     toc: true
     number-sections: true
-    include-before-body: toc-sep.typ
+    include-before-body: estilo/toc-sep.typ
     code-fold: false
-    brand: _brand.yml
-    fig-align: center
-    tbl-align: center
-  
+    brand: _brand.yml"
 lang: es
 ---
 
@@ -52,7 +49,8 @@ crea_tabla_estilo <- function(tabla, nombresfila = TRUE) {
     rownames(tabla) <- NULL 
   }
 
-  t <- tt(tabla, theme = "empty", width = 1) |>
+  t <- tt(tabla, theme = "empty", width=1) |>
+    format_tt(quarto=TRUE) |>
     style_tt(j = 1:ncol(tabla), align = crea_vector_posiciones_tabla(ncol(tabla)), alignv = "m") |>
     style_tt(i = 0, line = "b", line_color = colores[2], line_width = 0.2,
     background = colores[5], color = colores[3]) |> 
@@ -318,6 +316,7 @@ Para el criterio de `{r} alternativa_puntoideal_desfavorable$criterio`, en el ca
 ```{r}
 #| echo: true
 
+
 matriz_resumen_desfavorable <- matrix(c(
                alternativa_pesimista_desfavorable$criterio,
                alternativa_optimista_desfavorable$criterio,
@@ -345,6 +344,8 @@ Vemos que las alternativas óptimas son diferentes según el criterio utilizado,
 ## Decisión final
 En este caso se va a optar por la alternativa $a_1$ dado que es la que mayor número de veces aparece como óptima y en el criterio de Hurwicz el gráfico nos muestra que es bastante equilibrada para todos los valores de alfa, aunque nunca sea la mejor.
 :::
+
+{{< pagebreak >}}
 
 ## Problema 2
 
