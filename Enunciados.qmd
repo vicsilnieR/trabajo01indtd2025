@@ -11,11 +11,11 @@ format:
     code-fold: false
     theme:
       - cosmo
-      - tema.scss
+      - estilo/tema.scss
   typst: 
     toc: true
     number-sections: true
-    include-before-body: toc-sep.typ
+    include-before-body: estilo/toc-sep.typ
     code-fold: false
     brand: _brand.yml
 lang: es

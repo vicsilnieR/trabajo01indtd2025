@@ -62,6 +62,8 @@ crea_tabla_estilo <- function(tabla, nombresfila = TRUE) {
 
 ```
 
+{{< pagebreak >}}
+
 ## Problema 1
 
 Se deben implementar todos los métodos de decisión bajo incertidumbre, tanto para el caso favorable como para el caso desfavorable (pesimista, optimista, Hurwicz, Savage, Laplace y punto ideal) para la siguiente tabla de decisión:

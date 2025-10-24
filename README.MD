@@ -13,4 +13,4 @@ quarto render nombreArchivo.qmd --to all
 
 Donde "nombreArchivo.qmd" debe ser sustituido por el nombre del archivo que se desea renderizar.
 
-- Los documentos se pueden visualizar directamente en el repositorio haciendo clic en los archivos .html o .pdf correspondientes.
+- Los documentos se pueden visualizar directamente en el repositorio haciendo click en los archivos .html o .pdf correspondientes.
